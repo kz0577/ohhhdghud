@@ -1,0 +1,760 @@
+@charset "UTF-8";
+/* ********************************************** */
+/* 記事上のめくり */
+.l-blogPageTurn{
+    display: -webkit-flex;
+    display:flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items:center;
+    align-items:center;
+    margin: 0px 0 20px;
+    padding:0;
+    text-align: center;
+    border-top : solid 1px rgba(0,0,0,0.1);
+    border-bottom : solid 1px rgba(0,0,0,0.1);
+}
+/* 記事上のめくり（帯） */
+.t-obi .l-blogPageTurn{
+    border-top: none;
+    margin: -10px 0 20px;
+}
+/* PC用 目立たなくする */
+@media screen and (min-width:850px) {
+    .l-blogPageTurn{
+        max-width: 360px;
+        margin: 0 auto 0;
+        border: none; /* 下線を消す */
+    }
+    .t-obi .l-blogPageTurn{ /*（帯）*/
+        margin: -10px auto 0;
+    }
+}
+/* めくりボタン */
+.blogPageTurn{
+    flex-grow:1;
+    padding:10px 0 10px;
+    font-size: 12px;
+    color: rgba(0,0,0,0.7);
+}
+/* マウスオーバー */
+a.blogPageTurn:hover,a.blogPageTurn:focus{
+    background-color: rgba(0,0,0,0.02);
+}
+/* ページが無いときは文字色を薄くする */
+div.blogPageTurn{
+    opacity: 0.5;
+}
+/* 前のページと次のページの幅 */
+.blogPageTurn_Left,.blogPageTurn_Right{
+    flex-basis: 40%
+}
+/* 「一覧へ」の幅 */
+.blogPageTurn_List{
+    flex-basis: 20%;
+    min-width:80px;
+}
+/* 文字（前のページ） */
+.blogPageTurn_Left span{padding:0 2% 0 8%;}
+/* 文字（次のページ） */
+.blogPageTurn_Right span{padding:0 8% 0 2%;}
+/* 文字（一覧へ） */
+.blogPageTurn_List span{
+    display:block;
+    padding:0 5px;
+    border-right: solid 1px rgba(0,0,0,0.1);
+    border-left: solid 1px rgba(0,0,0,0.1);
+}
+/* ********************************************** */
+/* 記事下のめくり */
+.l-blogPageTurnEnd{
+    display: -webkit-flex;
+    display:flex;
+    margin:0;
+    padding:0;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-top: solid 1px rgba(0,0,0,0.1);
+}
+/* めくりボタン */
+.blogPageTurnEnd{
+    margin:0;
+    padding:10px 0;
+    color: #444;
+    flex-basis: 50%;
+    position: relative;
+    min-width: 80px;/* 横幅を計算できるようにして ↓ */
+    word-break: break-word;/* 英単語を横幅で折り返せるようにする */
+}
+/* マウスオーバー */
+a.blogPageTurnEnd:hover,
+a.blogPageTurnEnd:focus{
+    background-color: rgba(0,0,0,0.02);
+}
+/* ページが無いとき */
+div.blogPageTurnEnd{
+    color:#b3b3b3;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+/* 前のページ、次のページ が入る枠 */
+.blogPageTurnEnd_Top{
+    position:absolute;
+    top:7px; right:0; left:0;
+    margin:auto;
+    text-align: center;
+    font-size: 12px;
+    color: #757575;
+}
+/* 記事のタイトルが入る枠 */
+.blogPageTurnEnd_Title{
+    display: -webkit-flex;
+    display:flex;
+    -webkit-align-items:center;
+    align-items:center;
+    height:100%;
+    padding: 20px 12px 0 12px;
+    box-sizing: border-box;
+    line-height: 24px;
+    min-height: 60px;
+}
+/* 縦の線 */
+.blogPageTurnEnd_Title_Left{ border-right: solid 1px rgba(0,0,0,0.1); }
+.blogPageTurnEnd_Title_Right{ border: none; /* スマホでは非表示 */ }
+
+/* めくりBOX 中央の記事一覧へ（PC用） */
+.blogPageTurnEnd_List {
+    display: none; /* スマホでは非表示 */
+    min-width: 100px;
+}
+/* 記事一覧への中 */
+.blogPageTurnEnd_List > div{
+    display: -webkit-flex;
+    display: flex;
+    width:100%;
+    height:100%;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 0 10px;
+}
+/* 記事一覧を見る（スマホ用）  */
+.blogPageTurnEnd_List2{
+    display: block;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: #444;
+}
+.blogPageTurnEnd_List2:hover,
+.blogPageTurnEnd_List2:focus{
+    background-color: rgba(0,0,0,0.02);
+}
+/* 記事一覧を見る（スマホ用）（帯）  */
+.t-obi .blogPageTurnEnd_List2{
+    margin: 0 0 -10px 0;
+}
+/* 「記事一覧を見る」の中身 */
+.blogPageTurnEnd_List2 > div{
+    display: block;
+    margin: 0 5px;
+    padding: 20px 0 20px;
+    border-top: solid 1px rgba(0,0,0,0.1);
+}
+/* 「記事一覧を見る」の中身（帯） */
+.t-obi .blogPageTurnEnd_List2 > div{
+    padding: 10px 0 10px;
+}
+
+/* 画面が大きいときは、3列にする */
+@media screen and (min-width:520px) {
+    a.blogPageTurnEnd_List{
+        display: -webkit-flex;
+        display: flex; /* PCだと表示する */
+        -webkit-justify-content: center;
+        justify-content: center;
+        flex-basis: 20%
+    }
+    .blogPageTurnEnd_List2{ display: none; /* PCでは非表示 */ }
+    .l-blogPageTurnEnd{ margin:0 10px 30px 10px; border-bottom: solid 1px rgba(0,0,0,0.1); }
+    .t-obi .l-blogPageTurnEnd{ margin:0 0 -10px 0; border-bottom:none;}
+    .blogPageTurnEnd_Title_Right{ border-left: solid 1px rgba(0,0,0,0.1); }
+}
+/* ********************************************** */
+/* ------ テーマカラー別のスタイル調整 ------- */
+
+/* 露草、紅葉、パンジー ------------------ */
+/* 線の色 */
+.obi-color13 .l-blogPageTurn,
+.obi-color13 .l-blogPageTurnEnd,
+.obi-color13 .blogPageTurn_List span,
+.obi-color13 .blogPageTurnEnd_Title_Right,
+.obi-color13 .blogPageTurnEnd_Title_Left,
+.obi-color13 .l-blogPageTurnEnd,
+.obi-color13 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.25);
+}
+.togle-color13 .l-blogPageTurn,
+.togle-color13 .l-blogPageTurnEnd,
+.togle-color13 .blogPageTurn_List span,
+.togle-color13 .blogPageTurnEnd_Title_Right,
+.togle-color13 .blogPageTurnEnd_Title_Left,
+.togle-color13 .l-blogPageTurnEnd,
+.togle-color13 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.25);
+}
+.obi-color14 .l-blogPageTurn,
+.obi-color14 .l-blogPageTurnEnd,
+.obi-color14 .blogPageTurn_List span,
+.obi-color14 .blogPageTurnEnd_Title_Right,
+.obi-color14 .blogPageTurnEnd_Title_Left,
+.obi-color14 .l-blogPageTurnEnd,
+.obi-color14 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.25);
+}
+.togle-color14 .l-blogPageTurn,
+.togle-color14 .l-blogPageTurnEnd,
+.togle-color14 .blogPageTurn_List span,
+.togle-color14 .blogPageTurnEnd_Title_Right,
+.togle-color14 .blogPageTurnEnd_Title_Left,
+.togle-color14 .l-blogPageTurnEnd,
+.togle-color14 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.25);
+}
+.obi-color15 .l-blogPageTurn,
+.obi-color15 .l-blogPageTurnEnd,
+.obi-color15 .blogPageTurn_List span,
+.obi-color15 .blogPageTurnEnd_Title_Right,
+.obi-color15 .blogPageTurnEnd_Title_Left,
+.obi-color15 .l-blogPageTurnEnd,
+.obi-color15 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.3);
+}
+.togle-color15 .l-blogPageTurn,
+.togle-color15 .l-blogPageTurnEnd,
+.togle-color15 .blogPageTurn_List span,
+.togle-color15 .blogPageTurnEnd_Title_Right,
+.togle-color15 .blogPageTurnEnd_Title_Left,
+.togle-color15 .l-blogPageTurnEnd,
+.togle-color15 .blogPageTurnEnd_List2 > div{
+    border-color: rgba(255,255,255,0.3);
+}
+/* 文字色 */
+.obi-color13 .blogPageTurn,
+.obi-color13 .blogPageTurnEnd,
+.obi-color13 .blogPageTurnEnd_List2,
+.obi-color14 .blogPageTurn,
+.obi-color14 .blogPageTurnEnd,
+.obi-color14 .blogPageTurnEnd_List2,
+.obi-color15 .blogPageTurn,
+.obi-color15 .blogPageTurnEnd,
+.obi-color15 .blogPageTurnEnd_List2{ color: #e5e5e5; }
+
+.togle-color13 .blogPageTurn,
+.togle-color13 .blogPageTurnEnd,
+.togle-color13 .blogPageTurnEnd_List2,
+.togle-color14 .blogPageTurn,
+.togle-color14 .blogPageTurnEnd,
+.togle-color14 .blogPageTurnEnd_List2,
+.togle-color15 .blogPageTurn,
+.togle-color15 .blogPageTurnEnd,
+.togle-color15 .blogPageTurnEnd_List2{ color: #e5e5e5; }
+
+/*マウスオーバー*/
+.obi-color13 a.blogPageTurn:hover,
+.obi-color13 a.blogPageTurn:focus,
+.obi-color13 a.blogPageTurnEnd:hover,
+.obi-color13 a.blogPageTurnEnd:focus,
+.obi-color13 a.blogPageTurnEnd_List2:hover,
+.obi-color13 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.obi-color14 a.blogPageTurn:hover,
+.obi-color14 a.blogPageTurn:focus,
+.obi-color14 a.blogPageTurnEnd:hover,
+.obi-color14 a.blogPageTurnEnd:focus,
+.obi-color14 a.blogPageTurnEnd_List2:hover,
+.obi-color14 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.obi-color15 a.blogPageTurn:hover,
+.obi-color15 a.blogPageTurn:focus,
+.obi-color15 a.blogPageTurnEnd:hover,
+.obi-color15 a.blogPageTurnEnd:focus,
+.obi-color15 a.blogPageTurnEnd_List2:hover,
+.obi-color15 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.togle-color13 a.blogPageTurn:hover,
+.togle-color13 a.blogPageTurn:focus,
+.togle-color13 a.blogPageTurnEnd:hover,
+.togle-color13 a.blogPageTurnEnd:focus,
+.togle-color13 a.blogPageTurnEnd_List2:hover,
+.togle-color13 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+.togle-color14 a.blogPageTurn:hover,
+.togle-color14 a.blogPageTurn:focus,
+.togle-color14 a.blogPageTurnEnd:hover,
+.togle-color14 a.blogPageTurnEnd:focus,
+.togle-color14 a.blogPageTurnEnd_List2:hover,
+.togle-color14 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.togle-color15 a.blogPageTurn:hover,
+.togle-color15 a.blogPageTurn:focus,
+.togle-color15 a.blogPageTurnEnd:hover,
+.togle-color15 a.blogPageTurnEnd:focus,
+.togle-color15 a.blogPageTurnEnd_List2:hover,
+.togle-color15 a.blogPageTurnEnd_List2:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+/* 下めくり「前のページ」「次のぺーじ」 */
+.obi-color13 .blogPageTurnEnd_Top,
+.obi-color14 .blogPageTurnEnd_Top,
+.obi-color15 .blogPageTurnEnd_Top{
+    color: #c5c5c5;
+}
+.togle-color13 .blogPageTurnEnd_Top,
+.togle-color14 .blogPageTurnEnd_Top,
+.togle-color15 .blogPageTurnEnd_Top{
+    color: #c5c5c5;
+}
+/* 「記事はありません」 */
+.obi-color13 div.blogPageTurnEnd,
+.obi-color14 div.blogPageTurnEnd,
+.obi-color15 div.blogPageTurnEnd{
+    color: #aaa;
+    color: rgba(255,255,255,0.5);
+}
+.togle-color13 div.blogPageTurnEnd,
+.togle-color14 div.blogPageTurnEnd,
+.togle-color15 div.blogPageTurnEnd{
+    color: #aaa;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ********************************************** */
+/* 日付とカテゴリー */
+.blogData{
+    font-size: 12px;
+    color:#757575;
+    padding: 4px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.64);
+}
+/* カテゴリーの枠 */
+.blogCate{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -webkit-align-items:baseline;
+    align-items:baseline;
+}
+.blogCate > a{
+    margin:0 5px;
+}
+/* ------ テーマカラー別のスタイル調整 ------- */
+
+/* 露草、紅葉、パンジー ------------------ */
+/* 日付とカテゴリーの文字色 */
+.obi-color13 .blogData,
+.obi-color14 .blogData,
+.obi-color15 .blogData{
+    color: #c5c5c5;
+}
+.togle-color13 .blogData,
+.togle-color14 .blogData,
+.togle-color15 .blogData{
+    color: #c5c5c5;
+}
+/* カテゴリーのリンク */
+.obi-color13 .blogCate a,
+.obi-color14 .blogCate a,
+.obi-color15 .blogCate a{
+    color: rgba(100, 193, 219, 0.9);
+    font-weight: bold;
+}
+.togle-color13 .blogCate a,
+.togle-color14 .blogCate a,
+.togle-color15 .blogCate a{
+    color: rgba(100, 193, 219, 0.9);
+    font-weight: bold;
+}
+/* ********************************************** */
+/* トグルで、ブログの上下の部分を、containerの外に出すための改修 */
+/* トグルをハックする 大枠 */
+.l-toggleHac{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+/* フロート外し */
+.toggleHac_Right > #container,
+.toggleHac_Left > .menubar{ /* 左メニューとメインエリア */
+    float:none;
+    width:100%;
+}
+/* IE崩れ対策 */
+.toggleHac_Right{
+    width: 100%;
+}
+@media screen and (min-width: 850px) {
+    .toggleHac_Right{ width: 645px; }
+    .toggleHac_Left{ width: 200px; }
+}
+
+/* ********************************************** */
+/* *****  ここからブログの記事一覧 ******************** */
+/* ********************************************** */
+/* ブログ一覧のタイトルとか */
+.l-blogListIntro{
+    margin: 0 3% 0;
+    padding: 14px 4px 4px;
+    border-bottom : solid 1px rgba(0,0,0,0.1);
+}
+.t-obi .l-blogListIntro{
+    margin: 0;
+    padding: 14px 4% 4px;
+}
+/* 画面が細くなった時 */
+@media screen and (max-width:520px) {
+    .l-blogListIntro{padding: 14px 1% 4px;}
+    t-obi .l-blogListIntro{padding: 14px 3% 4px;}
+}
+/* ブログの名前 */
+.blogName{
+    margin:0 0 20px 0;
+    padding:0;
+    text-align: center;
+    font-size: 24px;
+    font-weight:500;
+    line-height: 32px;
+}
+/* ブログの名前（カテゴリーの時） */
+.s-blogCate > .blogName{
+    font-size: 14px;
+    line-height: 22px;
+}
+/* カテゴリー見出し */
+.blogCateName{
+    margin:0 0 10px 0;
+    padding:0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight:500;
+    color: #0000ee;
+}
+
+/* ブログ一覧のリスト部分 SEOのためにリストで囲う */
+ul.l-blogList{ list-style:none; margin:0; padding:0; }
+ul.l-blogList > li{ margin:0; padding:0; }
+/* 記事の大きな塊にしてリンク */
+a.l-blogArticle{
+    display: block;
+    margin: 0 3% 0;
+    padding: 20px 2% 10px;
+    color: #111;
+    border-bottom : solid 1px rgba(0,0,0,0.1);
+}
+/* 画面が細くなった時 */
+@media screen and (max-width:520px) {
+    a.l-blogArticle{padding: 20px 1% 10px;}
+    ul.l-blogList > li:last-child > a.l-blogArticle{border-bottom:none;}
+}
+/* 左右に分かれた部分 */
+.l-blogArticle_Top{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+/* タイトル、テキスト*/
+.l-blogArticl_Left{
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width:80px;/* 横幅を計算できるようにして ↓ */
+    word-break: break-word;/* 英単語を横幅で折り返せるようにする */
+}
+/* 画像 */
+.l-blogArticl_Right{
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left:4%;
+    /* IEのために */
+    width:100px;
+    height:100px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+/* 記事タイトル */
+.blogArticl_Title{
+    font-size:22px;
+    font-weight:500;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+/* 記事内容の抜粋 */
+.blogArticl_Text{
+    color: #969696;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+/* 画像 */
+img.blogArticl_Img{
+    width:100px;
+    height:100px;
+    object-fit: cover;
+    object-position: 50% 10%;
+    border-radius: 8px;
+    vertical-align: top;
+}
+/* 日付とカテゴリー */
+.l-blogArticl_Bottom{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width:100%;
+    color: #868686;
+    font-size: 11px;
+    line-height: 15px;
+}
+/* 日付 */      
+.blogArticl_Date{ margin: 3px 16px 3px 0; }
+/* カテゴリー */
+.blogArticl_Cate{ margin: 3px 14px 3px 0; }
+/* ********************************************** */
+/* 画面が細くなった時の対応 */
+@media screen and (max-width:520px) {
+    /* 記事タイトル */
+    .blogArticl_Title{font-size:18px; line-height:24px;}
+    /* 記事内容の抜粋 */
+    .blogArticl_Text{
+        font-size:13px; line-height:19px;
+        max-height: 57px;
+        overflow: hidden;
+    }
+    /* 画像 */
+    .l-blogArticl_Right{width:86px; height:86px;}/* IEのためだけに */
+    img.blogArticl_Img{width:86px; height:86px; margin-bottom:10px;}
+}
+/* ********************************************** */
+/* blog一覧のページめくり */
+.l-blogListTurn{
+    display: -webkit-flex;
+    display:flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    margin:20px auto 40px;
+    padding:0;
+    text-align: center;
+    width: 100%;
+    max-width:400px;
+    font-size:13px;
+    font-weight: bold;
+}
+.t-obi .l-blogListTurn{
+    margin:12px auto 6px;
+}
+/* めくりのリンク部分 */
+.blogListTurn{
+    padding: 10px 0 10px;
+    color:rgba(0,0,0,0.63);
+}
+/* マウスオーバー */
+a.blogListTurn:hover,a.blogListTurn:focus{
+    background-color: rgba(0,0,0,0.02);
+}
+/* ページが無いときは文字色を薄くする */
+div.blogListTurn{
+    color: rgba(0, 0, 0, 0.3);
+}
+/* 先頭と最後に飛ぶボタンに追加スタイル */
+.s-turnSingle{
+    flex-grow: 1;
+    width:38%;
+}
+/* 前と次のページ用の追加スタイル */
+.s-turnDobule{
+    flex-grow: 1;
+    width:12%;
+}
+/* 一覧（カテゴリーリストの時のみ） */
+.s-turnTop{
+    flex-grow: 1;
+    width:24%;
+}
+
+/* 右に縦線を入れるためのスタイル */
+.blogListTurn_RightBorder{
+    display: -webkit-flex;
+    display:flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding:0 4px 0;
+    height: 20px;
+    border-right:1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    width:100%;
+}
+/* ボーダー消す奴 */
+.noBorder{
+    border:none;
+}
+/* 最新と最後に飛ぶボタンの縦棒の調整 */
+.tate_no_bou{
+    display: inline-block;
+    line-height: 1rem;
+    padding:0 1px 1px;
+    font-family: Arial;
+    font-weight: bold;
+}
+/* ********************************************** */
+/* 画面が細くなった時の対応 */
+@media screen and (max-width:520px) {
+    /* blog一覧のページめくり */
+    .l-blogListTurn{
+        margin:0 auto 20px;
+        border-top: solid 1px rgba(0,0,0,0.1);
+        border-bottom: solid 1px rgba(0,0,0,0.1);
+        max-width:none;}
+    .t-obi .l-blogListTurn{margin:0 auto -10px; border-bottom: none;}
+    /* めくりのリンク部分 */
+    .blogListTurn{padding: 10px 0 10px;}
+    /* 前と次のページ用の追加スタイル */
+    .s-turnSingle{max-width:none;}
+    /* 右に縦線を入れるためのスタイル */
+    .blogListTurn_RightBorder{height: 40px;}
+}
+/* ********************************************** */
+/* ------ カラーパターンごとのスタイル調整 ------- */
+
+/* 露草、紅葉、パンジー ------------------ */
+/* 線の色 */
+.obi-color13 .l-blogListIntro,
+.obi-color13 a.l-blogArticle,
+.obi-color13 .blogListTurn_RightBorder,
+.obi-color13 .l-blogListTurn,
+.togle-color13 .l-blogListIntro,
+.togle-color13 a.l-blogArticle,
+.togle-color13 .blogListTurn_RightBorder,
+.togle-color13 .l-blogListTurn{
+    border-color: rgba(255,255,255,0.25);
+}
+.obi-color14 .l-blogListIntro,
+.obi-color14 a.l-blogArticle,
+.obi-color14 .blogListTurn_RightBorder,
+.obi-color14 .l-blogListTurn,
+.togle-color14 .l-blogListIntro,
+.togle-color14 a.l-blogArticle,
+.togle-color14 .blogListTurn_RightBorder,
+.togle-color14 .l-blogListTurn{
+    border-color: rgba(255,255,255,0.25);
+}
+.obi-color15 .l-blogListIntro,
+.obi-color15 a.l-blogArticle,
+.obi-color15 .blogListTurn_RightBorder,
+.obi-color15 .l-blogListTurn,
+.togle-color15 .l-blogListIntro,
+.togle-color15 a.l-blogArticle,
+.togle-color15 .blogListTurn_RightBorder,
+.togle-color15 .l-blogListTurn{
+    border-color: rgba(255,255,255,0.3);
+}
+/* 文字色 */
+/* 全体 */
+.obi-color13 a.l-blogArticle,
+.obi-color14 a.l-blogArticle,
+.obi-color15 a.l-blogArticle,
+.togle-color13 a.l-blogArticle,
+.togle-color14 a.l-blogArticle,
+.togle-color15 a.l-blogArticle{ color: #e5e5e5; }
+
+.togle-color13 .l-blogListIntro,
+.togle-color14 .l-blogListIntro,
+.togle-color15 .l-blogListIntro{ color: #e5e5e5; }
+
+/* 内容の抜粋 */
+.obi-color09 .blogArticl_Text,
+.obi-color10 .blogArticl_Text,
+.obi-color11 .blogArticl_Text,
+.obi-color12 .blogArticl_Text,
+.togle-color09 .blogArticl_Text,
+.togle-color10 .blogArticl_Text,
+.togle-color11 .blogArticl_Text,
+.togle-color12 .blogArticl_Text{ color: rgba(0,0,0,0.6); }
+.obi-color13 .blogArticl_Text,
+.obi-color14 .blogArticl_Text,
+.obi-color15 .blogArticl_Text,
+.togle-color13 .blogArticl_Text,
+.togle-color14 .blogArticl_Text,
+.togle-color15 .blogArticl_Text{ color: rgba(255,255,255,0.7); }
+/* 日付とカテゴリー */
+.obi-color09 .l-blogArticl_Bottom,
+.obi-color10 .l-blogArticl_Bottom,
+.obi-color11 .l-blogArticl_Bottom,
+.obi-color12 .l-blogArticl_Bottom,
+.togle-color09 .l-blogArticl_Bottom,
+.togle-color10 .l-blogArticl_Bottom,
+.togle-color11 .l-blogArticl_Bottom,
+.togle-color12 .l-blogArticl_Bottom{ color: rgba(0,0,0,0.64); }
+.obi-color13 .l-blogArticl_Bottom,
+.obi-color14 .l-blogArticl_Bottom,
+.obi-color15 .l-blogArticl_Bottom,
+.togle-color13 .l-blogArticl_Bottom,
+.togle-color14 .l-blogArticl_Bottom,
+.togle-color15 .l-blogArticl_Bottom{ color: rgba(255,255,255,0.75);}
+/* ページめくりのリンク */
+.obi-color13 .blogListTurn,
+.obi-color14 .blogListTurn,
+.obi-color15 .blogListTurn,
+.togle-color13 .blogListTurn,
+.togle-color14 .blogListTurn,
+.togle-color15 .blogListTurn{ color: #e5e5e5; }
+/* めくれないとき */
+.obi-color13 div.blogListTurn,
+.obi-color14 div.blogListTurn,
+.obi-color15 div.blogListTurn,
+.togle-color13 div.blogListTurn,
+.togle-color14 div.blogListTurn,
+.togle-color15 div.blogListTurn{ color: rgba(255,255,255,0.5); }
+/*マウスオーバー*/
+.obi-color13 a.blogListTurn:hover,
+.obi-color13 a.blogListTurn:focus,
+.togle-color13 a.blogListTurn:hover,
+.togle-color13 a.blogListTurn:focus{ background-color: rgba(255, 255, 255, 0.08); }
+
+.obi-color14 a.blogListTurn:hover,
+.obi-color14 a.blogListTurn:focus,
+.togle-color14 a.blogListTurn:hover,
+.togle-color14 a.blogListTurn:focus{ background-color: rgba(255, 255, 255, 0.1); }
+
+.obi-color15 a.blogListTurn:hover,
+.obi-color15 a.blogListTurn:focus,
+.togle-color15 a.blogListTurn:hover,
+.togle-color15 a.blogListTurn:focus{ background-color: rgba(255, 255, 255, 0.2); }
+
+/* カテゴリー別一覧の見出し */
+.obi-color13 .blogCateName,
+.obi-color14 .blogCateName,
+.obi-color15 .blogCateName,
+.togle-color13 .blogCateName,
+.togle-color14 .blogCateName,
+.togle-color15 .blogCateName{
+    color: rgba(100, 193, 219, 0.9);
+    font-weight: bold;
+}
+
+/* ********************************************** */

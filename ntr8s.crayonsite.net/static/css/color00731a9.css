@@ -1,0 +1,652 @@
+@charset "UTF-8";
+/*------------------------------------------
+	　　色パターンのデフォルト値　　
+-------------------------------------------*/
+/*-----------------------------
+		初期色設定
+-----------------------------*/
+/* 背景色 */
+body{
+	background-color: #ffffff;
+}
+/*======ID設定======*/
+#header{
+	/*ヘッダの下余白はbodyに依存*/
+	background-color: #ffffff;
+}
+#container{
+	background-color: #ffffff;
+}
+#footer{
+	background-color: #7a6b61;
+}
+#powered{
+	background-color: #ffffff;
+}
+
+/*======各パーツ設定======*/
+.imgtext,.imgtext_area .imgtrm,.arw,.machipo_area .imgtrm{	/*画像+テキストパーツ用*/
+	background-color: #e7e4e1;		/*背景色変えたい時以外はcontainerと同じ*/
+}
+.table_area th{
+	background-color: #bcaca6;
+}
+.table_area td{
+	background-color: #ffffff;
+}
+.grid_imgbd p{
+	background-color: #333333;
+}
+.gimgtrm p{
+	background-color: #000000;
+	opacity: 0.7;
+	filter: alpha(opacity=70);        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=70)";  /* ie 8 */
+	-moz-opacity:0.7;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.7;              /* Safari 1.x */
+}
+.slider li{background-color: #000000;}
+.slider li p{
+	background-color: #333333;
+	opacity: 0.7;
+	filter: alpha(opacity=70);        /* ie lt 8 */
+	-ms-filter: "alpha(opacity=70)";  /* ie 8 */
+	-moz-opacity:0.7;                 /* FF lt 1.5, Netscape */
+	-khtml-opacity: 0.7;              /* Safari 1.x */
+}
+.pager-item button {background-color: #999999;}
+.pager-item li.slick-active button {
+	background-color: #000000;
+}
+.cpnimg_imgbd{
+	background-color: #ffffff;
+}
+
+/* 文字色 */
+.hptn1{color:#221e1b;}
+.text_area,.text_area>a{color:#221e1b;}
+.imgtext_text {color:#221e1b;}
+.table_area{color:#221e1b;}
+.map_area{color:#221e1b;}
+.grid_imgbd p{color: #cccccc;}
+.gimgtrm p{color: #cccccc;}
+.slider li p{color: #ffffff;}
+.cal_area{color:#221e1b;}
+.cpn_area{color:#221e1b;}
+.weekly_area{color:#221e1b;}/*見出し、内容の文字色初期設定*/
+.wtblptn01{color:#221e1b;}/*週カレンダー内の文字色初期設定*/
+.wtblptn01 caption{color:#221e1b;}/*週カレンダーのcaption文字色初期設定*/
+
+.fadd{color: #ffffff;}
+a .fadd:hover {
+	color: #cccccc;
+}
+.ftel{color: #ffffff;}
+a .ftel:hover {
+	color: #cccccc;
+}
+.fcpy{color: #ffffff;}
+#powered p{color: #221e1b;}
+
+/*ボーダーの色*/
+.table_area th,.table_area td{
+	border-color: ＃221e1b;
+}
+
+/*各設定用クラスの色(デザインパターンにより固定)*/
+.bd_s,.bd_d,.ldb_1,.ldb_2,.bdbtm{
+	border-color: #7a6b61;
+}
+.ggrid_area .bd_s,.gslide_area .bd_s{	/*ギャラリーパーツの枠線*/
+	border-color: #666666;
+}
+
+/*------------------------------------------------------
+				  初期色設定（リストパーツ）
+	※リストパーツについてはデザインパターン毎に設定値をまとめる
+	　（背景色、文字色ごとだとイメージしづらいため）
+	　ボーダーの色とボーダーのその他の設定を分けると意図しない表示となる
+	　ため、ボーダー色はここにはまとめていません
+------------------------------------------------------*/
+
+/*初期表示*/
+.list_area li{
+	background-color: #ffffff;
+}
+.list_area .txt{			/*本文文字色*/
+	color: #111111;
+}
+
+/*デザインパターン１*/
+.list1 li{
+	background-color: #ffffff;
+}
+.list1 .txt{			/*本文文字色*/
+	color: #111111;
+}
+.list1 .listh{			/*見出し背景色*/
+	background-color: #ffffff;
+}
+.list1 .htxt{			/*見出し文字色*/
+	color: #2e4d64;
+}
+
+/*デザインパターン2*/
+.list2 li{
+	background-color: #ffffff;
+}
+.list2 .txt{
+	color: #111111;
+}
+
+.list2 .htxt{
+	color: #2e4d64;
+}
+
+/*デザインパターン3*/
+.list3 li{
+	background-color: #f7f3ea;
+}
+
+.list3 .txt{
+	color: #676767;
+}
+.list3 .listh{
+	background-color: #7a6b61;
+}
+.list3 .htxt{
+	color: #ffffff;
+}
+
+/*デザインパターン4*/
+.list4 li{
+	background-color: #221e1b;
+}
+.list4 .txt{
+	color: #ffffff;
+}
+.list4 .listh{
+	background-color: #a99c93;
+}
+.list4 .htxt{
+	color: #221e1b;
+}
+/*------------------------------------------------------
+				  初期色設定（電話番号パーツ）
+				  パターン毎に色をまとめる
+------------------------------------------------------*/
+/*電話番号パーツ　デザインパターン１*/
+.telbtn1{
+	background-color: #799d2d;
+	color: #666666;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#11dddddd', endColorstr = '#77dddddd');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#11dddddd', endColorstr = '#77dddddd')";
+	background-image: -moz-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -ms-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -o-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(221, 221, 221, 0.1)), to(rgba(221, 221, 221, 0.4)));
+	background-image: -webkit-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+}
+
+/*電話番号パーツ　デザインパターン２*/
+.telbtn2{
+	background-color: #799d2d;
+	color: #666666;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#11dddddd', endColorstr = '#77dddddd');
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#11dddddd', endColorstr = '#77dddddd')";
+	background-image: -moz-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -ms-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -o-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(221, 221, 221, 0.1)), to(rgba(221, 221, 221, 0.4)));
+	background-image: -webkit-linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+	background-image: linear-gradient(top, rgba(221, 221, 221, 0.1), rgba(221, 221, 221, 0.4));
+}
+/*電話番号パーツ　デザインパターン３*/
+.telbtn3{
+	background-color: #799d2d;
+	color: #666666;
+}
+/*------------------------------------------------------
+				  初期色設定（クーポンパーツ）
+				  パターン毎に色をまとめる
+------------------------------------------------------*/
+.cpnview{
+	background-color: #f6ece8;
+	color: #473437;
+}
+.cpnptn2{
+	background-color: #ffffff;
+	color: #3d3a38;
+}
+.cpnptn3{color: #21140f;}
+.cpnptn3 .hdcpn{
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/53/223_35.png) no-repeat 98% 50%;	/*partsに書くと背景色きかなくなるため*/
+	background-color: #21140f;
+}
+.cpnptn4{
+	background-color: #63534f;
+	color: #eeeeee;
+}
+.cpnptn4 .showcpn,.cpnptn4 .usecpn,.cpnptn4 .limitcpn{
+	background-color: #fd5a2a;
+	color: #ffffff;
+}
+.cpnptn5{background-color: #f2f2f2;}
+.cpnptn6{
+	color: #182526;
+}
+.cpnptn7{
+	background-color: #ffffff;
+	color: #17283d;
+}
+.cpnptn7 .hdcpn{color: #ffffff;}
+.cpnptn7::before{
+	background-color: #4f81bd;
+}
+.cpnptn7 .namecpn{color: #ff8040;}
+.cpnptn7 .showcpn,.cpnptn7 .usecpn,.cpnptn7 .limitcpn{
+	background-color: #4f81bd;
+	color: #ffffff;
+}
+.cpnptn8{
+	color: #eaeaea;
+	background-color: #333333;
+}
+.cpnptn8 .cpntext{		/*クーポンタイプ８の文字部分背景白透過*/
+	background-color: rgb(255,255,255);/* IE8用 */
+	background-color: rgba(255,255,255,0.7);
+	color: #333333;
+}
+
+/*--------- クーポンパターン９（すっきりオレンジ）  ---------*/
+/* 全体 */
+.cpnptn9{
+    background-color:#fff;
+    color:#222222;
+}
+/* クーポン内容 */
+.cpnptn9 .aboutcpn{
+    background-color:#ff931e;
+    color:#ffffff;
+}
+/* クーポン有効期限 */
+.cpnptn9 .limitcpn p{
+    color:#c1272d;
+}
+/*--------- クーポンパターン10（すっきりレッド）  ---------*/
+/* 全体 */
+.cpnptn10{
+    background-color: #f6ece8;
+    color:#222222;
+}
+/* クーポンの枠 */
+.cpnptn10 .ponDisp{
+    background-color:#ffffff;
+}
+/* クーポン内容 */
+.cpnptn10 .aboutcpn{
+    background-color:#c1272d;
+    color:#ffffff;
+}
+/* クーポン有効期限 */
+.cpnptn10 .limitcpn p{
+    color:#c1272d;
+}
+
+/*--------- クーポンパターン11（すっきりグリーン）  ---------*/
+/* 全体 */
+.cpnptn11{
+    background-color: rgb(255,255,255);/* IE8用 */
+    background-color: rgba(255,255,255,0.9);
+    color:#222222;
+}
+/* クーポン部分の枠 */
+.cpnptn11 .ponDisp{
+    background-color:#ffffff;
+}
+/* クーポン内容 */
+.cpnptn11 .aboutcpn{
+    background-color:#69b05e;
+    color:#ffffff;
+}
+/* クーポン有効期限 */
+.cpnptn11 .limitcpn p{
+    color:#c1272d;
+}
+
+/*--------- クーポンパターン12（オレンジカード） ---------*/
+/* 全体 */
+.cpnptn12{
+    color:#222222;
+    /* 背景グラデーション */
+    background: #ffc579; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffc579 0%, #fb9d23 90%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffc579), color-stop(90%,#fb9d23)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffc579 0%,#fb9d23 90%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffc579 0%,#fb9d23 90%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ffc579 0%,#fb9d23 90%); /* IE10+ */
+    background: linear-gradient(to bottom, #ffc579 0%,#fb9d23 90%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc579', endColorstr='#fb9d23',GradientType=0 ); /* IE6-9 */
+}
+/* 内側の白い部分 */
+.cpnptn12 .ponDisp{
+    background-color:#ffffff;
+}
+/* クーポン名 */
+.cpnptn12 .namecpn{
+    color:#42210B;
+}
+/* クーポン内容 */
+.cpnptn12 .aboutcpn{
+    color:#C1272D;
+}
+/* クーポン有効期限 */
+.cpnptn12 .limitcpn{
+    background-color: #d1720f;
+}
+.cpnptn12 .limitcpn p{
+    color:#ffffff;
+}
+
+/*--------- クーポンパターン13（ゴールドフレーム） ---------*/
+/* 全体 */
+.cpnptn13{
+    background-color: transparent;
+    color:#222222;
+}
+/* 額縁 内枠（IE対応のため） */
+.cpnptn13 .ponDispDuble{
+   background-color:#fff1d5;
+ }
+/* 下の灰色のテキスト部分 */
+.cpnptn13 .ponDisp2{
+    background-color: rgb(245,245,245);/* IE8用 */
+    background-color: rgba(245,245,245,0.7);
+}
+/* クーポン名 */
+.cpnptn13 .namecpn{
+    color:#e17e2b;
+}
+/* クーポン画像 */
+.cpnptn13 .imgtrm{
+    background-color: #ffffff;
+}
+/* クーポン内容 */
+.cpnptn13 .aboutcpn{
+    color:#736357;
+}
+.cpnptn13 .limitcpn p{
+    color:#c1272d;
+}
+
+/*--------- クーポンパターン14（切り取りグリーン） ---------*/
+/* 全体 */
+.cpnptn14{
+    background-color: transparent;
+    color:#222222;
+}
+/* 外枠 ギザギザ */
+.cpnptn14 .ponDisp{
+    background-color:#ffffff;
+}
+/* 緑の部分 */
+.cpnptn14 .ponDispDuble{
+    background-color:#69b05e;
+}
+/* 枠外のテキスト部分 */
+.cpnptn14 .ponDisp2{
+    background-color: #ffffff;
+}
+/* クーポン名 */
+.cpnptn14 .namecpn{
+    color:#ffffff;
+}
+/* クーポン画像 */
+.cpnptn14 .imgtrm{
+    background-color: #ffffff;
+}
+/* クーポン内容 */
+.cpnptn14 .aboutcpn{
+    color:#ffffff;
+}
+.cpnptn14 .limitcpn p{
+    color:#c1272d;
+ }
+
+/*--------- クーポンパターン15（紅白） ---------*/
+/* 全体 */
+.cpnptn15{
+    background-color: transparent;
+    color:#222222;
+}
+/* 白い枠の部分と影 */
+.cpnptn15 .ponDisp{
+    background-color:#ffffff;
+}
+/* 内枠 赤字に白文字のところ */
+.cpnptn15 .ponDispDuble{
+    background-color:#c1272d;
+}
+/* 白枠外のテキスト部分 */
+.cpnptn15 .ponDisp2{
+    background-color: rgb(255,255,255);/* IE8用 */
+    background-color: rgba(255,255,255,0.85);
+}
+/* クーポン名 */
+.cpnptn15 .namecpn{
+    color:#ffffff;
+}
+/* クーポン画像 */
+.cpnptn15 .imgtrm{
+    background-color: #ffffff;
+}
+/* クーポン内容 */
+.cpnptn15 .aboutcpn{
+    color:#ffffff;
+}
+/* クーポン有効期限 */
+.cpnptn15 .limitcpn p{
+    color:#c1272d;
+}
+
+/*--------- クーポンパターン16（赤文字） ---------*/
+/* 全体 */
+.cpnptn16{
+    background-color: transparent;
+    color:#222222;
+}
+/* 紅い枠＋影 */
+.cpnptn16 .ponDisp{
+     background-color:#c1272d;
+ }
+/* 赤枠内の白地の部分 */
+.cpnptn16 .ponDispDuble{
+     background-color:#ffffff;
+}
+/* 赤枠外のテキスト部分 */
+.cpnptn16 .ponDisp2{
+     background-color: rgb(255,255,255);/* IE8用 */
+    background-color: rgba(255,255,255,0.85);
+}
+/* クーポン名 */
+.cpnptn16 .namecpn{
+    color:#c1272d;
+}
+/* クーポン内容 */
+.cpnptn16 .aboutcpn{
+    color:#c1272d;
+}
+/* クーポン有効期限 */
+.cpnptn16 .limitcpn p{
+    color:#c1272d;
+}
+
+/*--------- クーポンパターン17（Black in Blood） ---------*/
+/* 全体 */
+.cpnptn17{
+    background-color:#222222;
+    color:#ffffff;
+}
+/* クーポン内容（オレンジの枠） */
+.cpnptn17 .aboutcpn{
+    background-color:#ba0038;
+    color:#ffffff;
+}
+/* クーポン有効期限 */
+.cpnptn17 .limitcpn p{
+    color:#d1272d;
+}
+
+/*--------- クーポンパターン18（Black in Frame） ---------*/
+
+/* 全体 */
+.cpnptn18{
+    background-color: transparent;
+    color:#222222;
+}
+/* 額縁 内枠（IE対応のため） */
+.cpnptn18 .ponDispDuble{
+     background-color:#222222;
+}
+/* 下の灰色のテキスト部分 */
+.cpnptn18 .ponDisp2{
+    background-color: rgb(12,12,12);/* IE8用 */
+    background-color: rgba(12,12,12,0.85);
+    color:#ffffff;
+}
+/* クーポン名 */
+.cpnptn18 .namecpn{
+    color:#e17e2b;
+}
+/* クーポン画像 */
+.cpnptn18 .imgtrm{
+    background-color: #000000;
+}
+/* クーポン内容 */
+.cpnptn18 .aboutcpn{
+    color:#ffffff;
+}
+.cpnptn18 .limitcpn p{
+    color:#f1272d;
+}
+
+/*--------- クーポンパターン19（Black of Cut）  ---------*/
+/* 全体 */
+.cpnptn19{
+    background-color: transparent;
+    color:#222222;
+}
+/* 外枠 ギザギザ */
+.cpnptn19 .ponDisp{
+    background-color:#666666;
+}
+/* クーポン内側 */
+.cpnptn19 .ponDispDuble{
+    background-color:#222222;
+}
+/* 枠外のテキスト部分 */
+.cpnptn19 .ponDisp2{
+    background-color: rgb(10,10,10);/* IE8用 */
+    background-color: rgba(10,10,10,0.85);
+    color:#ffffff;
+}
+/* クーポン名 */
+.cpnptn19 .namecpn{
+    color:#ffffff;
+}
+/* クーポン画像 */
+.cpnptn19 .imgtrm{
+    background-color: #000000;
+}
+/* クーポン内容 */
+.cpnptn19 .aboutcpn{
+    color:#c1272d;
+}
+/* クーポン有効期限 枠 */
+.cpnptn19 .limitcpn p{
+    color:#f1272d;
+}
+
+/*区切り線パーツ*/
+.lineptn01{
+	border-bottom-color: #aaaaaa;
+}
+.lineptn04,.lineptn05{
+	border-top-color: #aaaaaa;
+}
+.lineptn07{
+	border-top-color: #cccccc;
+	background-color: #eeeeee;
+	background: -moz-linear-gradient(top, #eeeeee, #ffffff);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top, #eeeeee, #ffffff);
+    background: -o-linear-gradient(top, #eeeeee, #ffffff);
+    background: -ms-linear-gradient(top, #eeeeee, #ffffff);
+	background: linear-gradient(to bottom, #eeeeee, #ffffff);
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#eeeeee, EndColorStr=#ffffff);
+}
+.lineptn08{
+	border-bottom-color: #cccccc;
+	background-color: #eeeeee;
+    background: -moz-linear-gradient(bottom, #eeeeee, #ffffff);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#eeeeee), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(bottom, #eeeeee, #ffffff);
+    background: -o-linear-gradient(bottom, #eeeeee, #ffffff);
+    background: -ms-linear-gradient(bottom, #eeeeee, #ffffff);
+	background: linear-gradient(to top, #eeeeee, #ffffff);
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#eeeeee);
+}
+.lineptn12{
+	border-bottom-color: #aaaaaa;	/*IE8以下用*/
+	border-bottom-color: rgba(100,100,100,0.2);
+}
+.lineptn13{
+	border-top-color: #aaaaaa;		/*IE8以下用*/
+	border-top-color: rgba(100,100,100,0.2);
+}
+
+/*お問合せパーツ*/
+.cbtn01{
+	color: #ffffff;
+	background-color: #8c9b6b;
+}
+.cbtn03{
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1638/100_100.png) repeat;
+	background-color: #8c9b6b;
+}
+.cbtn04 p{
+	border-color: #fafafa;
+	background-color: #8c9b6b;
+}
+
+/*週カレンダーパーツ*/
+.wtblptn01 th,.wtblptn01 td{		
+	border-color: #cccccc;
+}
+.wtblptn01 thead th{			/*１行目の背景色*/
+	background-color: #ece8da;
+}
+.wtblptn01 tbody th,.wtblptn01 tbody td{	/*２行目以降の背景色*/
+	background-color: #ffffff;
+}
+.wtblptn02 th,.wtblptn02 td{
+	border-bottom-color: #cccccc;
+}
+.wtblptn03{
+	border-top-color: #cccccc;
+	border-left-color: #cccccc;
+}
+
+/*------------------------------------------------------
+				  背景色設定クラス（ギャラリーパーツ）
+	※ギャラリーパーツの「長辺基準サイズ」設定項目を選択した時のみ
+	　設定可能な「背景色」ON/OFFで使用
+------------------------------------------------------*/
+.bgclr_on{
+	background-color: #7a6b61;	/*フッタの背景色と同じ*/
+}
+
+.shopItemBGC{background-color: #e7e4e1;}
+.shopItemBGC .shopItemName {border-bottom: 1px solid #bbaca6;}
+.shopItemBGC .shopItemImagesFrame{border-color: #fff;}

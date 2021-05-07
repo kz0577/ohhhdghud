@@ -1,0 +1,168 @@
+
+/* 全体レイアウト */
+.l-protectionBox {
+    text-align:center;
+    margin:40px 0 80px 0;
+    color:#485754;
+}
+.l-protactionOpen_Togle {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: 20px 0;
+}
+.l-protactionOpen_Togle img {
+    max-width: 48px;
+    vertical-align: bottom;
+}
+.l-protactionOpen_Togle > div {
+    font-size: 14px;
+    padding: 14px 0 0 10px;
+    opacity: 0.7;
+}
+/* 南京錠の画像 */
+.protectionImage {
+    max-width: 100%;
+    height: auto;
+    margin:0 0 30px 0;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+/* スマホでも、スクロールしないでエラーが見えるように画像とかを調整 */
+@media screen and (max-width: 600px){
+    .l-protectionBox {
+        margin:30px 0 80px 0;
+    }
+    .protectionImage {
+        max-width: 50px;
+    }
+}
+/*　説明文　*/
+.protectionText{
+    margin:0 4% 40px 4%;
+}
+/* PASSWORDという文字は廃止 */
+/*.protectionTitle {
+    font-size: 1.1rem;
+    margin-bottom:10px;
+}*/
+/* パスワードボックスのレイアウト用 */
+.l-protectionPassBox {
+    margin:0 4% 26px 4%;
+}
+/* パスワードボックス*/
+.protectionPassword {
+    width: 100%;
+    max-width: 240px;
+    height:44px;
+    padding: 0 9px;
+    color: #777;
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color:#f5f5f5;
+    margin:0;
+    box-sizing:border-box;
+    border: solid 1px #d2d2d2;
+}
+/* パスワードボックスのプレースホルダー */
+.protectionPassword::-webkit-input-placeholder{color: #888;}
+.protectionPassword::-moz-placeholder {color: #555;}
+.protectionPassword:-ms-input-placeholder{color: #888;}
+
+/*　エラーメッセージ　*/
+.protectionPassError{
+    margin:10px 0 0 0;
+    padding:0;
+    color: #ff0909;
+    font-weight:bold;
+}
+
+/* Enterボタン */
+.protectionSubmit{
+    font-size: 1rem;
+    width:140px;
+    height:44px;
+    margin:0;
+    border-radius: 4px;
+    color:#485754;
+    box-sizing:border-box;
+    border: solid 1px #d0d0d0;
+    overflow: hidden;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fdfdfd), color-stop(100%, #f5f5f5));
+    background: -webkit-linear-gradient(top, #fdfdfd, #f5f5f5);
+    background: linear-gradient(to bottom, #fdfdfd, #f5f5f5);
+    background-color: #e0dfe0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.protectionSubmit:hover, .protectionSubmit:focus {
+    background: #fff;
+    background-color: #e0dfe0;
+    border: solid 1px #cbcbcb;
+}
+
+/*-------------------------------------------------------*/
+
+/* 露草 */
+.obi-color13 .l-protectionBox {color:#fafafa;}
+.obi-color13 .protectionPassword {
+    background-color: #eeeeee;
+    border: solid 1px #afafaf;
+}
+.obi-color13 .protectionSubmit{
+    color: #ffffff;
+    background: #8196b8;
+    background-color: #8196b8;
+    border: solid 1px #b7c0cc;
+    box-shadow:none;
+}
+.obi-color13 .protectionSubmit:hover,
+.obi-color13 .protectionSubmit:focus {
+    background-color: #1d243e;
+    border: solid 1px #445ca1;
+}
+.obi-color13 .protectionPassError {
+    color: #e9d209;
+}
+
+/* 紅葉 */
+.obi-color14 .l-protectionBox {color:#fafafa;}
+.obi-color14 .protectionPassword {
+    background-color: #eeeeee;
+    border: solid 1px #afafaf;
+}
+.obi-color14 .protectionSubmit{
+    color: #ffffff;
+    background: #3e3434;
+    background-color: #3e3434;
+    border: solid 1px #675858;
+    box-shadow:none;
+}
+.obi-color14 .protectionSubmit:hover,
+.obi-color14 .protectionSubmit:focus {
+    background-color: #646464;
+    border: solid 1px #898989;
+}
+.obi-color14 .protectionPassError {
+    color: #e9d209;
+}
+/* パンジー */
+.obi-color15 .l-protectionBox {color:#fafafa;}
+.obi-color15 .protectionPassword {
+    background-color: #eeeeee;
+    border: solid 1px #cdcdcd;
+}
+.obi-color15 .protectionSubmit{
+    color: #ffffff;
+    background: #646464;
+    background-color: #646464;
+    border: solid 1px #898989;
+    box-shadow:none;
+}
+.obi-color15 .protectionSubmit:hover,
+.obi-color15 .protectionSubmit:focus {
+    border: solid 1px #afafaf;
+    background-color: #979797;
+}

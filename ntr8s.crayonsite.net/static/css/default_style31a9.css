@@ -1,0 +1,3345 @@
+@charset "UTF-8";
+/*--- reset ---*/
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body,div,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote
+{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+	word-break: normal;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	font-size: 100%;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: 24px; font-size:1.5rem;
+	padding: 4px;
+	font-weight: normal;
+}
+p{
+	font-size: 16px; font-size:1.0rem;
+	padding: 4px;
+}
+span{
+	padding: 2px;
+	padding-right:10px;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a {
+	text-decoration: none;
+	background: transparent;
+	display: inline-block;		/*スマホはタップしやすいようaをブロック要素にする*/
+}
+a:active,
+a:hover {
+	outline: 0;
+}
+img{
+	border: 0;
+}
+.clearfix:after {
+	display:block;
+	clear:both;
+	height:0px;
+	visibility:hidden;
+	content:".";
+}
+.hide {
+	display: none !important;
+}
+
+
+/*------------------------------------------
+	　　ヘッダ内のデフォルト値
+-------------------------------------------*/
+#header a{display: block;}
+
+.hd_area{
+	text-align: center;
+}
+
+/*　---ヘッダパターン1---　*/
+.hptn1{
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+.hptn1 h1{
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font-weight: normal;
+}
+/*背景画像＋透過以外用*/
+.ngrad {
+	display: table;
+    table-layout:fixed;
+	width: 100%;
+	height: 100%;
+}
+/*背景画像＋透過用*/
+.grad {
+	display: table;
+    table-layout:fixed;
+	width: 100%;
+	height: 100%;
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.0));
+	background: -webkit-gradient(linear, left center, right center, from(rgba(255, 255, 255, 1.0)), to(rgba(255, 255, 255, 0.0)));
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.0));
+	background: linear-gradient(to right, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0.0));
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#ffffffff, EndColorStr=#00ffffff);
+	background-color: rgba(255, 255, 255, 0.0);
+}
+
+/*　---ヘッダパターン2---　*/
+.hptn2{
+	height: 50px;
+	text-align: left;
+	overflow: hidden;
+}
+.hptn2 h1{
+	height: 100%;
+	padding: 0;
+}
+.hptn2 img{
+	height: 100%;
+}
+
+/*　---ヘッダパターン3---　*/
+.hptn3 h1{
+	padding: 0;
+}
+.hptn3 img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
+/*------------------------------------------
+	　　フッタ内のデフォルト値
+-------------------------------------------*/
+#footer a{display: block;}
+
+.ft_area{
+	text-align: center;
+}
+.fadd{
+	font-size: 12px; font-size:0.75rem;
+	padding-top: 6px;
+	padding-bottom: 0;
+}
+.ftel{
+	font-size: 12px; font-size:0.75rem;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.fcpy{					/*コピーライト部分*/
+	padding-top: 0;
+	font-size: 12px; font-size:0.75rem;
+}
+
+#powered{
+	text-align: center;
+}
+
+/*------------------------------------------
+	　　各パーツクラスのデフォルト値　　
+-------------------------------------------*/
+#container{
+}
+
+
+/*テキストパーツ*/
+.text_area{
+	text-align: left;
+	border: none;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.text_area>a{
+	display: block;
+}
+
+/*画像パーツ*/
+.imgbd{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	width: 80%;				/*デフォルト値*/
+	margin: 0 auto;
+	height: auto;
+	display: block;
+}
+
+/*画像+テキストパーツ*/
+.imgtext_area,.machipo_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.imgtext_area h2,.imgtext_area p,.machipo_area h2,.machipo_area p{
+	padding-right: 0;
+}
+.imgtext_area span,.machipo_area span{
+	padding-right: 0;
+	line-height: 140%;
+}
+.imgtext_area>div,.imgtext_area>a,.imgtext_area>a>div,.machipo_area>div,.machipo_area>a,.machipo_area>a>div{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	width: 100%;
+}
+.imgtext_area>div,.imgtext_area>a>div,.machipo_area>div,.machipo_area>a>div {
+	display: table;
+	table-layout: fixed;
+}
+.imgtext_imgbd{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	float: left;
+	width: 40%;				/*デフォルト値*/
+	max-width: 400px;
+	margin: 6px;
+	height: auto;
+	display: block;
+}
+.arw{
+	display: table-cell;
+	vertical-align: middle;
+	padding-right: 6px;
+	width: 20px;
+	text-align: center;
+}
+.arw img{				/*矢印アイコンのサイズ*/
+	width: auto;
+	height: 18px;
+}
+.imgtext{
+	display: table-cell;
+	width: auto;
+}
+/*画像系共通*/
+.img_area a,.imgtext_area a,.machipo_area a{
+	display: block;
+}
+.imgtrm{						/*トリミング用*/
+	height: auto;
+	overflow: hidden;
+}
+.imgtrm img{
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+}
+.imgtrm a{
+	display: block;
+}
+
+/*表パーツ*/
+.table_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.table_area table{
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+	table-layout: fixed;
+ 	width: 100%;
+	text-align: center;
+}
+.table_area th,.table_area td{
+	font-size: 14px; font-size:0.875rem;
+	padding: 10px 5px;
+	margin:0;
+	border-width: 1px;
+	border-style: solid;
+}
+.leftth th{
+	width: 30%;
+}
+
+
+/*リストパーツ*/
+.list_area{
+	font-size: 16px; font-size:1.0rem;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.list_area ul, .list_area li{	
+	margin: 0;
+	padding: 0;
+}
+.list_area li{
+	list-style: none outside none;
+	border-bottom: 1px solid #aaaaaa;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+.list_area a{
+	display: table;
+	width: 100%;
+	padding-left: 2px;
+	box-sizing: border-box;
+	table-layout: fixed;
+}
+.list_area .iimg{				/*アイコン設定*/
+	display: inline-block;
+	position: relative;
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	vertical-align: middle;
+	margin: 6px 4px;
+}
+.list_area .iimg img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.list_area .icon{
+	display: table-cell;
+	vertical-align: middle;
+	width: 37px;
+}
+.list_area .txt{
+	display: table-cell;
+	width: auto;
+	vertical-align: middle;
+	padding: 8px 4px;
+}
+.list_area .arws{
+	display: table-cell;
+	vertical-align: middle;
+	/* padding-right: 10px; */
+	width: 21px;
+}
+.list_area .arws img{
+	width: auto;
+	height: 18px;
+}
+.list_area .arws img,.list_area .icon img{
+	vertical-align: middle;
+}
+.listh{
+	font-size: 16px; font-size:1.0rem;
+	padding-left: 2px;
+	border-top: none;
+}
+
+/*初期設定*/
+.list0{
+	list-style: none outside none;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	margin: 0 auto;
+	border-top: 1px solid #aaaaaa;
+}
+
+/*地図パーツ*/
+.map_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.map_area h2{
+	margin-bottom: 6px;
+}
+.mapsize{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	width: 80%;
+	margin: 0 auto;
+}
+.mapsize>div{
+	overflow: hidden;
+}
+
+.link_r{
+	float: right;
+	width: auto;
+}
+.mapframe{
+	height: 200px;
+}
+
+/*電話番号パーツ*/
+.tel_area{
+	position: relative;
+	z-index: 1;
+	margin-left: 8px;
+	margin-right: 8px;
+	text-align: center;
+}
+.teltable{
+	display: block;
+	font-size: 16px; font-size:1.0rem;
+	font-weight: bold;
+}
+.telmark{
+	display: inline;
+}
+.telmark span{
+	padding: 0;
+	vertical-align: middle;
+}
+.telmark img{
+	vertical-align: middle;
+}
+.telno{
+	display: inline;
+	vertical-align: middle;
+}
+
+/* 予約パーツ */
+.yoyaku_area {
+    display: block;
+}
+.yoyaku_area .buttonBase {
+    width: auto;
+    max-width: 100%;
+}
+
+/*SNSパーツ*/
+.sns_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.snstable{
+	display: table;
+	width: 100%;
+}
+.iconarea{
+	display: inline-block;
+	vertical-align: middle;
+}
+.snsicon{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	float: left;
+}
+.snsicon img{
+	width: 60px;
+	vertical-align: middle;
+}
+/* インスタアイコン */
+.snsicon .insta_btn {
+  display: inline-block;
+  text-align: center;/*中央揃え*/
+  margin: 8px;
+}
+.snsicon .insta_btn .insta{/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 44px;/*幅*/
+  height: 44px;/*高さ*/
+  vertical-align: middle;/*垂直中央に*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 6px;/*角丸に*/
+}
+.snsicon .insta_btn .insta:before{/*グラデーションを重ねるため*/
+  content: '';
+  position: absolute;/*絶対配置*/
+  top: 23px;/*ずらす*/
+  left: -18px;/*ずらす*/
+  width: 60px;/*グラデーションカバーの幅*/
+  height: 60px;/*グラデーションカバーの高さ*/
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);/*グラデーション②*/
+}
+.snsicon .insta_btn .fa-instagram {/*アイコン*/
+  color: #FFF;/*白に*/
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 29px;/*アイコンサイズ*/
+  line-height: 43px;/*高さと合わせる*/
+}
+
+/* --------------------fontsomeway snsアイコン---------------------- */
+.l-snsButton{
+    display:-webkit-flex;
+    display:flex;
+    -webkit-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin:10px 0;
+    letter-spacing:-.4rem;
+}
+.snsButton {
+  display: inline-block;
+  letter-spacing:normal;
+  width: 48px; height: 48px;
+  margin:0 6px; padding:0;
+  position: relative;
+  font-size: 28px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  color: #fff;
+}
+.snsButton i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    overflow: hidden;
+    z-index: 10;
+}
+/* Twitter */
+.sns_twitter{background:#55acee;}
+
+/* Facebook */
+.sns_facebook{background:#3B5998;}
+
+/* Google + */
+.sns_googlePlus{background:#dd4b39;}
+
+/* Line */
+.sns_line{
+    background:#00c300;
+    color:#00c300;
+    font-size:48px;
+}
+/* Line 吹き出しの部分を白くするために、白い背景を間に挟む */
+.sns_line:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    width:38px;
+    height:38px;
+    background:#fff;
+    border-radius:10px;
+    z-index:2;
+ }
+
+/* Instagramアイコン */
+.sns_insta{
+    font-size: 32px;
+    background:#f13f79;
+}
+
+.radiusHarf{
+    border-radius: 50%;
+}
+/* -------------------------------------------- */
+
+/*ギャラリーパーツ(グリッド)*/
+.ggrid_area{
+	margin-left: 8px;
+	margin-right: 8px;
+	text-align: center;
+}
+.gridlist{
+	padding: 0;
+	list-style: none;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	font-size: 0;		/*inline-blockの隙間問題を解決*/
+	vertical-align: middle;
+}
+.gridlist p{			/*コメント共通設定*/
+	width: 140px;
+	font-size: 12px; font-size:0.75rem;
+	padding: 2px 0;
+	margin: 0;
+	text-align: center;
+}
+.grid_imgbd{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: top;
+	margin: 4px;
+}
+.grid_imgbd p{				/*コメントを画像の下に表示*/
+	margin-top: 2px;
+}
+.gimgtrm{						/*トリミング用*/
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	position: relative;
+}
+.gimgtrm img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.gimgtrm p{				/*コメントを画像内に表示*/
+	position: absolute;
+	bottom: 0.5em;
+	left:0;
+	margin-top: 0;
+}
+
+/*スライドショーパーツ*/
+.photo-item{					/*画像表示部分*/
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	overflow: hidden;
+}
+.slider{
+	width: 100%;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.slider li{
+	width: 100%;
+	height: 300px;
+	padding: 0;
+	float: left;
+	position: relative;
+}
+@media screen and (max-width: 480px) {	/* 端末幅480px以下の場合 */
+	.slider li{height: 210px;}
+}
+.slider li + li{	/*ライブラリが動作するまでは２枚目以降の画像非表示（起動後はライブラリ側でblockに変更）*/
+	display: none;
+}
+.slider li img{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.slider li p{
+	width: 100%;
+	font-size: 12px; font-size:0.75rem;
+	padding: 4px 0;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left:0;
+}
+.pager-item > ul{					/*ページマーク*/
+	text-align: center;
+	padding-top: 10px;
+	margin:0;			/* デフォルトのmarginとpaddingを打消し */
+	padding-left:0;		/* デフォルトのmarginとpaddingを打消し */
+}
+.pager-item li {display: inline-block;}
+.pager-item button {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 10px;
+	margin: 0.5px 3px;
+	border-radius: 5px;
+	border: none;
+	padding: 0;
+	outline: none;
+}
+.direction-item a{				/*矢印画像*/
+	display: inline-block;
+	text-indent: -9999px;
+	position: absolute;
+	top: 50%;
+	margin-top: -16px;
+	width: 32px;
+	height: 32px;
+}
+.prevmark{
+	left: 3px;
+	background: url(img/slideicon.png) no-repeat 0 0;
+}
+.prevmark:hover,.prevmark:active{
+	background: url(img/slideicon.png) no-repeat -76px 0;
+}
+.nextmark{
+	right: 3px;
+	background: url(img/slideicon.png) no-repeat -40px 0;
+}
+.nextmark:hover,.nextmark:active{
+	background: url(img/slideicon.png) no-repeat -114px 0;
+}
+
+/*カレンダーパーツ*/
+.pcal_area{
+	text-align: left;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.pcalview{
+	padding: 10px 4px;
+	text-align: center;
+	font-size: 0;
+}
+
+/*table-cell*/
+.cal_area{
+	text-align: left;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.caltext{
+	font-size: 0;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.calview{
+	padding: 10px 4px;
+}
+.callist{
+	text-align: center;
+}
+/*画面幅540px以上の場合はカレンダーと本文横並び*/
+@media screen and (min-width: 540px) {
+	.caltext{
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+	.caltext li{
+		display: table-cell;
+		vertical-align: top;
+	}
+	.txtlist p{
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		-ms-box-sizing:border-box;
+		box-sizing:border-box;
+		width: 100%;
+	}
+}
+
+/*クーポンパーツ*/
+.cpn_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.cpn_area span{padding: 0;}
+.cpnview{			/*クーポン表示エリア*/
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin-bottom: 8px;
+	border: 6px inset #f75d86;
+	max-width: 640px;
+}
+.cpnview .ftcpn{clear: both;}
+.cpnimg_imgbd{		/*クーポン画像エリア*/
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	float: left;
+	width: 40%;
+	margin: 4px;
+	margin-left: 10px;
+}
+.cpntext{			/*クーポンテキストエリア*/
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	overflow: hidden;
+	margin: 0 2px;
+}
+.namecpn{
+	font-weight: bold;
+}
+.aboutcpn p,.showcpn p,.usecpn p,.limitcpn p{
+	display: inline-block;
+}
+.aboutcpn{
+	margin-bottom: 4px;
+}
+
+/*区切り線パーツ*/
+.line_area{
+	margin-left: 8px;
+	margin-right: 8px;
+	padding: 8px 0;		/*線の上下に間を空ける*/
+}
+.lineptn01 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin: 0 auto;
+}
+
+/*お問合せパーツ*/
+.contact_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.cbtn01{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	display: block;
+	width: 80%;
+	text-align: center;
+	padding: 6px 4px;
+	margin: 0 auto;
+}
+
+/*週カレンダーパーツ*/
+.weekly_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.wtbltxt{
+	width: 100%;
+	margin: 0 auto;
+}
+/*内容部分*/
+.wtxt{
+	font-size: 12px; font-size:0.75rem;		/*小文字*/
+	line-height: 200%;
+ 	margin-top: 8px;
+ }
+/*　週カレンダーパーツ　タイプ１ 初期状態　*/
+.wtblptn01{
+	width: 100%;
+	font-size: 16px; font-size:1.0rem;
+	text-align: center;
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ 	margin-top: 4px;
+}
+.wtblptn01 th{
+	font-weight: normal;
+}
+.wtblptn01 th,.wtblptn01 td{
+	border-style: solid;
+	border-width: 1px;
+}
+.wtblptn01 tbody th,.wtblptn01 thead th:first-child{
+	width: 35%;
+	text-align: left;
+	padding: 6px 6px;
+}
+/*　週カレンダーパーツ　タイプ２ 初期状態　*/
+.wtblptn02 tbody th,.wtblptn02 thead th:first-child{
+	width: 30%;
+	text-align: right;
+}
+.wtblptn02 th,.wtblptn02 td{
+	border: none;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+/*　週カレンダーパーツ　タイプ３　初期状態*/
+.wtblptn03{
+	border-collapse:separate;	/*これがないとborder-radiusが効かない*/
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-right: none;
+	border-bottom: none;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-radius: 10px;
+}
+.wtblptn03 th,.wtblptn03 td{
+	border-top: none;
+	border-left: none;
+	padding: 8px;
+}
+.wtblptn03 tbody th,.wtblptn03 thead th:first-child{
+	text-align: center;
+	width: 30%;
+}
+.wtblptn03 thead th:first-child{
+	border-radius: 10px 0 0 0;
+}
+.wtblptn03 thead th:last-child{
+	border-radius: 0 10px 0 0;
+}
+.wtblptn03 tbody tr:last-child th{
+	border-radius: 0 0 0 10px;
+}
+.wtblptn03 tbody tr:last-child td:last-child{
+	border-radius: 0 0 10px 0;
+}
+/*　週カレンダーパーツ　タイプ４　初期状態*/
+.wtblptn04 thead th{
+	font-weight: bold;
+}
+.wtblptn04 tbody th,.wtblptn04 thead th:first-child{
+	width: 25%;
+	text-align: center;
+}
+.wtblptn04 caption{
+	caption-side: top;
+}
+/*週カレンダーパーツ 改行調整*/
+.spInline {
+    display: none;
+}
+@media screen and (max-width: 480px) {
+	.spInline {
+	    display: inline;
+	}
+	.wtblptn01 th,.wtblptn01 td,.wtblptn04 caption{
+		font-size: 12px; font-size:0.75rem;
+	}
+
+}
+
+/*フリーパーツ*/
+.free_area{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+/*---------------------------------------
+	グローバルメニュー用
+---------------------------------------*/
+.menubar dl,.menubar dt,.menubar dd,.menubar ul,.menubar ol,.menubar li
+{
+	margin: 0;
+	padding: 0;
+}
+.sr-only{
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+.icon-bar{
+	background-color: rgba(99, 99, 99, 0.9);
+	display: block;
+	width: 22px;
+	height: 2px;
+	border-radius: 1px;
+}
+.icon-bar+.icon-bar{
+	margin-top: 4px;
+}
+.btn-toolbar button:focus{
+	outline:none;
+}
+.menu-toggle{
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	padding: 10px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: rgba(170, 170, 170, 0.9);
+	border-color: rgba(170, 170, 170, 0.9);
+	z-index: 999;
+}
+.menulist{
+	position: fixed;
+	right: 0px;
+	top: 50px;
+	width: 100%;
+	list-style: none;
+	max-height: 430px;	/*ナビメニューの高さが430px以上になった時スクロールバーを出す*/
+	overflow-y: auto;
+	z-index: 999;
+}
+.menulist a{
+	color: #000000;
+	display: block;
+	padding-left: 10px;
+}
+.menulist ul{
+	list-style: none;
+}
+.menulist li{
+	padding: 5px 0;
+    background-color: rgba(170, 170, 170, 0.9);
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+}
+.menulist li:first-child{
+    border-top: 1px solid #dddddd;
+}
+
+/*開閉メニューの制御*/
+.menulist .m_open{
+	padding-bottom: 0;
+}
+.menulist .m_open>a{
+	padding-bottom: 5px;
+	background: url(img/up.png) 98% 42% no-repeat;
+}
+.menulist .m_close{
+	padding-bottom: 0;
+}
+.menulist .m_close>a{
+	padding-bottom: 5px;
+	background: url(img/down.png) 98% 50% no-repeat;
+}
+.childm li{
+	padding-left: 5px;
+	background-color: rgba(90, 90, 90, 0.4);
+	border: 0;
+	border-top: 1px solid #dddddd;
+}
+/*メニューの初期状態は閉じておく*/
+.menulist{
+    display: none;
+}
+.menulist ul{
+    display: none;
+}
+
+/* -- 商品パーツ -- */
+
+/* 商品パーツ大枠 */
+.shopItem{
+	text-align: right;
+	margin-left:8px;
+	margin-right:8px;
+	padding:8px 1%;
+	letter-spacing: -.40rem;
+	font-size: 1rem;
+	overflow: hidden;
+	clear:both;
+}
+/* 商品名 */
+.shopItemName{
+	display:inline-block;
+	width:61%;
+	margin:0 0 14px 0;
+	padding-bottom:5px;
+	letter-spacing: normal;
+	text-align:left;
+	font-size:1.4rem;
+	line-height: 1.8rem;
+	border-bottom: 1px solid #e7e7e7;
+}
+/* 商品画像の枠 */
+.shopItemImages{
+	width:37%;
+	float:left;
+	margin:0 0 10px 0;
+	text-align:center;
+	vertical-align: top;
+	letter-spacing: normal;
+}
+
+/* #11 IE対応 */
+.shopItemImages a { display: inline; }
+
+/* 画像枠線用 */
+.shopItemImagesFrame {
+	border:solid 1px #e0e0e0;
+	box-sizing: border-box;
+}
+
+/* 二枚目以降を非表示 */
+.shopItemImagesWrap + .shopItemImagesWrap { display: none; }
+
+/* -- slick css 打消し -- */
+.shopItem .slick-track {
+	display: table;
+	table-layout: fixed;
+}
+.shopItemImagesWrap.slick-slide {
+	float: none;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 3px;
+}
+
+/* 商品画像 */
+.shopItemImagesFile{
+	display: block;
+	max-width:100%;
+	height:auto;
+	margin: 0 auto;
+}
+
+/* 商品情報の枠 */
+.shopItemInfo{
+	display:inline-block;
+	width:61%;
+	margin:0;
+	text-align:left;
+	letter-spacing: normal;
+}
+/* 商品画像が無い時 */
+.shopItemNoimage{text-align:left;}
+.shopItemNoimage .shopItemName{width:100%;}
+.shopItemNoimage .shopItemInfo{width:100%;}
+/* 画面幅が狭い時 */
+@media screen and (max-width: 550px){ /* 550px以下で */
+	.shopItemName{width:100%;}
+	.shopItemImages{width:100%;float:none;}
+	.shopItemInfo{width:100%;}
+	.shopItemImagesFile{max-height:300px;width:auto;}
+}
+/* 商品の価格 */
+.shopItemPrice{
+	display: inline-block;
+	margin:0 0 10px 0;
+}
+.shopItemPrice1{padding:0;color:#555;}
+.shopItemPrice2{padding:0;color:#b12704;font-size:1.4rem;}
+.shopItemPrice3{padding:0;color:#b12704;font-size:0.9rem;}
+/* 送料 */
+.shopItemPostage{
+	display: inline-block;
+	margin:0 0 10px 10px;
+	color: #0066c0;
+	font-size:0.9rem;
+}
+.shopItemPostage a{
+	color: #0066c0;
+	text-decoration: underline;
+}
+.shopItemPostage a:hover{
+	text-decoration: none;
+}
+/* 在庫 */
+.shopItemStock{
+	display: block;
+	margin-bottom:10px;
+	font-size:1.1rem;
+	color:#008a00;
+}
+.shopItemStock span{
+	padding:0;
+	font-weight:bold;
+}
+/* 売り切れ */
+.shopItemStockOut{
+	display: block;
+	margin-bottom:10px;
+	font-size:1.1rem;
+	color: #b12704;
+}
+/* バリエーション */
+.shopItemKind{
+	font-size:0.9rem;
+	margin-bottom:10px;
+}
+.shopItemKind span{
+	color:#555;
+	padding:0;
+	vertical-align: middle;
+}
+.shopItemKind select{
+	display: inline-block;
+	margin:0;
+	border: 1px solid #e0e0e0;
+	padding: 5px 5px 5px 5px;
+	background-color: #ffffff;
+	border-radius: 2px;
+}
+/* 出来たら凄いバリエーション */
+.shopItemKind ul{
+	display: inline-block;
+	list-style-type:none;
+	margin:0;
+	padding: 0;
+	vertical-align: middle;
+}
+.shopItemKind li{
+	display: inline-block;
+	letter-spacing: normal;
+	padding:0;
+	margin:4px 6px 4px 0;
+}
+.shopItemKind li a{
+	margin:0;
+	padding: 5px 10px 5px 11px;
+	border: 1px solid #e0e0e0;
+	color:#111;
+	line-height:1.2rem;
+	background-color:#fff;
+}
+.shopItemKind li a .kindOfPrice{
+	color:#b12704;
+	font-size:0.8rem;
+}
+.shopItemKind li a:hover{
+	border-color:#d0d0d0;
+	background-color:#f5f5f5;
+}
+.shopItemKind li a:active,.shopItemKind li a:focus{
+	border-color: #e77600;
+	background-color: #fefaf6;
+	box-shadow: 0 0 3px 0 rgba(228,121,17,0.8);
+	border-radius: 2px;
+}
+.shopItemKind .s-select{
+	border: 1px solid #e47911;
+	background-color: #fefaf6;
+}
+.shopItemKind .s-select:hover{
+	border: 1px solid #e47911;
+	background-color: #fefaf6;
+}
+.shopItemKind .s-select:active,.shopItemKind .s-select:focus{
+	border-color: #e77600;
+	background-color: #fefaf6;
+	box-shadow: 0 0 3px 0 rgba(228,121,17,0.8);
+	border-radius: 2px;
+}
+/* カゴ画面のライン */
+.shopItemKagoLine{
+	display:table;
+	margin-bottom:10px;
+	width:100%;
+}
+/* 購入数 */
+.shopItemS{
+	display:table-cell;
+	width: 104px;
+	vertical-align: middle;
+}
+.shopItemSu{
+	display: inline-block;
+	vertical-align: middle;
+	padding:1px 0 0 0;
+	color:#555;
+}
+.shopItemS select,.shopItemS input{
+	display: inline-block;
+	margin:0;
+	border: 1px solid #e0e0e0;
+	padding: 8px 5px 7px 5px;
+	border-radius: 2px;
+	background-color: #ffffff;
+	-webkit-appearance: none;
+}
+.shopItemS select{width:50px;}
+.shopItemS input{width:34px;}
+
+/* カゴボタン */
+.shopItemKago{
+	display: table-cell;
+	width:auto;
+	padding-left:10px;
+}
+.shopItemKagoButton{
+	display: inline-block;
+	margin:0;
+	padding: 8px;
+	border-radius: 2px;
+	background-color: #f0c14b;
+	border:solid 1px #a88734;
+	max-width: 210px;
+	width: 100%;
+	cursor: pointer;
+}
+/* カゴボタンの色 */
+.button-highlight {
+	background:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcd370), color-stop(100%, #fac33e));
+	background: -moz-linear-gradient(top, #fcd370, #fac33e);
+	background:-webkit-linear-gradient(top, #fcd370, #fac33e);
+	background:linear-gradient(to bottom, #fcd370, #fac33e);
+	background-color: #fbcb57;
+	color: #000000;
+	text-shadow: 0 -1px 1px rgba(181, 129, 4, 0.35);
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+.button-highlight:hover {
+	background-color: #fbcb57;
+	background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fcda89), color-stop(100%, #fac33e));
+	background: -moz-linear-gradient(top, #fcda89, #fac33e);
+	background: -webkit-linear-gradient(top, #fcda89, #fac33e);
+	background: linear-gradient(to bottom, #fcda89, #fac33e);
+}
+/* 商品説明 */
+.shopItemComentTitle{
+	color:#555;
+	font-weight:bold;
+	margin:20px 0 4px 0;
+}
+.shopItemComentText{
+	font-size:0.9rem;
+	line-height:1.5rem;
+}
+.crayonInModal{
+    padding:20px !important;
+    text-align:left;
+    color: #111;
+}
+
+
+/* ホームランパーツ */
+.homeran_area{
+    display:block;
+    text-align: center;
+    margin:0 8px;
+    background-color: rgba(255,255,255,0.85);
+}
+/* 右寄せ、左寄せ用のdiv */
+.l-homeran{
+    -webkit-box-align: center; /*Android4.3*/  
+    -webkit-align-items: center; /*PC-Safari,iOS8.4*/
+    align-items: center;
+    display : -webkit-inline-box; /* Android4.3以下、Safari3.1〜6.0 */
+    display : -webkit-inline-flex; /* Safari6.1以降 */
+    display:inline-flex;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    line-height: 1.4rem;
+    max-width:100%;
+    min-width:0;
+    padding: 10px 0;
+    letter-spacing: -.40rem;  /* 文字間を詰めて隙間を削除する iOS safari用 */
+}
+/* 文章のレイアウト用div */
+.l-homeranText{
+    box-sizing:border-box;
+    display: inline-block;
+    -webkit-box-flex:1.0;
+    -webkit-flex:1 1 auto;
+    flex:1 1 auto;
+    margin:0;
+    max-width: 1000px;
+    min-width: 0;
+    padding:5px;
+    text-align: left;
+    vertical-align: middle;
+    letter-spacing: normal;
+}
+/* 投票ボタンのレイアウト用div */
+.l-homeranVote {
+    box-sizing: border-box;
+    display: inline-block;
+    -webkit-box-flex:1.0;
+    -webkit-flex:0 1 auto;
+    flex:0 1 auto;
+    margin:0;
+    max-width: 100%;
+    min-width: 110px;
+    padding:5px;
+    vertical-align: middle;
+    letter-spacing: normal;
+}
+/* 319px以下で改行 */
+@media screen and (max-width: 319px){
+    .l-homeran{
+        flex-wrap:wrap;
+        -webkit-flex-wrap:wrap;
+    }
+    .l-homeranText {
+        max-width:100%;
+        text-align:center;
+    }
+}
+
+/* ------------------------------------------------ */
+/* 右寄せ、左寄せ用 */
+.alignLeft{text-align:left;}
+.alignRight{text-align:right;}
+.alignCenter{text-align: center;}
+.alignLeft > .l-homeran > .l-homeranText{text-align: left;}
+.alignRight > .l-homeran > .l-homeranText{text-align: right;}
+/* 319px以下で改行 */
+@media screen and (max-width: 319px){ 
+  .alignLeft > .l-homeran{
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;}
+  .alignRight > .l-homeran{
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;}
+}
+/* ------------------------------------------------ */
+/* 文章とボタンの位置を逆転 */
+.flexReverse{
+    -ms-flex-direction: reverse; /*IE10*/
+    -webkit-box-direction: reverse; /* Android4.3以下、Safari3.1〜6.0 */
+    -webkit-flex-direction: row-reverse; /* Safari6.1以降 */
+    flex-direction: row-reverse;
+}
+/* 逆転時は右寄せ左寄せの指定が逆になる */
+@media screen and (max-width: 320px){
+  .alignLeft > .flexReverse{
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;}
+  .alignRight > .flexReverse{
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;}
+}
+/* ------------------------------------------------ */
+/* 縦配置 */
+.flexColumn{
+    -ms-flex-direction: inherit; /*IE10*/
+    -webkit-box-direction: inherit; /* Android4.3以下、Safari3.1〜6.0 */
+    -webkit-flex-direction: column; /* Safari6.1以降 */
+    flex-direction: column;
+}
+.flexColumn > .l-homeranText{ max-width:100%; }/* 英語がはみ出るので */
+.alignLeft > .flexColumn{
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.alignLeft > .flexColumn > .l-homeranText{text-align: left;}
+.alignRight > .flexColumn{
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+.alignRight > .flexColumn > .l-homeranText{text-align: right;}
+/* ------------------------------------------------ */
+/* デフォルト用 文章レイアウト*/
+.homeranDef > .l-homeranText{
+    -webkit-box-flex:1.0;
+    -webkit-flex:0 1 auto;
+    flex:0 1 auto;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 6px #fff, 0 0 4px #fff;
+    padding:0;
+    margin:5px;
+}
+.homeranDef > .l-homeranVote >.buttonBase{
+    max-width: 138px;
+}
+@media screen and (max-width: 450px){
+  .homeranDef > .l-homeranText {width:152px;}
+}
+@media screen and (max-width: 350px){
+  .homeranDef > .l-homeranText {
+    font-size: 1rem;
+    margin: 0;
+    min-width:140px;
+    width:140px;
+  }
+}
+/* 319px以下で */
+@media screen and (max-width: 319px){
+  .homeranDef > .l-homeranText {font-size: 1rem;width:100%;}
+}
+/* デフォルト用 ボタンレイアウト */
+.homeranDef > .l-homeranVote {
+    -webkit-box-flex:1.1;
+    -webkit-flex:0 0 auto;
+    flex:0 0 auto;
+}
+/* デフォルト用 文字の右寄せキャンセル */
+@media screen and (min-width: 320px){
+  .alignRight > .homeranDef > .l-homeranText {
+    text-align: left;
+  }
+}
+/* デフォルト＆縦配置用の横幅 */
+.homeranDef.flexColumn > .l-homeranText{
+    width:auto;
+}
+
+/* ------------------------------------------------ */
+/* ベースとなるボタンのスタイル */
+.buttonBase {
+    background-color: #EEE;
+    background: -webkit-linear-gradient(top, #fbfbfb, #e1e1e1);
+    background: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+    border: 1px solid #d4d4d4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    display: inline-block;
+    color: #666;
+    line-height: 1.7rem;
+    margin: 0;
+    max-width:400px;
+    min-width:100px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px white;
+    vertical-align: middle;
+    width:100%;
+}
+.buttonBase:hover, .buttonBase:focus {
+    color: #666;
+    background-color: #EEE;
+    background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+    text-decoration: none;
+    outline: none;
+} 
+.buttonBase:active{
+    background: #eeeeee;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    color: #bbbbbb;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+/* ボタンベース２号 */
+.button_B2 {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    min-width:100px;
+    margin: 0;
+    padding: 0.5em 0.7em 0.5em 0.7em;
+    background-color: #EEE;
+    background: -webkit-linear-gradient(top, #fbfbfb, #e1e1e1);
+    background: linear-gradient(to bottom, #fbfbfb, #e1e1e1);
+    border: 1px solid #d4d4d4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    color: #666;
+    line-height: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px white;
+    vertical-align: middle;
+}
+.button_B2:hover, .button_B2:focus {
+    color: #666;
+    background-color: #EEE;
+    background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+    text-decoration: none;
+    outline: none;
+} 
+.button_B2:active{
+    background: #eeeeee;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    color: #bbbbbb;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+/* 押せない */
+.buttonDisabled,
+.buttonDisabled:hover,
+.buttonDisabled:focus,
+.buttonDisabled:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    background: #EEE;
+    border: 1px solid #DDD;
+    text-shadow: 0 1px 1px white;
+    color: #CCC;
+    cursor: default;
+    -webkit-appearance: none;
+}
+/* 平たいボタン */
+.buttonFlat {
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #EEE;
+    border: none;
+    text-shadow: none;
+}
+.buttonFlat:hover, .buttonFlat:focus {
+    background: #fbfbfb;
+}
+.buttonFlat:active {
+    background: #eeeeee;
+    color: #bbbbbb;
+    transition-duration: 0s;
+}
+/* ボーダーボタン */
+.buttonBorder {
+    background: none;
+    border: 2px solid #666;
+    box-shadow: none;
+    color: #666;
+    text-shadow: none;
+    transition-duration: 0.3s;
+    transition-property: all;
+}
+.buttonBorder:hover, .buttonBorder:focus {
+    background: none;
+    border: 2px solid gray;
+    color: gray;
+}
+.buttonBorder:active {
+    background: none;
+    border: 2px solid #4d4d4d;
+    color: #4d4d4d;
+    transition-duration: 0s;
+}
+
+/* 3Dボタン */
+.button3d {
+    margin-bottom:7px;
+    transition-property: all;
+    transition-duration: 0.2s;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #bbbbbb, 0px 8px 3px rgba(0, 0, 0, 0.2);
+    background: -webkit-linear-gradient(top, #f3f3f3, #e9e9e9);
+    background: linear-gradient(to bottom, #f3f3f3, #e9e9e9);
+    background-color: #EEE;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    text-shadow: none;
+    position: relative;
+    top: 0px;
+}
+.button3d:hover, .button3d:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #bbbbbb, 0px 8px 3px rgba(0, 0, 0, 0.2);
+    background: -webkit-linear-gradient(top, #ffffff, #ebebeb);
+    background: linear-gradient(to bottom, #ffffff, #ebebeb);
+    background-color: white;
+    color: #666;
+}
+.button3d:active{
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #bbbbbb, 0px 3px 3px rgba(0, 0, 0, 0.2);
+    background: -webkit-linear-gradient(top, #e9e9e9, #f3f3f3);
+    background: linear-gradient(to bottom, #e9e9e9, #f3f3f3);
+    background-color: #eeeeee;
+    color: #bbbbbb;
+    border: 1px solid #e1e1e1;
+    top: 5px; 
+}
+.button3d.disabled {
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+
+
+/* ---------------色々---------------- */
+/* 01:青 ------------------------------------------------------------- */
+.buttonColor01 {
+    background: -webkit-linear-gradient(top, #00b5e5, #008db2);
+    background: linear-gradient(to bottom, #00b5e5, #008db2);
+    background-color: #00A1CB;
+    border-color: #007998;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 1px rgba(0, 40, 50, 0.35);
+}
+.buttonColor01:hover, .buttonColor01:focus {
+    background-color: #00A1CB;
+    color: #FFFFFF;   
+    background: -webkit-linear-gradient(top, #00c9fe, #008db2);
+    background: linear-gradient(to bottom, #00c9fe, #008db2);
+}
+.buttonColor01:active{
+    background: #1495b7;
+    color: #005065;
+}
+.button3d.buttonColor01 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #007998, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #00a9d5, #0099c1);
+    background: linear-gradient(to bottom, #00a9d5, #0099c1);
+    background-color: #00A1CB;
+    color: #FFFFFF;
+    border: 1px solid #007998;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor01:hover, .button3d.buttonColor01:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #00708e, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #00c1f4, #009dc6);
+    background: linear-gradient(to bottom, #00c1f4, #009dc6);
+    background-color: #00c9fe;
+    color: #FFFFFF;
+}
+.button3d.buttonColor01:active{
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #007998, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #0099c1, #00a9d5);
+    background: linear-gradient(to bottom, #0099c1, #00a9d5);
+    background-color: #1495b7;
+    color: #005065;
+    border: 1px solid #008db2;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor01 {
+    box-shadow: none;
+    color: #00A1CB;
+    border: 2px solid #00A1CB;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor01:hover, .buttonBorder.buttonColor01:focus {
+    background: none;
+    color: #00c9fe;
+    border: 2px solid #00c9fe;
+}
+.buttonBorder.buttonColor01:active{
+    transition-duration: 0s;
+    background: none;
+    color: #007998;
+    border: 2px solid #007998;
+}
+.buttonFlat.buttonColor01 {  
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #00A1CB;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: none; 
+} 
+.buttonFlat.buttonColor01:hover, .buttonFlat.buttonColor01:focus {
+    color: #FFFFFF;
+    background: #00b5e5;
+}
+.buttonFlat.buttonColor01:active{
+    background: #1495b7;
+    color: #00647f;
+}
+
+/* 02:ライムグリーン ----------------------------------------------------- */
+.buttonColor02 {  
+    background: -webkit-linear-gradient(top, #8fcf00, #6b9c00);
+    background: linear-gradient(to bottom, #8fcf00, #6b9c00);
+    background-color: #7db500;
+    border-color: #5a8200;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 1px rgba(19, 28, 0, 0.35);
+}
+.buttonColor02:hover, .buttonColor02:focus {
+    background-color: #7db500;
+    color: #FFFFFF;
+    background: -webkit-linear-gradient(top, #a0e800, #6b9c00);
+    background: linear-gradient(to bottom, #a0e800, #6b9c00);
+}
+.buttonColor02:active, .buttonColor02.is-active, .buttonColor02.active {
+    background: #76a312;
+    color: #374f00;
+}
+.button3d.buttonColor02 { 
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #5a8200, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #84bf00, #76ab00);
+    background: linear-gradient(to bottom, #84bf00, #76ab00);
+    background-color: #7db500;
+    color: #FFFFFF;
+    border: 1px solid #5a8200;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor02:hover, .button3d.buttonColor02:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #537800, 0px 8px 3px rgba(0, 0, 0, 0.3);   
+    background: -webkit-linear-gradient(top, #99de00, #79b000);
+    background: linear-gradient(to bottom, #99de00, #79b000);
+    background-color: #a0e800;
+    color: #FFFFFF;
+} 
+.button3d.buttonColor02:active {  
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #5a8200, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #76ab00, #84bf00);
+    background: linear-gradient(to bottom, #76ab00, #84bf00);
+    background-color: #76a312;
+    color: #374f00;
+    border: 1px solid #6b9c00;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor02 {  
+    box-shadow: none;
+    color: #7db500;
+    border: 2px solid #7db500;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor02:hover, .buttonBorder.buttonColor02:focus {
+    background: none;
+    color: #a0e800;
+    border: 2px solid #a0e800;
+}
+.buttonBorder.buttonColor02:active {
+    transition-duration: 0s;
+    background: none;
+    color: #5a8200;
+    border: 2px solid #5a8200;
+}
+.buttonFlat.buttonColor02 {
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #7db500;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor02:hover, .buttonFlat.buttonColor02:focus {
+    color: #FFFFFF;
+    background: #8fcf00;
+}
+.buttonFlat.buttonColor02:active {
+    background: #76a312;
+    color: #486900;
+}
+
+/* 03:オレンジ --------------------------------------------------------- */
+.buttonColor03 {  
+  background: -webkit-linear-gradient(top, #fa9915, #d87e04);
+  background: linear-gradient(to bottom, #fa9915, #d87e04);
+  background-color: #F18D05;
+  border-color: #bf7004;
+  color: #FFFFFF;
+  text-shadow: 0 -1px 1px rgba(91, 53, 2, 0.35);
+}
+.buttonColor03:hover, .buttonColor03:focus {
+    background-color: #F18D05;
+    color: #FFFFFF;    
+    background: -webkit-linear-gradient(top, #fba42e, #d87e04);
+    background: linear-gradient(to bottom, #fba42e, #d87e04);
+}
+.buttonColor03:active, .buttonColor03.is-active, .buttonColor03.active {
+    background: #d8891e;
+    color: #8d5303;
+}
+.button3d.buttonColor03 { 
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #bf7004, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #fa9306, #e78705);
+    background: linear-gradient(to bottom, #fa9306, #e78705);
+    background-color: #F18D05;
+    color: #FFFFFF;
+    border: 1px solid #bf7004;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor03:hover, .button3d.buttonColor03:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #b56a04, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #faa024, #ec8a05);
+    background: linear-gradient(to bottom, #faa024, #ec8a05);
+    background-color: #fba42e;
+    color: #FFFFFF;
+}
+.button3d.buttonColor03:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #bf7004, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e78705, #fa9306);
+    background: linear-gradient(to bottom, #e78705, #fa9306);
+    background-color: #d8891e;
+    color: #8d5303;
+    border: 1px solid #d87e04;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor03 {
+    box-shadow: none;
+    color: #F18D05;
+    border: 2px solid #F18D05;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor03:hover, .buttonBorder.buttonColor03:focus {
+    background: none;
+    color: #fba42e;
+    border: 2px solid #fba42e;
+}
+.buttonBorder.buttonColor03:active{
+    transition-duration: 0s;
+    background: none;
+    color: #bf7004;
+    border: 2px solid #bf7004;
+}
+.buttonFlat.buttonColor03 {
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #F18D05;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor03:hover, .buttonFlat.buttonColor03:focus {
+    color: #FFFFFF;
+    background: #fa9915;
+}
+.buttonFlat.buttonColor03:active{
+    background: #d8891e;
+    color: #a66103;
+}
+  
+/* 04:赤 ------------------------------------------------------------- */
+.buttonColor04 {
+    background: -webkit-linear-gradient(top, #e8543f, #d9331a);
+    background: linear-gradient(to bottom, #e8543f, #d9331a);
+    background-color: #E54028;
+    border-color: #c22d18;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 1px rgba(103, 24, 13, 0.35);
+}
+.buttonColor04:hover, .buttonColor04:focus {
+    background-color: #E54028;
+    color: #FFFFFF;
+    background: -webkit-linear-gradient(top, #eb6855, #d9331a);
+    background: linear-gradient(to bottom, #eb6855, #d9331a);
+}
+.buttonColor04:active, .buttonColor04.is-active, .buttonColor04.active {
+    background: #cd5240;
+    color: #952312;
+}
+.button3d.buttonColor04 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #c22d18, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e64831, #e4381f);
+    background: linear-gradient(to bottom, #e64831, #e4381f);
+    background-color: #E54028;
+    color: #FFFFFF;
+    border: 1px solid #c22d18;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor04:hover, .button3d.buttonColor04:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #b92b16, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e9604c, #e43c23);
+    background: linear-gradient(to bottom, #e9604c, #e43c23);
+    background-color: #eb6855;
+    color: #FFFFFF;
+}
+.button3d.buttonColor04:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #c22d18, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e4381f, #e64831);
+    background: linear-gradient(to bottom, #e4381f, #e64831);
+    background-color: #cd5240;
+    color: #952312;
+    border: 1px solid #d9331a;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor04 {
+    box-shadow: none; 
+    color: #E54028;
+    border: 2px solid #E54028;
+    background: none;
+    text-shadow: none;
+} 
+.buttonBorder.buttonColor04:hover, .buttonBorder.buttonColor04:focus {
+    background: none;
+    color: #eb6855;
+    border: 2px solid #eb6855;
+} 
+.buttonBorder.buttonColor04:active {
+    transition-duration: 0s;
+    background: none;
+    color: #c22d18;
+    border: 2px solid #c22d18;
+}
+.buttonFlat.buttonColor04 {
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #E54028;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor04:hover, .buttonFlat.buttonColor04:focus {
+    color: #FFFFFF;
+    background: #e8543f;
+} 
+.buttonFlat.buttonColor04:active{
+    background: #cd5240;
+    color: #ac2815;
+}
+  
+/* 05:紫 -------------------------------------------------------- */
+.buttonColor05 {
+    background: -webkit-linear-gradient(top, #99389f, #752a79);
+    background: linear-gradient(to bottom, #99389f, #752a79);
+    background-color: #87318C;
+    border-color: #632466;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 1px rgba(26, 9, 27, 0.35);
+} 
+.buttonColor05:hover, .buttonColor05:focus {
+    background-color: #87318C;
+    color: #FFFFFF;    
+    background: -webkit-linear-gradient(top, #ab3eb2, #752a79);
+    background: linear-gradient(to bottom, #ab3eb2, #752a79);
+}
+.buttonColor05:active, .buttonColor05.is-active, .buttonColor05.active {
+    background: #764479;
+    color: #3e1740;
+}
+.button3d.buttonColor05 { 
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #632466, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #8e3494, #802e84);
+    background: linear-gradient(to bottom, #8e3494, #802e84);
+    background-color: #87318C;
+    color: #FFFFFF;
+    border: 1px solid #632466;
+    text-shadow: none;
+    position: relative;
+} 
+.button3d.buttonColor05:hover, .button3d.buttonColor05:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #5b215f, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #a43caa, #833088);
+    background: linear-gradient(to bottom, #a43caa, #833088);
+    background-color: #ab3eb2;
+    color: #FFFFFF;
+}
+.button3d.buttonColor05:active { 
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #632466, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #802e84, #8e3494);
+    background: linear-gradient(to bottom, #802e84, #8e3494);
+    background-color: #764479;
+    color: #3e1740;
+    border: 1px solid #752a79;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor05 {  
+    box-shadow: none;
+    color: #87318C;
+    border: 2px solid #87318C;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor05:hover, .buttonBorder.buttonColor05:focus {
+    background: none;
+    color: #ab3eb2;
+    border: 2px solid #ab3eb2;
+}
+.buttonBorder.buttonColor05:active{
+    transition-duration: 0s;
+    background: none;
+    color: #632466;
+    border: 2px solid #632466;
+}
+.buttonFlat.buttonColor05 { 
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #87318C;
+    color: #FFFFFF;
+    text-shadow: none;
+    border: none;
+} 
+.buttonFlat.buttonColor05:hover, .buttonFlat.buttonColor05:focus {
+    color: #FFFFFF;
+    background: #99389f;
+}
+.buttonFlat.buttonColor05:active{
+    background: #764479;
+    color: #501d53;
+}
+
+/* 06:薄緑 ----------------------------------------------------------- */
+.buttonColor06 {  
+    background: -webkit-linear-gradient(top, #95e298, #6dd870);
+    background: linear-gradient(to bottom, #95e298, #6dd870);
+    background-color: #81dd84;
+    border-color: #59d25d;
+    color: #054d08;
+    text-shadow: 0 1px 1px rgba(215, 238, 216, 0.8);
+} 
+.buttonColor06:hover, .buttonColor06:focus {
+    background-color: #81dd84;
+    color: #054d08;   
+    background: -webkit-linear-gradient(top, #a9e8ab, #6dd870);
+    background: linear-gradient(to bottom, #a9e8ab, #6dd870);
+}  
+.buttonColor06:active, .buttonColor06.is-active, .buttonColor06.active {
+    background: #91cd93;
+    color: #35c339;
+}
+.button3d.buttonColor06 { 
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #59d25d, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #89df8c, #79db7c);
+    background: linear-gradient(to bottom, #89df8c, #79db7c);
+    background-color: #81dd84;
+    border: 1px solid #59d25d;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor06:hover, .button3d.buttonColor06:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #51d055, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #a1e6a3, #7ddc80);
+    background: linear-gradient(to bottom, #a1e6a3, #7ddc80);
+    background-color: #a9e8ab;
+}
+.button3d.buttonColor06:active{
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #59d25d, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #79db7c, #89df8c);
+    background: linear-gradient(to bottom, #79db7c, #89df8c);
+    background-color: #91cd93;
+    color: #35c339;
+    border: 1px solid #6dd870;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor06 {
+    box-shadow: none;
+    color: #81dd84;
+    border: 2px solid #81dd84;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor06:hover, .buttonBorder.buttonColor06:focus {
+    background: none;
+    color: #a9e8ab;
+    border: 2px solid #a9e8ab;
+}
+.buttonBorder.buttonColor06:active{
+    transition-duration: 0s;
+    background: none;
+    color: #59d25d;
+    border: 2px solid #59d25d;
+}
+.buttonFlat.buttonColor06 {  
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #81dd84;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor06:hover, .buttonFlat.buttonColor06:focus {
+    background: #95e298;
+}
+.buttonFlat.buttonColor06:active{
+    transition-duration: 0s;
+    background: #91cd93;
+    color: #45cd49;
+}
+
+/* 07:青緑色 ----------------------------------------------------- */
+.buttonColor07 {
+    background: -webkit-linear-gradient(top, #00cf73, #009c57);
+    background: linear-gradient(to bottom, #00cf73, #009c57);
+    background-color: #00b565;
+    border-color: #008249;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(0, 28, 16, 0.35);
+}
+.buttonColor07:hover, .buttonColor07:focus {
+    background-color: #00b565;
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #00e881, #009c57);
+    background: linear-gradient(to bottom, #00e881, #009c57);
+}
+.buttonColor07:active {
+    background: #12a363;
+    color: #004f2c;
+}
+.button3d.buttonColor07 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #008249, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #00bf6b, #00ab5f);
+    background: linear-gradient(to bottom, #00bf6b, #00ab5f);
+    background-color: #00b565;
+    color: #ffffff;
+    border: 1px solid #008249;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor07:hover, .button3d.buttonColor07:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #007843, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #00de7c, #00b062);
+    background: linear-gradient(to bottom, #00de7c, #00b062);
+    background-color: #00e881;
+    color: #ffffff;
+} 
+.button3d.buttonColor07:active{
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #008249, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #00ab5f, #00bf6b);
+    background: linear-gradient(to bottom, #00ab5f, #00bf6b);
+    background-color: #12a363;
+    color: #004f2c;
+    border: 1px solid #009c57;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.button3d.buttonColor07.disabled {
+    box-shadow: none;
+    -webkit-appearance: none;
+}
+.buttonBorder.buttonColor07 {
+    box-shadow: none; 
+    color: #00b565;
+    border: 2px solid #00b565;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor07:hover, .buttonBorder.buttonColor07:focus {
+    background: none;
+    color: #00e881;
+    border: 2px solid #00e881;
+} 
+.buttonBorder.buttonColor07:active {
+    transition-duration: 0s;
+    background: none;
+    color: #008249;
+    border: 2px solid #008249;
+} 
+.buttonFlat.buttonColor07 {
+    box-shadow: none;  
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #00b565;
+    color: #ffffff;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor07:hover, .buttonFlat.buttonColor07:focus {
+    color: #ffffff;
+    background: #00cf73;
+} 
+.buttonFlat.buttonColor07:active {
+    background: #12a363;
+    color: #00693a;
+}
+
+/* 08:黄色 --------------------------- */
+.buttonColor08 {  
+    background: -webkit-linear-gradient(top, #f7e140, #f5d910);
+    background: linear-gradient(to bottom, #f7e140, #f5d910);
+    background-color: #f6dd28;
+    border-color: #e2c709;
+    color: #000000;
+    text-shadow: 0 1px 1px rgba(248, 239, 176, 0.7);
+}
+.buttonColor08:hover, .buttonColor08:focus {
+    background-color: #f6dd28;
+    color: #000000;
+    background: -webkit-linear-gradient(top, #f8e559, #f5d910);
+    background: linear-gradient(to bottom, #f8e559, #f5d910);
+}
+.buttonColor08:active {
+    background: #e0cc3e;
+    color: #b19c07;
+}
+.button3d.buttonColor08 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #e2c709, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f6df32, #f6db1e);
+    background: linear-gradient(to bottom, #f6df32, #f6db1e);
+    background-color: #f6dd28;
+    color: #000000;
+    border: 1px solid #e2c709;
+    text-shadow: none;
+    position: relative;
+}
+.button3d.buttonColor08:hover, .button3d.buttonColor08:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #d8bf09, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f8e34f, #f6dc23);
+    background: linear-gradient(to bottom, #f8e34f, #f6dc23);
+    background-color: #f8e559;
+    color: #000000;
+}
+.button3d.buttonColor08:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #e2c709, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f6db1e, #f6df32);
+    background: linear-gradient(to bottom, #f6db1e, #f6df32);
+    background-color: #e0cc3e;
+    color: #b19c07;
+    border: 1px solid #f5d910;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor08 {
+    box-shadow: none;
+    color: #f6dd28;
+    border: 2px solid #f6dd28;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor08:hover, .buttonBorder.buttonColor08:focus {
+    background: none;
+    color: #f8e559;
+    border: 2px solid #f8e559;
+} 
+.buttonBorder.buttonColor08:active {
+    transition-duration: 0s;
+    background: none;
+    color: #e2c709;
+    border: 2px solid #e2c709;
+}
+.buttonFlat.buttonColor08 {
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #f6dd28;
+    color: #000000;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor08:hover, .buttonFlat.buttonColor08:focus {
+    color: #000000;
+    background: #f7e140;
+} 
+.buttonFlat.buttonColor08:active {
+    background: #e0cc3e;
+    color: #c9b208;
+}
+
+/* 09: 深緑 ---------------------------------------------------------------- */
+.buttonColor09 {
+    background: -webkit-linear-gradient(top, #13a01d, #0d7215);
+    background: linear-gradient(to bottom, #13a01d, #0d7215);
+    background-color: #108919;
+    border-color: #0b5b11;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.35);
+}
+  
+.buttonColor09:hover, .buttonColor09:focus {
+    background-color: #108919;
+    color: #ffffff; 
+    background: -webkit-linear-gradient(top, #15b721, #0d7215);
+    background: linear-gradient(to bottom, #15b721, #0d7215);
+}
+.buttonColor09:active {
+    background: #1f7a26;
+    color: #052e08;
+}
+.button3d.buttonColor09 { 
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #0b5b11, 0px 8px 3px rgba(0, 0, 0, 0.3);
+  background: -webkit-linear-gradient(top, #11921b, #0f8017);
+  background: linear-gradient(to bottom, #11921b, #0f8017);
+  background-color: #108919;
+  color: #ffffff;
+  border: 1px solid #0b5b11;
+  text-shadow: none;
+  position: relative;
+}
+.button3d.buttonColor09:hover, .button3d.buttonColor09:focus {   
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #0a520f, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #14ae20, #0f8418);
+    background: linear-gradient(to bottom, #14ae20, #0f8418);
+    background-color: #15b721;
+    color: #ffffff;
+}
+.button3d.buttonColor09:active, .button3d.buttonColor09.is-active, .button3d.buttonColor09.active {   
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #0b5b11, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #0f8017, #11921b);
+    background: linear-gradient(to bottom, #0f8017, #11921b);
+    background-color: #1f7a26;
+    color: #052e08;
+    border: 1px solid #0d7215;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.buttonBorder.buttonColor09 {
+    box-shadow: none;
+    color: #108919;
+    border: 2px solid #108919;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor09:hover, .buttonBorder.buttonColor09:focus {
+    background: none;
+    color: #15b721;
+    border: 2px solid #15b721;
+} 
+.buttonBorder.buttonColor09:active{
+    transition-duration: 0s;
+    background: none;
+    color: #0b5b11;
+    border: 2px solid #0b5b11;
+}
+/* フラット */
+.buttonFlat.buttonColor09 { 
+    box-shadow: none;
+    transition-property: background;
+    transition-duration: 0.3s;
+    background: #108919;
+    color: #ffffff;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor09:hover, .buttonFlat.buttonColor09:focus {
+    color: #ffffff;
+    background: #13a01d;
+} 
+.buttonFlat.buttonColor09:active {
+    background: #1f7a26;
+    color: #08450d;
+}
+/* 10:青みのある赤 --------------------------------------------------------------- */
+.buttonColor10 {
+    background: -webkit-linear-gradient(top, #e14977, #d32359);
+    background: linear-gradient(to bottom, #e14977, #d32359);
+    background-color: #dd3367;
+    border-color: #bd2050;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(102, 17, 43, 0.35);
+}
+.buttonColor10:hover, .buttonColor10:focus {
+    background-color: #dd3367;
+    color: #ffffff;   
+    background: -webkit-linear-gradient(top, #e45f88, #d32359);
+    background: linear-gradient(to bottom, #e45f88, #d32359);
+}
+.buttonColor10:active {
+    background: #c54b70;
+    color: #92183d;
+}
+/* 3D */
+.button3d.buttonColor10 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #bd2050, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #de3c6e, #dc2a60);
+    background: linear-gradient(to bottom, #de3c6e, #dc2a60);
+    text-shadow: none;
+} 
+.button3d.buttonColor10:hover, .button3d.buttonColor10:focus {   
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #b51e4c, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e35681, #dc2f64);
+    background: linear-gradient(to bottom, #e35681, #dc2f64);
+    background-color: #e45f88;
+}
+.button3d.buttonColor10:active {   
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #bd2050, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #dc2a60, #de3c6e);
+    background: linear-gradient(to bottom, #dc2a60, #de3c6e);
+    border: 1px solid #d32359;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+/* 線 */
+.buttonBorder.buttonColor10 {
+    color: #dd3367;
+    border: 2px solid #dd3367;
+    background: none;
+    text-shadow: none;
+}
+.buttonBorder.buttonColor10:hover, .buttonBorder.buttonColor10:focus {
+    background: none;
+    color: #e45f88;
+    border: 2px solid #e45f88;
+} 
+.buttonBorder.buttonColor10:active {
+    background: none;
+    color: #bd2050;
+    border: 2px solid #bd2050;
+}
+/* フラット */
+.buttonFlat.buttonColor10 {
+    background: #dd3367;
+    color: #ffffff;
+    text-shadow: none;
+    border: none;
+}
+.buttonFlat.buttonColor10:hover, .buttonFlat.buttonColor10:focus {
+    color: #ffffff;
+    background: #e14977;
+} 
+.buttonFlat.buttonColor10:active {
+    background: #c54b70;
+    color: #a81c47;
+}
+
+/* 11:ピンク ----------------------------------------------------------------- */
+.buttonColor11 {
+    background: -webkit-linear-gradient(top, #f48fc0, #f061a6);
+    background: linear-gradient(to bottom, #f48fc0, #f061a6);
+    background-color: #f278b3;
+    border-color: #ee4999;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(191, 18, 102, 0.35); }
+.buttonColor11:hover, .buttonColor11:focus {
+    background-color: #f278b3;
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #f6a7cd, #f061a6);
+    background: linear-gradient(to bottom, #f6a7cd, #f061a6); }
+.buttonColor11:active, .buttonColor11.is-active, .buttonColor11.active {
+    background: #e387b3;
+    color: #e91b7f; }
+/* 3D */
+.button3d.buttonColor11 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #ee4999, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f381b8, #f16fae);
+    background: linear-gradient(to bottom, #f381b8, #f16fae);
+    text-shadow: none; }
+.button3d.buttonColor11:hover, .button3d.buttonColor11:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #ed4094, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f69dc8, #f273b0);
+    background: linear-gradient(to bottom, #f69dc8, #f273b0);
+    background-color: #f6a7cd; }
+.button3d.buttonColor11:active, .button3d.buttonColor11.is-active, .button3d.buttonColor11.active {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #ee4999, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f16fae, #f381b8);
+    background: linear-gradient(to bottom, #f16fae, #f381b8);
+    background-color: #e387b3;
+    border: 1px solid #f061a6;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor11 {
+    color: #f278b3;
+    border: 2px solid #f278b3;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor11:hover, .buttonBorder.buttonColor11:focus {
+    background: none;
+    color: #f6a7cd;
+    border: 2px solid #f6a7cd; }  
+.buttonBorder.buttonColor11:active {
+    background: none;
+    color: #ee4999;
+    border: 2px solid #ee4999; }
+/* フラット */
+.buttonFlat.buttonColor11 {
+    background: #f278b3;
+    color: #ffffff;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor11:hover, .buttonFlat.buttonColor11:focus {
+    color: #ffffff;
+    background: #f48fc0; }
+.buttonFlat.buttonColor11:active {
+    background: #e387b3;
+    color: #eb328c; }
+
+/* 12:ミントグリーン --------------------------------------------------------- */
+.buttonColor12 {
+    background: -webkit-linear-gradient(top, #ade7c8, #85dbae);
+    background: linear-gradient(to bottom, #ade7c8, #85dbae);
+    background-color: #99e1bb;
+    border-color: #72d5a1;    
+    color: #345734;
+    text-shadow: 0 1px 1px rgba(235, 255, 245, 0.8); }
+.buttonColor12:hover, .buttonColor12:focus {
+    background-color: #99e1bb;
+    color: #345734;
+    background: -webkit-linear-gradient(top, #c0edd5, #85dbae);
+    background: linear-gradient(to bottom, #c0edd5, #85dbae); }
+.buttonColor12:active{
+    background: #a6d4bc; color: #4aca86; }
+/* 3D */
+.button3d.buttonColor12 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #72d5a1, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #a1e3c0, #91dfb6);
+    background: linear-gradient(to bottom, #a1e3c0, #91dfb6);
+    text-shadow: none;}
+.button3d.buttonColor12:hover, .button3d.buttonColor12:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #6ad39b, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #b9ead0, #95e0b8);
+    background: linear-gradient(to bottom, #b9ead0, #95e0b8);
+    background-color: #c0edd5;}
+.button3d.buttonColor12:active {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #72d5a1, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #91dfb6, #a1e3c0);
+    background: linear-gradient(to bottom, #91dfb6, #a1e3c0);
+    border: 1px solid #85dbae;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);}
+/* 線 */
+.buttonBorder.buttonColor12 {
+    color: #99e1bb;
+    border: 2px solid #99e1bb;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor12:hover, .buttonBorder.buttonColor12:focus {
+    background: none; color: #c0edd5; border: 2px solid #c0edd5; }
+.buttonBorder.buttonColor12:active {
+    background: none; color: #72d5a1; border: 2px solid #72d5a1; }
+/* フラット */
+.buttonFlat.buttonColor12 {
+    background: #99e1bb;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor12:hover, .buttonFlat.buttonColor12:focus {
+    background: #ade7c8; }
+.buttonFlat.buttonColor12:active {
+    background: #a6d4bc; color: #5ed094; }
+  
+
+/* 13:黄色みのある薄いピンク ------------------------------------------------------------------ */
+.buttonColor13 {
+    background: -webkit-linear-gradient(top, #ffd2d2, #ff9f9f);
+    background: linear-gradient(to bottom, #ffd2d2, #ff9f9f);
+    background-color: #ffb8b8;
+    border-color: #ff8585;
+    color: #4d2925;
+    text-shadow: 0 1px 1px rgba(244, 219, 219, 0.8); }
+.buttonColor13:hover, .buttonColor13:focus {
+    background-color: #ffb8b8;
+    color: #4b1c00;
+    background: -webkit-linear-gradient(top, #ffebeb, #ff9f9f);
+    background: linear-gradient(to bottom, #ffebeb, #ff9f9f); }
+.buttonColor13:active {
+    background: #f8bfbf; color: #ff5252; }
+/* 3D */
+.button3d.buttonColor13 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #ff8585, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #ffc2c2, #ffaeae);
+    background: linear-gradient(to bottom, #ffc2c2, #ffaeae);
+    text-shadow: none;}
+.button3d.buttonColor13:hover, .button3d.buttonColor13:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #ff7b7b, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #ffe1e1, #ffb3b3);
+    background: linear-gradient(to bottom, #ffe1e1, #ffb3b3);
+    background-color: #ffebeb; }
+.button3d.buttonColor13:active{
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #ff8585, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #ffaeae, #ffc2c2);
+    background: linear-gradient(to bottom, #ffaeae, #ffc2c2);
+    border: 1px solid #ff9f9f;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor13 {
+    color: #ffb8b8;
+    border: 2px solid #ffb8b8;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor13:hover, .buttonBorder.buttonColor13:focus {
+    background: none; color: #ffebeb; border: 2px solid #ffebeb; }
+.buttonBorder.buttonColor13:active {
+    background: none; color: #ff8585; border: 2px solid #ff8585; }
+/* フラット */
+.buttonFlat.buttonColor13{
+    background: #ffb8b8;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor13:hover, .buttonFlat.buttonColor13:focus {
+    background: #ffd2d2; }
+.buttonFlat.buttonColor13:active{
+    background: #f8bfbf; color: #ff6c6c; }
+
+
+/* 14:モカブラウン ------------------------------------------------------------------ */
+.buttonColor14 {  
+    background: -webkit-linear-gradient(top, #bb9e7d, #a9845b);
+    background: linear-gradient(to bottom, #bb9e7d, #a9845b);
+    background-color: #b2916c;
+    border-color: #9a7851;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(87, 68, 46, 0.35); }
+.buttonColor14:hover, .buttonColor14:focus {
+    background-color: #b2916c;
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #c4aa8d, #a9845b);
+    background: linear-gradient(to bottom, #c4aa8d, #a9845b); }
+.buttonColor14:active{
+    background: #af926f; background: #ab9479; color: #795e3f; }
+/* 3D */
+.button3d.buttonColor14 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #9a7851, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #b69673, #ae8c65);
+    background: linear-gradient(to bottom, #b69673, #ae8c65);
+    text-shadow: none;
+    position: relative;}
+.button3d.buttonColor14:hover, .button3d.buttonColor14:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #94724d, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #c0a587, #b08e69);
+    background: linear-gradient(to bottom, #c0a587, #b08e69);
+    background-color: #c4aa8d; }
+.button3d.buttonColor14:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #9a7851, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #ae8c65, #b69673);
+    background: linear-gradient(to bottom, #ae8c65, #b69673);
+    border: 1px solid #a9845b;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor14 {  
+    color: #b2916c;
+    border: 2px solid #b2916c;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor14:hover, .buttonBorder.buttonColor14:focus {
+    background: none; color: #c4aa8d; border: 2px solid #c4aa8d; }
+.buttonBorder.buttonColor14:active {
+    background: none; color: #9a7851; border: 2px solid #9a7851; }
+/* フラット */
+.buttonFlat.buttonColor14 {
+    background: #b2916c;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor14:hover, .buttonFlat.buttonColor14:focus {
+    background: #bb9e7d; }
+.buttonFlat.buttonColor14:active {
+    background: #ab9479; color: #896b48; }
+
+
+/* 15:ミク --------------------------------------------------------------------- */
+.buttonColor15 {  
+    background: -webkit-linear-gradient(top, #4fc5ab, #38aa91);
+    background: linear-gradient(to bottom, #4fc5ab, #38aa91);
+    background-color: #3ebda1;
+    border-color: #319780;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(24, 74, 63, 0.35); }
+.buttonColor15:hover, .buttonColor15:focus {
+    background-color: #3ebda1;
+    color: #ffffff;    
+    background: -webkit-linear-gradient(top, #62ccb4, #38aa91);
+    background: linear-gradient(to bottom, #62ccb4, #38aa91); }
+.buttonColor15:active {
+    background: #57a493; color: #257060; }
+/* 3D */
+.button3d.buttonColor15 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #319780, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #44c2a6, #3bb59a);
+    background: linear-gradient(to bottom, #44c2a6, #3bb59a);
+    background-color: #3ebda1;
+    text-shadow: none; }
+.button3d.buttonColor15:hover, .button3d.buttonColor15:focus {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #2f8f7a, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #5bc9b1, #3db99e);
+    background: linear-gradient(to bottom, #5bc9b1, #3db99e);
+    background-color: #62ccb4; }
+.button3d.buttonColor15:active {    
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #319780, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #3bb59a, #44c2a6);
+    background: linear-gradient(to bottom, #3bb59a, #44c2a6);
+    border: 1px solid #38aa91;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor15 {
+    color: #3ebda1;
+    border: 2px solid #3ebda1;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor15:hover, .buttonBorder.buttonColor15:focus {
+    background: none; color: #62ccb4; border: 2px solid #62ccb4; }  
+.buttonBorder.buttonColor15:active {
+    background: none; color: #319780; border: 2px solid #319780; }
+/* フラット */
+.buttonFlat.buttonColor15 {
+    background: #3ebda1;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor15:hover, .buttonFlat.buttonColor15:focus {
+    background: #4fc5ab; }
+.buttonFlat.buttonColor15:active {
+    background: #57a493; color: #2b8370; }
+
+/* 16:オーキッド -------------------------------------------------------- */
+.buttonColor16 {
+    background: -webkit-linear-gradient(top, #e0c2eb, #cc9cdf);
+    background: linear-gradient(to bottom, #e0c2eb, #cc9cdf);
+    background-color: #d6afe5;
+    border-color: #c289d8;
+    color: #49075e;
+    text-shadow: 0 1px 1px rgba(240, 224, 246, 0.8); }
+.buttonColor16:hover, .buttonColor16:focus {
+    background-color: #d6afe5;
+    color: #49075e;
+    background: -webkit-linear-gradient(top, #ead5f2, #cc9cdf);
+    background: linear-gradient(to bottom, #ead5f2, #cc9cdf); }
+.buttonColor16:active {
+    background: #d1bada; color: #af62cc; }
+/* 3D */
+.button3d.buttonColor16 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #c289d8, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #dab7e8, #d2a7e2);
+    background: linear-gradient(to bottom, #dab7e8, #d2a7e2);
+    background-color: #d6afe5;
+    text-shadow: none; }
+.button3d.buttonColor16:hover, .button3d.buttonColor16:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #be81d6, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e6ceef, #d4abe4);
+    background: linear-gradient(to bottom, #e6ceef, #d4abe4);
+    background-color: #ead5f2; }
+.button3d.buttonColor16:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #c289d8, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #d2a7e2, #dab7e8);
+    background: linear-gradient(to bottom, #d2a7e2, #dab7e8);
+    border: 1px solid #cc9cdf;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor16 {
+    color: #d6afe5;
+    border: 2px solid #d6afe5;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor16:hover, .buttonBorder.buttonColor16:focus {
+    background: none; color: #ead5f2; border: 2px solid #ead5f2; }
+.buttonBorder.buttonColor16:active {
+    background: none; color: #c289d8; border: 2px solid #c289d8; }
+/* フラット */
+.buttonFlat.buttonColor16 {
+    background: #d6afe5;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor16:hover, .buttonFlat.buttonColor16:focus {
+    background: #e0c2eb; }
+.buttonFlat.buttonColor16:active {
+    background: #d1bada; color: #b875d2; }
+
+/* 17:薄い青白 --------------------------------------------------------- */
+.buttonColor17 {
+    background: -webkit-linear-gradient(top, #dbe7f8, #b1cbf0);
+    background: linear-gradient(to bottom, #dbe7f8, #b1cbf0);
+    background-color: #c6d9f4;
+    border-color: #9bbdec;
+    color: #072951;
+    text-shadow: 0 1px 1px rgba(227, 239, 255, 0.8); }
+.buttonColor17:hover, .buttonColor17:focus {
+    background-color: #c6d9f4;
+    color: #072951;
+    background: -webkit-linear-gradient(top, #f1f6fc, #b1cbf0);
+    background: linear-gradient(to bottom, #f1f6fc, #b1cbf0); }
+.buttonColor17:active { 
+    background: #cddaed; color: #71a0e4; }
+/* 3D */
+.button3d.buttonColor17 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #9bbdec, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #cfdff6, #bdd3f2);
+    background: linear-gradient(to bottom, #cfdff6, #bdd3f2);
+    background-color: #c6d9f4;
+    text-shadow: none; }
+.button3d.buttonColor17:hover, .button3d.buttonColor17:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #93b7ea, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #e8f0fb, #c2d6f3);
+    background: linear-gradient(to bottom, #e8f0fb, #c2d6f3);
+    background-color: #f1f6fc; }
+.button3d.buttonColor17:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #9bbdec, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #bdd3f2, #cfdff6);
+    background: linear-gradient(to bottom, #bdd3f2, #cfdff6);
+    background-color: #cddaed;
+    border: 1px solid #b1cbf0;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor17 {
+    color: #a6bedf;
+    border: 2px solid #a6bedf;
+    
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor17:hover, .buttonBorder.buttonColor17:focus {
+    background: none;
+    color: #c6d9f4;
+    border: 2px solid #c6d9f4; }
+.buttonBorder.buttonColor17:active {
+    background: none; color: #9bbdec; border: 2px solid #9bbdec; }
+/* フラット */
+.buttonFlat.buttonColor17 {
+    background: #c6d9f4;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor17:hover, .buttonFlat.buttonColor17:focus {
+    background: #dbe7f8; }
+.buttonFlat.buttonColor17:active {
+    background: #cddaed; color: #86aee8; }
+
+/* 18:ゴールド -------------------------------------------------------- */
+.buttonColor18 {
+    background: -webkit-linear-gradient(top, #fde006, #ceb602);
+    background: linear-gradient(to bottom, #fde006, #ceb602);
+    background-color: #e7cc02;
+    border-color: #b49f02;
+    color: #000000;
+    text-shadow: 0 1px 1px rgba(234, 229, 192, 0.8); }
+.buttonColor18:hover, .buttonColor18:focus {
+    background-color: #e7cc02;
+    color: #000000;
+    background: -webkit-linear-gradient(top, #ffef79, #ceb602);
+    /*background: linear-gradient(to bottom, #fde31f, #ceb602);*/
+    background: linear-gradient(to bottom, #ffef79, #ceb602); }
+.buttonColor18:active {
+    background: #d0ba19; color: #827301; }
+/* 3D */
+.button3d.buttonColor18 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #b49f02, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #f1d502, #ddc302);
+    background: linear-gradient(to bottom, #f1d502, #ddc302);
+    background-color: #e7cc02;
+    text-shadow: none; }
+.button3d.buttonColor18:hover, .button3d.buttonColor18:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #aa9601, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #fde215, #e2c802);
+    background: linear-gradient(to bottom, #fde215, #e2c802);
+    background-color: #fde31f; }
+.button3d.buttonColor18:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #b49f02, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #ddc302, #f1d502);
+    background: linear-gradient(to bottom, #ddc302, #f1d502);
+    background-color: #d0ba19;
+    border: 1px solid #ceb602;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor18 {
+    color: #e7cc02;
+    border: 2px solid #e7cc02;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor18:hover, .buttonBorder.buttonColor18:focus {
+    background: none; color: #fde31f; border: 2px solid #fde31f; }
+.buttonBorder.buttonColor18:active {
+    background: none; color: #b49f02; border: 2px solid #b49f02; }
+/* フラット */
+.buttonFlat.buttonColor18 {
+    background: #e7cc02;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor18:hover, .buttonFlat.buttonColor18:focus {
+    background: #fde006; }
+.buttonFlat.buttonColor18:active {
+    background: #d0ba19; color: #9b8901; }
+
+/* 19:シアン ------------------------------------------------------------ */
+.buttonColor19 {
+    background: -webkit-linear-gradient(top, #19ccf3, #0baccf);
+    background: linear-gradient(to bottom, #19ccf3, #0baccf);
+    background-color: #0cc0e7;
+    border-color: #0998b7;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(4, 71, 86, 0.35); }
+.buttonColor19:hover, .buttonColor19:focus {
+    background-color: #0cc0e7;
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #32d2f4, #0baccf);
+    background: linear-gradient(to bottom, #32d2f4, #0baccf); }
+.buttonColor19:active {
+    background: #24b0cf; color: #076f86; }
+/* 3D */
+.button3d.buttonColor19 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #0998b7, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #0dc8f1, #0bb8dd);
+    background: linear-gradient(to bottom, #0dc8f1, #0bb8dd);
+    background-color: #0cc0e7;
+    text-shadow: none; }
+.button3d.buttonColor19:hover, .button3d.buttonColor19:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #0990ad, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #28d0f4, #0cbce2);
+    background: linear-gradient(to bottom, #28d0f4, #0cbce2);
+    background-color: #32d2f4; }
+.button3d.buttonColor19:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #0998b7, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #0bb8dd, #0dc8f1);
+    background: linear-gradient(to bottom, #0bb8dd, #0dc8f1);
+    background-color: #24b0cf;
+    border: 1px solid #0baccf;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);  }
+/* 線 */
+.buttonBorder.buttonColor19 {
+    color: #0cc0e7;
+    border: 2px solid #0cc0e7;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor19:hover, .buttonBorder.buttonColor19:focus {
+    background: none; color: #32d2f4; border: 2px solid #32d2f4; }
+.buttonBorder.buttonColor19:active {
+    background: none; color: #0998b7; border: 2px solid #0998b7;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,.4); }
+/* フラット */
+.buttonFlat.buttonColor19 {
+    background: #0cc0e7;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor19:hover, .buttonFlat.buttonColor19:focus {
+    color: #ffffff; background: #19ccf3; }
+.buttonFlat.buttonColor19:active {
+    background: #24b0cf; color: #08849e;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,.4); }
+
+/* 20:ロイヤルブルー -------------------------------------------------------- */
+.buttonColor20 {
+    background: -webkit-linear-gradient(top, #394bce, #2a39ab);
+    background: linear-gradient(to bottom, #394bce, #2a39ab);
+    background-color: #2f40bf;
+    border-color: #253296;
+    color: #ffffff;
+    text-shadow: 0 -1px 1px rgba(17, 23, 68, 0.35); }
+.buttonColor20:hover, .buttonColor20:focus {
+    background-color: #2f40bf;
+    color: #ffffff;
+    background: -webkit-linear-gradient(top, #4e5dd3, #2a39ab);
+    background: linear-gradient(to bottom, #4e5dd3, #2a39ab); }
+.buttonColor20:active {
+    background: #4752a7; color: #1b256d; }
+/* 3D */
+.button3d.buttonColor20 {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #253296, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #3143c7, #2d3db7);
+    background: linear-gradient(to bottom, #3143c7, #2d3db7);
+    background-color: #2f40bf;
+    text-shadow: none; }
+.button3d.buttonColor20:hover, .button3d.buttonColor20:focus {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 7px 0px #23308e, 0px 8px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #4556d1, #2e3fbb);
+    background: linear-gradient(to bottom, #4556d1, #2e3fbb);
+    background-color: #4e5dd3; }
+.button3d.buttonColor20:active {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px -1px 1px rgba(255, 255, 255, 0.15), 0px 2px 0px #253296, 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #2d3db7, #3143c7);
+    background: linear-gradient(to bottom, #2d3db7, #3143c7);
+    background-color: #4752a7;
+    border: 1px solid #2a39ab;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); }
+/* 線 */
+.buttonBorder.buttonColor20 {
+    color: #2f40bf;
+    border: 2px solid #2f40bf;
+    background: none;
+    text-shadow: none; }
+.buttonBorder.buttonColor20:hover, .buttonBorder.buttonColor20:focus {
+    background: none; color: #4e5dd3; border: 2px solid #4e5dd3; }
+.buttonBorder.buttonColor20:active {
+    background: none; color: #253296; border: 2px solid #253296;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,.4); }
+/* フラット */
+.buttonFlat.buttonColor20 {
+    background: #2f40bf;
+    text-shadow: none;
+    border: none; }
+.buttonFlat.buttonColor20:hover, .buttonFlat.buttonColor20:focus {
+    color: #ffffff; background: #394bce; }
+.buttonFlat.buttonColor20:active {
+    background: #4752a7; color: #202b82; 
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,.4); }
+
+/* ------------------------------------------------ */
+/* buttonColorで上書きされたスタイルをさらに上書きするスタイル */
+.buttonBorder.buttonColor01:active,
+.buttonBorder.buttonColor02:active,
+.buttonBorder.buttonColor03:active,
+.buttonBorder.buttonColor04:active,
+.buttonBorder.buttonColor05:active,
+.buttonBorder.buttonColor06:active,
+.buttonBorder.buttonColor07:active,
+.buttonBorder.buttonColor08:active,
+.buttonBorder.buttonColor09:active,
+.buttonBorder.buttonColor10:active,
+.buttonBorder.buttonColor11:active,
+.buttonBorder.buttonColor12:active,
+.buttonBorder.buttonColor13:active,
+.buttonBorder.buttonColor14:active,
+.buttonBorder.buttonColor15:active,
+.buttonBorder.buttonColor16:active,
+.buttonBorder.buttonColor17:active,
+.buttonBorder.buttonColor18:active,
+.buttonFlat.buttonColor01:active,
+.buttonFlat.buttonColor02:active,
+.buttonFlat.buttonColor03:active,
+.buttonFlat.buttonColor04:active,
+.buttonFlat.buttonColor05:active,
+.buttonFlat.buttonColor06:active,
+.buttonFlat.buttonColor07:active,
+.buttonFlat.buttonColor08:active,
+.buttonFlat.buttonColor09:active,
+.buttonFlat.buttonColor10:active,
+.buttonFlat.buttonColor11:active,
+.buttonFlat.buttonColor12:active,
+.buttonFlat.buttonColor13:active,
+.buttonFlat.buttonColor14:active,
+.buttonFlat.buttonColor15:active,
+.buttonFlat.buttonColor16:active,
+.buttonFlat.buttonColor17:active,
+.buttonFlat.buttonColor18:active{
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3), 0 1px 0 rgba(255,255,255,.3);
+    text-shadow: 0 1px 0 rgba(255,255,255,.4);
+}
+/* ------------------------------------------------ */
+/* spanに変なスタイルついてるから消す奴 */
+.l-homeranText span{margin:0;padding:0;}
+/* fontパターン */
+.font02{font-family: "Arial", sans-serif;}
+.buttonFontSS{
+    font-size: 12px;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    padding: 5px 10px;
+}
+.buttonFontS{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding: 7px 10px;
+}
+.buttonFontL{
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    padding: 10px 20px;
+}
+.buttonFontLL {
+    font-size: 2rem;
+    line-height: 3rem;
+    padding: 10px 24px;
+}
+.buttonFontXL {
+    font-size: 3rem;
+    line-height: 4rem;
+    padding: 10px 40px;
+}
+/* 角を丸める */
+.radius3{border-radius:3px;}
+.radius8{border-radius:8px;}
+.radius16{border-radius:16px;}
+.radius20{border-radius:20px;}
+.radius40{border-radius:40px;}
+/* ------------------------------------------------ */
+.c-green{color:#23b744;}
+.c-rose{color:#e81780;}
+.break{display: inline-block;}
+
+/* ボタン用、文字サイズが自由な時の設定 */
+.edit_Sizing{
+    line-height: 1.3em;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+}
+
+/*-----------------------------
+		　色変更用クラス
+-----------------------------*/
+/*---　文字色関連　---*/
+.clr11,.table_area th.clr11,.table_area td.clr11,.list_area .clr11 .txt,.list_area .clr11 .htxt{color: #ffffff !important;}
+.clr12,.table_area th.clr12,.table_area td.clr12,.list_area .clr12 .txt,.list_area .clr12 .htxt{color: #cccccc !important;}
+.clr13,.table_area th.clr13,.table_area td.clr13,.list_area .clr13 .txt,.list_area .clr13 .htxt{color: #999999 !important;}
+.clr14,.table_area th.clr14,.table_area td.clr14,.list_area .clr14 .txt,.list_area .clr14 .htxt{color: #333333 !important;}
+.clr15,.table_area th.clr15,.table_area td.clr15,.list_area .clr15 .txt,.list_area .clr15 .htxt{color: #000000 !important;}
+
+.clr21,.table_area th.clr21,.table_area td.clr21,.list_area .clr21 .txt,.list_area .clr21 .htxt{color: #ffccd9 !important;}
+.clr22,.table_area th.clr22,.table_area td.clr22,.list_area .clr22 .txt,.list_area .clr22 .htxt{color: #ff7799 !important;}
+.clr23,.table_area th.clr23,.table_area td.clr23,.list_area .clr23 .txt,.list_area .clr23 .htxt{color: #ff2259 !important;}
+.clr24,.table_area th.clr24,.table_area td.clr24,.list_area .clr24 .txt,.list_area .clr24 .htxt{color: #dd0037 !important;}
+.clr25,.table_area th.clr25,.table_area td.clr25,.list_area .clr25 .txt,.list_area .clr25 .htxt{color: #880022 !important;}
+.clr26,.table_area th.clr26,.table_area td.clr26,.list_area .clr26 .txt,.list_area .clr26 .htxt{color: #550015 !important;}
+
+.clr31,.table_area th.clr31,.table_area td.clr31,.list_area .clr31 .txt,.list_area .clr31 .htxt{color: #fbd4d0 !important;}
+.clr32,.table_area th.clr32,.table_area td.clr32,.list_area .clr32 .txt,.list_area .clr32 .htxt{color: #f59a92 !important;}
+.clr33,.table_area th.clr33,.table_area td.clr33,.list_area .clr33 .txt,.list_area .clr33 .htxt{color: #ec4435 !important;}
+.clr34,.table_area th.clr34,.table_area td.clr34,.list_area .clr34 .txt,.list_area .clr34 .htxt{color: #ca2213 !important;}
+.clr35,.table_area th.clr35,.table_area td.clr35,.list_area .clr35 .txt,.list_area .clr35 .htxt{color: #7c150c !important;}
+.clr36,.table_area th.clr36,.table_area td.clr36,.list_area .clr36 .txt,.list_area .clr36 .htxt{color: #3e0b06 !important;}
+
+.clr41,.table_area th.clr41,.table_area td.clr41,.list_area .clr41 .txt,.list_area .clr41 .htxt{color: #faeebf !important;}
+.clr42,.table_area th.clr42,.table_area td.clr42,.list_area .clr42 .txt,.list_area .clr42 .htxt{color: #f4dd81 !important;}
+.clr43,.table_area th.clr43,.table_area td.clr43,.list_area .clr43 .txt,.list_area .clr43 .htxt{color: #eec832 !important;}
+.clr44,.table_area th.clr44,.table_area td.clr44,.list_area .clr44 .txt,.list_area .clr44 .htxt{color: #cba511 !important;}
+.clr45,.table_area th.clr45,.table_area td.clr45,.list_area .clr45 .txt,.list_area .clr45 .htxt{color: #7d650a !important;}
+.clr46,.table_area th.clr46,.table_area td.clr46,.list_area .clr46 .txt,.list_area .clr46 .htxt{color: #2f2604 !important;}
+
+.clr51,.table_area th.clr51,.table_area td.clr51,.list_area .clr51 .txt,.list_area .clr51 .htxt{color: #c5ffe4 !important;}
+.clr52,.table_area th.clr52,.table_area td.clr52,.list_area .clr52 .txt,.list_area .clr52 .htxt{color: #3dffa7 !important;}
+.clr53,.table_area th.clr53,.table_area td.clr53,.list_area .clr53 .txt,.list_area .clr53 .htxt{color: #00d675 !important;}
+.clr54,.table_area th.clr54,.table_area td.clr54,.list_area .clr54 .txt,.list_area .clr54 .htxt{color: #008147 !important;}
+.clr55,.table_area th.clr55,.table_area td.clr55,.list_area .clr55 .txt,.list_area .clr55 .htxt{color: #003d21 !important;}
+.clr56,.table_area th.clr56,.table_area td.clr56,.list_area .clr56 .txt,.list_area .clr56 .htxt{color: #001b0f !important;}
+
+.clr61,.table_area th.clr61,.table_area td.clr61,.list_area .clr61 .txt,.list_area .clr61 .htxt{color: #bfeefa !important;}
+.clr62,.table_area th.clr62,.table_area td.clr62,.list_area .clr62 .txt,.list_area .clr62 .htxt{color: #81ddf4 !important;}
+.clr63,.table_area th.clr63,.table_area td.clr63,.list_area .clr63 .txt,.list_area .clr63 .htxt{color: #32c8ee !important;}
+.clr64,.table_area th.clr64,.table_area td.clr64,.list_area .clr64 .txt,.list_area .clr64 .htxt{color: #0e8cac !important;}
+.clr65,.table_area th.clr65,.table_area td.clr65,.list_area .clr65 .txt,.list_area .clr65 .htxt{color: #033649 !important;}
+.clr66,.table_area th.clr66,.table_area td.clr66,.list_area .clr66 .txt,.list_area .clr66 .htxt{color: #04262f !important;}
+
+.clr71,.table_area th.clr71,.table_area td.clr71,.list_area .clr71 .txt,.list_area .clr71 .htxt{color: #d4e2f2 !important;}
+.clr72,.table_area th.clr72,.table_area td.clr72,.list_area .clr72 .txt,.list_area .clr72 .htxt{color: #93b6de !important;}
+.clr73,.table_area th.clr73,.table_area td.clr73,.list_area .clr73 .txt,.list_area .clr73 .htxt{color: #4580c6 !important;}
+.clr74,.table_area th.clr74,.table_area td.clr74,.list_area .clr74 .txt,.list_area .clr74 .htxt{color: #2f5f98 !important;}
+.clr75,.table_area th.clr75,.table_area td.clr75,.list_area .clr75 .txt,.list_area .clr75 .htxt{color: #1b3757 !important;}
+.clr76,.table_area th.clr76,.table_area td.clr76,.list_area .clr76 .txt,.list_area .clr76 .htxt{color: #031634 !important;}
+
+.clr81,.table_area th.clr81,.table_area td.clr81,.list_area .clr81 .txt,.list_area .clr81 .htxt{color: #e3d6ed !important;}
+.clr82,.table_area th.clr82,.table_area td.clr82,.list_area .clr82 .txt,.list_area .clr82 .htxt{color: #bc9cd3 !important;}
+.clr83,.table_area th.clr83,.table_area td.clr83,.list_area .clr83 .txt,.list_area .clr83 .htxt{color: #9561b8 !important;}
+.clr84,.table_area th.clr84,.table_area td.clr84,.list_area .clr84 .txt,.list_area .clr84 .htxt{color: #724293 !important;}
+.clr85,.table_area th.clr85,.table_area td.clr85,.list_area .clr85 .txt,.list_area .clr85 .htxt{color: #452859 !important;}
+.clr86,.table_area th.clr86,.table_area td.clr86,.list_area .clr86 .txt,.list_area .clr86 .htxt{color: #20132a !important;}
+
+
+/*---　背景色関連　　---*/
+.bclr11,.table_area th.bclr11,.table_area td.bclr11,.imgtext_area .bclr11,.list_area .bclr11,.contact_area .bclr11 p,.tblclr th.bclr11,.tblclr td.bclr11,.machipo_area .bclr11{background-color: #ffffff !important;}
+.bclr12,.table_area th.bclr12,.table_area td.bclr12,.imgtext_area .bclr12,.list_area .bclr12,.contact_area .bclr12 p,.tblclr th.bclr12,.tblclr td.bclr12,.machipo_area .bclr12{background-color: #dddddd !important;}
+.bclr13,.table_area th.bclr13,.table_area td.bclr13,.imgtext_area .bclr13,.list_area .bclr13,.contact_area .bclr13 p,.tblclr th.bclr13,.tblclr td.bclr13,.machipo_area .bclr13{background-color: #aaaaaa !important;}
+.bclr14,.table_area th.bclr14,.table_area td.bclr14,.imgtext_area .bclr14,.list_area .bclr14,.contact_area .bclr14 p,.tblclr th.bclr14,.tblclr td.bclr14,.machipo_area .bclr14{background-color: #000000 !important;}
+.bclr15,.table_area th.bclr15,.table_area td.bclr15,.imgtext_area .bclr15,.list_area .bclr15,.contact_area .bclr15 p,.tblclr th.bclr15,.tblclr td.bclr15,.machipo_area .bclr15{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#dddddd', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#dddddd', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #dddddd, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #dddddd, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #dddddd, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#dddddd), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #dddddd, #ffffff) !important;
+	background-image: linear-gradient(top, #dddddd, #ffffff) !important;
+}
+
+.bclr21,.table_area th.bclr21,.table_area td.bclr21,.imgtext_area .bclr21,.list_area .bclr21,.contact_area .bclr21 p,.tblclr th.bclr21,.tblclr td.bclr21,.machipo_area .bclr21{background-color: #ffdde5 !important;}
+.bclr22,.table_area th.bclr22,.table_area td.bclr22,.imgtext_area .bclr22,.list_area .bclr22,.contact_area .bclr22 p,.tblclr th.bclr22,.tblclr td.bclr22,.machipo_area .bclr22{background-color: #ffbbcb !important;}
+.bclr23,.table_area th.bclr23,.table_area td.bclr23,.imgtext_area .bclr23,.list_area .bclr23,.contact_area .bclr23 p,.tblclr th.bclr23,.tblclr td.bclr23,.machipo_area .bclr23{background-color: #ff99b1 !important;}
+.bclr24,.table_area th.bclr24,.table_area td.bclr24,.imgtext_area .bclr24,.list_area .bclr24,.contact_area .bclr24 p,.tblclr th.bclr24,.tblclr td.bclr24,.machipo_area .bclr24{background-color: #ff668a !important;}
+.bclr25,.table_area th.bclr25,.table_area td.bclr25,.imgtext_area .bclr25,.list_area .bclr25,.contact_area .bclr25 p,.tblclr th.bclr25,.tblclr td.bclr25,.machipo_area .bclr25{background-color: #880020 !important;}
+.bclr26,.table_area th.bclr26,.table_area td.bclr26,.imgtext_area .bclr26,.list_area .bclr26,.contact_area .bclr26 p,.tblclr th.bclr26,.tblclr td.bclr26,.machipo_area .bclr26{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffdde5', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffdde5', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #ffdde5, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #ffdde5, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #ffdde5, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#ffdde5), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #ffdde5, #ffffff) !important;
+	background-image: linear-gradient(top, #ffdde5, #ffffff) !important;
+}
+
+.bclr31,.table_area th.bclr31,.table_area td.bclr31,.imgtext_area .bclr31,.list_area .bclr31,.contact_area .bclr31 p,.tblclr th.bclr31,.tblclr td.bclr31,.machipo_area .bclr31{background-color: #fcd5cf !important;}
+.bclr32,.table_area th.bclr32,.table_area td.bclr32,.imgtext_area .bclr32,.list_area .bclr32,.contact_area .bclr32 p,.tblclr th.bclr32,.tblclr td.bclr32,.machipo_area .bclr32{background-color: #f9ab9f !important;}
+.bclr33,.table_area th.bclr33,.table_area td.bclr33,.imgtext_area .bclr33,.list_area .bclr33,.contact_area .bclr33 p,.tblclr th.bclr33,.tblclr td.bclr33,.machipo_area .bclr33{background-color: #f6816f !important;}
+.bclr34,.table_area th.bclr34,.table_area td.bclr34,.imgtext_area .bclr34,.list_area .bclr34,.contact_area .bclr34 p,.tblclr th.bclr34,.tblclr td.bclr34,.machipo_area .bclr34{background-color: #ec3624 !important;}
+.bclr35,.table_area th.bclr35,.table_area td.bclr35,.imgtext_area .bclr35,.list_area .bclr35,.contact_area .bclr35 p,.tblclr th.bclr35,.tblclr td.bclr35,.machipo_area .bclr35{background-color: #5e1008 !important;}
+.bclr36,.table_area th.bclr36,.table_area td.bclr36,.imgtext_area .bclr36,.list_area .bclr36,.contact_area .bclr36 p,.tblclr th.bclr36,.tblclr td.bclr36,.machipo_area .bclr36{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fcd5cf', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fcd5cf', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #fcd5cf, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #fcd5cf, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #fcd5cf, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#fcd5cf), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #fcd5cf, #ffffff) !important;
+	background-image: linear-gradient(top, #fcd5cf, #ffffff) !important;
+}
+
+.bclr41,.table_area th.bclr41,.table_area td.bclr41,.imgtext_area .bclr41,.list_area .bclr41,.contact_area .bclr41 p,.tblclr th.bclr41,.tblclr td.bclr41,.machipo_area .bclr41{background-color: #fbf2cf !important;}
+.bclr42,.table_area th.bclr42,.table_area td.bclr42,.imgtext_area .bclr42,.list_area .bclr42,.contact_area .bclr42 p,.tblclr th.bclr42,.tblclr td.bclr42,.machipo_area .bclr42{background-color: #f8eab0 !important;}
+.bclr43,.table_area th.bclr43,.table_area td.bclr43,.imgtext_area .bclr43,.list_area .bclr43,.contact_area .bclr43 p,.tblclr th.bclr43,.tblclr td.bclr43,.machipo_area .bclr43{background-color: #f4dd81 !important;}
+.bclr44,.table_area th.bclr44,.table_area td.bclr44,.imgtext_area .bclr44,.list_area .bclr44,.contact_area .bclr44 p,.tblclr th.bclr44,.tblclr td.bclr44,.machipo_area .bclr44{background-color: #f1d052 !important;}
+.bclr45,.table_area th.bclr45,.table_area td.bclr45,.imgtext_area .bclr45,.list_area .bclr45,.contact_area .bclr45 p,.tblclr th.bclr45,.tblclr td.bclr45,.machipo_area .bclr45{background-color: #ba9715 !important;}
+.bclr46,.table_area th.bclr46,.table_area td.bclr46,.imgtext_area .bclr46,.list_area .bclr46,.contact_area .bclr46 p,.tblclr th.bclr46,.tblclr td.bclr46,.machipo_area .bclr46{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fbf2cf', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fbf2cf', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #fbf2cf, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #fbf2cf, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #fbf2cf, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#fbf2cf), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #fbf2cf, #ffffff) !important;
+	background-image: linear-gradient(top, #fbf2cf, #ffffff) !important;
+}
+
+.bclr51,.table_area th.bclr51,.table_area td.bclr51,.imgtext_area .bclr51,.list_area .bclr51,.contact_area .bclr51 p,.tblclr th.bclr51,.tblclr td.bclr51,.machipo_area .bclr51{background-color: #d6ffec !important;}
+.bclr52,.table_area th.bclr52,.table_area td.bclr52,.imgtext_area .bclr52,.list_area .bclr52,.contact_area .bclr52 p,.tblclr th.bclr52,.tblclr td.bclr52,.machipo_area .bclr52{background-color: #a3ffd4 !important;}
+.bclr53,.table_area th.bclr53,.table_area td.bclr53,.imgtext_area .bclr53,.list_area .bclr53,.contact_area .bclr53 p,.tblclr th.bclr53,.tblclr td.bclr53,.machipo_area .bclr53{background-color: #81ffc5 !important;}
+.bclr54,.table_area th.bclr54,.table_area td.bclr54,.imgtext_area .bclr54,.list_area .bclr54,.contact_area .bclr54 p,.tblclr th.bclr54,.tblclr td.bclr54,.machipo_area .bclr54{background-color: #00c56b !important;}
+.bclr55,.table_area th.bclr55,.table_area td.bclr55,.imgtext_area .bclr55,.list_area .bclr55,.contact_area .bclr55 p,.tblclr th.bclr55,.tblclr td.bclr55,.machipo_area .bclr55{background-color: #004e2a !important;}
+.bclr56,.table_area th.bclr56,.table_area td.bclr56,.imgtext_area .bclr56,.list_area .bclr56,.contact_area .bclr56 p,.tblclr th.bclr56,.tblclr td.bclr56,.machipo_area .bclr56{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#c5ffe4', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#c5ffe4', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #c5ffe4, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #c5ffe4, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #c5ffe4, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#c5ffe4), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #c5ffe4, #ffffff) !important;
+	background-image: linear-gradient(top, #c5ffe4, #ffffff) !important;
+}
+
+.bclr61,.table_area th.bclr61,.table_area td.bclr61,.imgtext_area .bclr61,.list_area .bclr61,.contact_area .bclr61 p,.tblclr th.bclr61,.tblclr td.bclr61,.machipo_area .bclr61{background-color: #cff2fb !important;}
+.bclr62,.table_area th.bclr62,.table_area td.bclr62,.imgtext_area .bclr62,.list_area .bclr62,.contact_area .bclr62 p,.tblclr th.bclr62,.tblclr td.bclr62,.machipo_area .bclr62{background-color: #b0eaf8 !important;}
+.bclr63,.table_area th.bclr63,.table_area td.bclr63,.imgtext_area .bclr63,.list_area .bclr63,.contact_area .bclr63 p,.tblclr th.bclr63,.tblclr td.bclr63,.machipo_area .bclr63{background-color: #81ddf4 !important;}
+.bclr64,.table_area th.bclr64,.table_area td.bclr64,.imgtext_area .bclr64,.list_area .bclr64,.contact_area .bclr64 p,.tblclr th.bclr64,.tblclr td.bclr64,.machipo_area .bclr64{background-color: #52d0f1 !important;}
+.bclr65,.table_area th.bclr65,.table_area td.bclr65,.imgtext_area .bclr65,.list_area .bclr65,.contact_area .bclr65 p,.tblclr th.bclr65,.tblclr td.bclr65,.machipo_area .bclr65{background-color: #0c728d !important;}
+.bclr66,.table_area th.bclr66,.table_area td.bclr66,.imgtext_area .bclr66,.list_area .bclr66,.contact_area .bclr66 p,.tblclr th.bclr66,.tblclr td.bclr66,.machipo_area .bclr66{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#bfeefa', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#bfeefa', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #bfeefa, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #bfeefa, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #bfeefa, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#bfeefa), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #bfeefa, #ffffff) !important;
+	background-image: linear-gradient(top, #bfeefa, #ffffff) !important;
+}
+
+.bclr71,.table_area th.bclr71,.table_area td.bclr71,.imgtext_area .bclr71,.list_area .bclr71,.contact_area .bclr71 p,.tblclr th.bclr71,.tblclr td.bclr71,.machipo_area .bclr71{background-color: #e1ebf6 !important;}
+.bclr72,.table_area th.bclr72,.table_area td.bclr72,.imgtext_area .bclr72,.list_area .bclr72,.contact_area .bclr72 p,.tblclr th.bclr72,.tblclr td.bclr72,.machipo_area .bclr72{background-color: #bad0ea !important;}
+.bclr73,.table_area th.bclr73,.table_area td.bclr73,.imgtext_area .bclr73,.list_area .bclr73,.contact_area .bclr73 p,.tblclr th.bclr73,.tblclr td.bclr73,.machipo_area .bclr73{background-color: #93b6de !important;}
+.bclr74,.table_area th.bclr74,.table_area td.bclr74,.imgtext_area .bclr74,.list_area .bclr74,.contact_area .bclr74 p,.tblclr th.bclr74,.tblclr td.bclr74,.machipo_area .bclr74{background-color: #6c9cd2 !important;}
+.bclr75,.table_area th.bclr75,.table_area td.bclr75,.imgtext_area .bclr75,.list_area .bclr75,.contact_area .bclr75 p,.tblclr th.bclr75,.tblclr td.bclr75,.machipo_area .bclr75{background-color: #172f4b !important;}
+.bclr76,.table_area th.bclr76,.table_area td.bclr76,.imgtext_area .bclr76,.list_area .bclr76,.contact_area .bclr76 p,.tblclr th.bclr76,.tblclr td.bclr76,.machipo_area .bclr76{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#bad1ea', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#bad1ea', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #bad1ea, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #bad1ea, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #bad1ea, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#bad1ea), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #bad1ea, #ffffff) !important;
+	background-image: linear-gradient(top, #bad1ea, #ffffff) !important;
+}
+
+.bclr81,.table_area th.bclr81,.table_area td.bclr81,.imgtext_area .bclr81,.list_area .bclr81,.contact_area .bclr81 p,.tblclr th.bclr81,.tblclr td.bclr81,.machipo_area .bclr81{background-color: #ebe2f2 !important;}
+.bclr82,.table_area th.bclr82,.table_area td.bclr82,.imgtext_area .bclr82,.list_area .bclr82,.contact_area .bclr82 p,.tblclr th.bclr82,.tblclr td.bclr82,.machipo_area .bclr82{background-color: #d4bfe2 !important;}
+.bclr83,.table_area th.bclr83,.table_area td.bclr83,.imgtext_area .bclr83,.list_area .bclr83,.contact_area .bclr83 p,.tblclr th.bclr83,.tblclr td.bclr83,.machipo_area .bclr83{background-color: #bc9cd3 !important;}
+.bclr84,.table_area th.bclr84,.table_area td.bclr84,.imgtext_area .bclr84,.list_area .bclr84,.contact_area .bclr84 p,.tblclr th.bclr84,.tblclr td.bclr84,.machipo_area .bclr84{background-color: #a578c3 !important;}
+.bclr85,.table_area th.bclr85,.table_area td.bclr85,.imgtext_area .bclr85,.list_area .bclr85,.contact_area .bclr85 p,.tblclr th.bclr85,.tblclr td.bclr85,.machipo_area .bclr85{background-color: #20132a !important;}
+.bclr86,.table_area th.bclr86,.table_area td.bclr86,.imgtext_area .bclr86,.list_area .bclr86,.contact_area .bclr86 p,.tblclr th.bclr86,.tblclr td.bclr86,.machipo_area .bclr86{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e3d6ed', endColorstr = '#ffffff') !important;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e3d6ed', endColorstr = '#ffffff')" !important;
+	background-image: -moz-linear-gradient(top, #e3d6ed, #ffffff) !important;
+	background-image: -ms-linear-gradient(top, #e3d6ed, #ffffff) !important;
+	background-image: -o-linear-gradient(top, #e3d6ed, #ffffff) !important;
+	background-image: -webkit-gradient(linear, center top, center bottom, from(#e3d6ed), to(#ffffff)) !important;
+	background-image: -webkit-linear-gradient(top, #e3d6ed, #ffffff) !important;
+	background-image: linear-gradient(top, #e3d6ed, #ffffff) !important;
+}
+
+
+/*---　ボーダー色関連　　---*/
+.bdclr11,.bdclr11 th,.bdclr11 td{border-color: #ffffff !important;}
+.bdclr12,.bdclr12 th,.bdclr12 td{border-color: #cccccc !important;}
+.bdclr13,.bdclr13 th,.bdclr13 td{border-color: #999999 !important;}
+.bdclr14,.bdclr14 th,.bdclr14 td{border-color: #333333 !important;}
+.bdclr15,.bdclr15 th,.bdclr15 td{border-color: #000000 !important;}
+
+.bdclr21,.bdclr21 th,.bdclr21 td{border-color: #ffccd9 !important;}
+.bdclr22,.bdclr22 th,.bdclr22 td{border-color: #ff7799 !important;}
+.bdclr23,.bdclr23 th,.bdclr23 td{border-color: #ff2259 !important;}
+.bdclr24,.bdclr24 th,.bdclr24 td{border-color: #dd0037 !important;}
+.bdclr25,.bdclr25 th,.bdclr25 td{border-color: #880022 !important;}
+.bdclr26,.bdclr26 th,.bdclr26 td{border-color: #550015 !important;}
+
+.bdclr31,.bdclr31 th,.bdclr31 td{border-color: #fbd4d0 !important;}
+.bdclr32,.bdclr32 th,.bdclr32 td{border-color: #f59a92 !important;}
+.bdclr33,.bdclr33 th,.bdclr33 td{border-color: #ec4435 !important;}
+.bdclr34,.bdclr34 th,.bdclr34 td{border-color: #ca2213 !important;}
+.bdclr35,.bdclr35 th,.bdclr35 td{border-color: #7c150c !important;}
+.bdclr36,.bdclr36 th,.bdclr36 td{border-color: #3e0b06 !important;}
+
+.bdclr41,.bdclr41 th,.bdclr41 td{border-color: #faeebf !important;}
+.bdclr42,.bdclr42 th,.bdclr42 td{border-color: #f4dd81 !important;}
+.bdclr43,.bdclr43 th,.bdclr43 td{border-color: #eec832 !important;}
+.bdclr44,.bdclr44 th,.bdclr44 td{border-color: #cba511 !important;}
+.bdclr45,.bdclr45 th,.bdclr45 td{border-color: #7d650a !important;}
+.bdclr46,.bdclr46 th,.bdclr46 td{border-color: #2f2604 !important;}
+
+.bdclr51,.bdclr51 th,.bdclr51 td{border-color: #c5ffe4 !important;}
+.bdclr52,.bdclr52 th,.bdclr52 td{border-color: #3dffa7 !important;}
+.bdclr53,.bdclr53 th,.bdclr53 td{border-color: #00d675 !important;}
+.bdclr54,.bdclr54 th,.bdclr54 td{border-color: #008147 !important;}
+.bdclr55,.bdclr55 th,.bdclr55 td{border-color: #003d21 !important;}
+.bdclr56,.bdclr56 th,.bdclr56 td{border-color: #001b0f !important;}
+
+.bdclr61,.bdclr61 th,.bdclr61 td{border-color: #bfeefa !important;}
+.bdclr62,.bdclr62 th,.bdclr62 td{border-color: #81ddf4 !important;}
+.bdclr63,.bdclr63 th,.bdclr63 td{border-color: #32c8ee !important;}
+.bdclr64,.bdclr64 th,.bdclr64 td{border-color: #0e8cac !important;}
+.bdclr65,.bdclr65 th,.bdclr65 td{border-color: #033649 !important;}
+.bdclr66,.bdclr66 th,.bdclr66 td{border-color: #04262f !important;}
+
+.bdclr71,.bdclr71 th,.bdclr71 td{border-color: #d4e2f2 !important;}
+.bdclr72,.bdclr72 th,.bdclr72 td{border-color: #93b6de !important;}
+.bdclr73,.bdclr73 th,.bdclr73 td{border-color: #4580c6 !important;}
+.bdclr74,.bdclr74 th,.bdclr74 td{border-color: #2f5f98 !important;}
+.bdclr75,.bdclr75 th,.bdclr75 td{border-color: #1b3757 !important;}
+.bdclr76,.bdclr76 th,.bdclr76 td{border-color: #031634 !important;}
+
+.bdclr81,.bdclr81 th,.bdclr81 td{border-color: #e3d6ed !important;}
+.bdclr82,.bdclr82 th,.bdclr82 td{border-color: #bc9cd3 !important;}
+.bdclr83,.bdclr83 th,.bdclr83 td{border-color: #9561b8 !important;}
+.bdclr84,.bdclr84 th,.bdclr84 td{border-color: #724293 !important;}
+.bdclr85,.bdclr85 th,.bdclr85 td{border-color: #452859 !important;}
+.bdclr86,.bdclr86 th,.bdclr86 td{border-color: #20132a !important;}

@@ -1,0 +1,2098 @@
+@charset "UTF-8";
+
+/*------------------------------------------
+	クラス定義
+-------------------------------------------*/
+
+/*---　ヘッダ関連　　---*/
+.hd_s{				/*ヘッダ高さ1*/
+	height: 50px;
+}
+.hd_m{				/*ヘッダ高さ2*/
+	height: 70px;
+}
+.hd_l{				/*ヘッダ高さ3*/
+	height: 100px;
+}
+
+/*---　文字関連　　---*/
+.xlchar,table .xlchar{					/*特大文字*/
+	font-size: 36px;font-size: 2.25rem;
+}
+.lchar,table .lchar{						/*大文字*/
+	font-size: 24px;font-size: 1.5rem;
+}
+.mchar{						/*中文字*/
+	font-size: 16px; font-size:1.0rem;
+}
+table .mchar{			/*表パーツのみMのサイズはデフォルトと同じものとする*/
+	font-size: 14px; font-size:0.875rem;
+}
+.schar,table .schar{						/*小文字*/
+	font-size: 12px; font-size:0.75rem;
+}
+.xschar,table .xschar{						/*極小文字*/
+	font-size: 8px; font-size:0.5rem;
+}
+
+.bld,.hd_area .bld{						/*太字*/
+	font-weight: bold;
+}
+.uline{						/*下線*/
+	text-decoration:underline;
+}
+
+/*---　画像関連　　---*/
+.img100{				/*画像フル表示*/
+	width: 100%;
+}
+.img80{				/*画像 80%*/
+	width: 80%;
+}
+.img60{				/*画像 60%*/
+	width: 60%;
+}
+.img50{				/*画像50%*/
+	width: 50%;
+}
+.img40 {			/*画像 40%*/
+	width: 40%;
+}
+.img30{				/*画像 30%*/
+	width: 30%;
+}
+.img20{				/*画像 20%*/
+	width: 20%;
+}
+
+.img_l{				/*画像左寄せ*/
+	float:left;
+}
+.img_r{				/*画像右寄せ*/
+	float:right;
+}
+
+/* ↓画像+テキストパーツ用　テキストが長いときに画像下に回り込まないようにする↓*/
+.imgtxtclr{
+	overflow: hidden;
+}
+
+/*---　位置関連　　---*/
+.line_l,.line_l th,.line_l td{		/*左に配置*/
+	text-align: left;	
+}
+.l-snsButton.line_l{
+    justify-content: flex-start;
+}
+.posi_l{						/*画像パーツ用*/
+	margin-right: auto;
+	margin-left: 0;
+}
+.img_area .posi_l{				/*画像パーツだけ余白*/
+	margin-left: 8px;
+}
+.line_m,.line_m th,.line_m td{		/*中央に配置*/
+	text-align: center;
+}
+.posi_c{						/*画像パーツ用*/
+	margin:0 auto;
+}
+.line_r,.line_r th,.line_r td{		/*右に配置*/
+	text-align: right;	
+}
+.l-snsButton.line_r{
+    justify-content: flex-end;
+}
+.posi_r{
+	margin-left: auto;
+	margin-right: 0;
+}
+.img_area .posi_r{				/*画像パーツだけ余白*/
+	margin-right: 8px;
+}
+.pd_5{				/*枠余白用1*/
+	padding:5px;
+}
+.pd_10{				/*枠余白用2*/
+	padding:10px;
+}
+.pd_15{				/*枠余白用3*/
+	padding:15px;
+}
+.pdb_0{				/*テキストパーツの<p>用　下のpadding4pxを0に*/
+	padding-bottom: 0;
+}
+.mgb_20{				/*枠余白用1*/
+	margin-bottom: 20px;
+}
+.mgb_40{			/*下余白用2*/
+	margin-bottom: 40px;
+}
+.mgb_80{			/*下余白用3*/
+	margin-bottom: 80px;
+}
+.mgrl_0{				/*左右余白なし(画像パーツ以外に使用)*/
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/*---　装飾関連　　---*/
+.bd_n,.bd_n th, .bd_n td{					/*枠無*/
+	border-style: none;
+}
+.bd_s{					/*枠(1本線)*/
+	border-width: 1px;
+	border-style: solid;
+}
+.gimgtrm .bd_s{			/*ギャラリーパーツの画面内コメントの時*/
+	border-style: none;
+}
+.bd_d{					/*枠（2本線）*/
+	border-width: 4px;
+	border-style: double;
+}
+.bdbtm{
+	border-bottom-width: 2px;
+	border-bottom-style: solid;	
+}
+.ldb_1{							/*見出し用*/
+	border-left-width: 4px;
+	border-left-style: solid;
+	padding-left: 5px;
+}
+.ldb_2{							/*見出し用*/
+	border-left-width: 10px;
+	border-left-style: solid;
+	padding-left: 5px;
+}
+
+/*---　パーツ関連　　---*/
+.tblsp, .table_area .tblsp{		/*表セルの分離化*/
+	border-collapse: separate;
+	border-spacing: 3px;
+}
+
+/*---　リストパターン　　---*/
+/*リストパターン１*/
+.list1{
+	border: none;				/*list0のリセット*/
+}
+.list1 li{
+	border-bottom: 1px solid #2e4d64;
+}
+.list1 li:first-child{
+	border-top: 1px solid #2e4d64;
+}
+.list1 .listh{
+	border-top: none;
+}
+
+/*リストパターン2*/
+.list2{
+	border: none;				/*list0のリセット*/
+	border: 1px solid #aaa;
+	border-radius: 4px;
+}
+.list2 li{
+	border: none;				/*list0のリセット*/
+	border-top: 1px solid #aaa;
+}
+.list2 li:first-child{
+	border-top: none;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.list2 li:last-child{				/*線のradiusと背景色が入るエリアのradiusを合わせる*/
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+/*リストパターン3*/
+.list3{
+	border: none;				/*list0のリセット*/
+}
+.list3 li{
+	border-bottom: 1px dashed #111111;
+}
+.list3 li:last-child{
+	border-bottom: 1px solid #111111;
+}
+
+/*リストパターン4*/
+.list4{
+	border: none;				/*list0のリセット*/
+}
+.list4 li{
+	border: 1px solid #111111;
+	margin-bottom: 5px;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.list4 li a{
+	border-radius: 4px;		/*背景色がradiusからはみ出ることを防止*/
+}
+
+
+/*地図パーツ*/
+.maph_s{
+	height: 150px;
+}
+.maph_m{
+	height: 200px;
+}
+.maph_l{
+	height: 300px;
+}
+.mapw_s{
+	width: 60%;
+}
+.mapw_m{
+	width: 80%;
+}
+.mapw_l{
+	width: 100%;
+}
+
+/*電話番号パーツ パターン１*/
+.telbtn1{
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 0px #cccccc;
+	border: 1px solid #cccccc;
+	border-radius: 6px;
+	padding: 10px;
+}
+.telbtn1::before,.telbtn1::after{
+	position: absolute;
+	width: 60%;
+	height: 20px;
+	content: "";
+	box-shadow: 0 30px 10px #777777;
+	left: 10px;
+	bottom: 30px;
+    transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+	z-index: -1;
+}
+.telbtn1::after{
+    left: auto;
+    right: 10px;
+    transform: rotate(2deg);
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+}
+
+/*電話番号パーツ　デザインパターン２*/
+.telbtn2{
+	display: block;
+	text-shadow: 1px 1px 0px #cccccc;
+	padding: 10px;
+	border-top: 1px solid #eeeeee;
+	border-left: 1px solid #eeeeee;
+	border-bottom: 2px solid #dddddd;
+	border-right: 2px solid #dddddd;
+	border-radius: 6px;
+	box-shadow: 1px 1px 4px #eeeeee;
+}
+
+/*電話番号パーツ　デザインパターン３*/
+.telbtn3{
+	display: block;
+	border: 1px solid #bbbbbb;
+	border-radius: 6px;
+	padding: 10px;
+	text-align: center;
+}
+
+/*SNSパーツ*/
+.sns_l img{
+	width: 60px;
+}
+.sns_s img{
+	width: 40px;
+}
+/* インスタアイコン */
+.sns_s .insta_btn {
+  display: inline-block;
+  text-align: center;/*中央揃え*/
+  margin: 5px;
+}
+
+.sns_s .insta_btn .insta{/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 29px;/*幅*/
+  height: 29px;/*高さ*/
+  vertical-align: middle;/*垂直中央に*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 6px;/*角丸に*/
+}
+
+.sns_s .insta_btn .insta:before{/*グラデーションを重ねるため*/
+  content: '';
+  position: absolute;/*絶対配置*/
+  top: 14px;/*ずらす*/
+  left: -13px;/*ずらす*/
+  width: 45px;/*グラデーションカバーの幅*/
+  height: 45px;/*グラデーションカバーの高さ*/
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);/*グラデーション②*/
+}
+
+.sns_s .insta_btn .fa-instagram {/*アイコン*/
+  color: #FFF;/*白に*/
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 20px;/*アイコンサイズ*/
+  line-height: 26px;/*高さと合わせる*/
+}
+
+/* snsボタン、fontawesome版 */
+.sns_s .snsButton {
+  display: inline-block;
+  letter-spacing:normal;
+  width: 32px; height: 32px;
+  margin:0 6px; padding:0;
+  position: relative;
+  font-size: 18px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+  overflow: hidden;
+  color: #fff;
+}
+.sns_s .snsButton i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/* Line */
+.sns_s .sns_line{
+    background:#00c300;
+    color:#00c300;
+    font-size:30px;
+}
+/* Line 吹き出しの部分を白くするために、白い背景を間に挟む */
+.sns_s .sns_line:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width:24px;
+    height:24px;
+    background:#fff;
+    border-radius:10px;
+    z-index:2;
+ }
+
+/* Insta Sサイズ */
+.sns_s .sns_insta{ 
+    font-size :22px; 
+    background:#f13f79;
+}
+
+.sns_s .radiusHarf{
+    border-radius: 50%;
+}
+
+/*ギャラリーパーツ(グリッド)*/
+.imgl .gimgtrm{				/*ギャラリー画像サイズ　Ｌ*/
+	width: 285px;
+	height: 285px;
+}
+.imgl p{
+	width: 285px;
+	font-size: 16px; font-size:1.0rem;
+}
+.imgm .gimgtrm{				/*ギャラリー画像サイズ　Ｍ*/
+	width: 140px;
+	height: 140px;
+}
+.imgm p{
+	width: 140px;
+}
+.imgs .gimgtrm{				/*ギャラリー画像サイズ　Ｓ*/
+	width: 92px;
+	height: 92px;
+}
+.imgs p{
+	width: 92px;
+	font-size: 10px; font-size:0.625rem;
+}
+.circle {			/*画像を円形に*/
+	border-radius: 60%;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* #2619の暫定対策 */
+}
+.viewptn2 .gimgtrm{			/*長辺基準サイズ　中央配置用*/
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.viewptn2 .gimgtrm img{
+	position: static;
+}
+
+/*スライドショーパーツ*/
+.imgh_l{height: 500px;}	/*画像縦サイズ固定 Ｌ*/
+.imgh_l li{height: 500px;}
+@media screen and (max-width: 480px) { /* 端末幅480px以下の場合 */
+	.imgh_l{height: 350px;}
+	.imgh_l li{height: 350px;}
+}
+.imgh_m{height: 380px;}        /*画像縦サイズ固定 Ｍ*/
+.imgh_m li{height: 380px;}
+@media screen and (max-width: 650px) {    /* 端末幅650px以下の場合 */
+    .imgh_m{height: 300px;}
+    .imgh_m li{height: 300px;}
+}
+@media screen and (max-width: 480px) {    /* 端末幅480px以下の場合 */
+    .imgh_m{height: 210px;}
+    .imgh_m li{height: 210px;}
+}
+.imgh_s{height: 200px;}		/*画像縦サイズ固定 Ｓ*/
+.imgh_s li{height: 200px;}
+@media screen and (max-width: 480px) {	/* 端末幅480px以下の場合 */
+	.imgh_s{height: 140px;}
+	.imgh_s li{height: 140px;}
+}
+.s_viewptn1 li,.s_viewptn2 li {		/*画像表示設定*/
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.s_viewptn1 li {					/*全体表示*/
+	background-size: cover;
+}
+.s_viewptn2 li {					/*拡大表示*/
+	background-size: contain;
+}
+.pager2 button{border-radius: 0;}	/*ページマーク 四角*/
+.prev2{background-position: 0 -40px;}	/*矢印パターン2*/
+.prev2:hover, .prev2:active{
+	background-position: -76px -40px;
+}
+.next2{background-position: -40px -40px;} /*矢印パターン2*/
+.next2:hover, .next2:active{
+	background-position: -114px -40px;
+}
+.prev3{background-position: 0 -80px;}	/*矢印パターン3*/
+.prev3:hover, .prev3:active{
+	background-position: -76px -80px;
+}
+.next3{background-position: -40px -80px;} /*矢印パターン3*/
+.next3:hover, .next3:active{
+	background-position: -114px -80px;
+}
+
+/*クーポンパーツ パターン２*/
+.cpnptn2{
+	border: 1px solid #000000;
+	padding-bottom: 5px;
+	max-width: 640px;
+}
+.cpnptn2 .hdcpn,.cpnptn2 .ftcpn{
+	height: 10px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/51/190_30.png) repeat-x;
+}
+/*クーポンパーツ パターン３*/
+.cpnptn3{
+	border-top: none;
+	border-bottom: solid 10px #21140f;
+	border-left: solid 3px #21140f;
+	border-right: solid 3px #21140f;
+	max-width: 400px;
+}
+.cpnptn3 .cpnimg_imgbd{				/*クーポンデザインパターン３*/
+	float:none;
+	width: 60%;
+	margin:	0 auto;
+}
+.cpnptn3 h2,.cpnptn3 .cpntext{
+	text-align: center;
+	margin: 8px 0 4px 0;
+}
+.cpnptn3 .showcpn p,.cpnptn3 .usecpn p,.cpnptn3 .limitcpn p{
+	text-decoration: underline;
+}
+.cpnptn3 .hdcpn{
+	height: 40px;
+}
+/*クーポンパーツ パターン４*/
+.cpnptn4{
+	border: 6px solid #ffa954;
+	border-radius: 5px;
+	padding-bottom: 0;
+	max-width: 400px;
+}
+.cpnptn4 .cpnimg_imgbd{
+	float:none;
+	width: 60%;
+	margin:	0 auto;
+}
+.cpnptn4 .cpntext{margin: 0;}
+.cpnptn4 h2,.cpnptn4 .cpntext{
+	text-align: center;
+	margin-top: 8px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.cpnptn4 .showcpn p,.cpnptn4 .usecpn p,.cpnptn4 .limitcpn p{
+	font-size: 12px; font-size:0.75rem;
+}
+/*クーポンパーツ パターン５*/
+.cpnptn5{
+	position: relative;
+	overflow: visible;
+	border-style: solid;
+	border-bottom-width: 20px;
+	margin-top: 14px;
+	max-width: 400px;
+}
+.cpnptn5 .cpnimg_imgbd{
+	float:none;
+	width: 40%;
+	margin:	0 auto;
+	margin-top: 20px;
+}
+.cpnptn5 .cpntext{
+	text-align: center;
+	margin-top: 26px;
+}
+.cpnptn5 .cpnimg_imgbd + .cpntext{
+	margin-top: 0;
+}
+.cpnptn5 .cpntext .aboutcpn{font-weight: bold;}
+.cpnptn5 .cpntext .limitcpn{
+	margin-bottom: 10px;
+}
+.cpnptn5 .hdcpn{
+	position: absolute;
+	top: -20px;
+	right: -14px;
+}
+.cpnptn5 .ftcpn{
+	border-bottom: 4px solid #fc4673;
+}
+.cpnptn5 h2{
+	font-size: 32px; font-size:2.0rem;
+}
+/*クーポンパーツ パターン６*/
+.cpnptn6{
+	padding-bottom: 0;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/50/327_216.png) top left repeat;
+	background-color: #eeeeee;	/*color●●.cssに書くと上書きされてしまうため*/
+	border: 6px solid #7abac0;
+	max-width: 640px;
+}
+.cpnptn6 .cpnimg_imgbd{
+	float: right;
+	margin-right: 10px;
+}
+.cpnptn6 .hdcpn{
+	height: 10px;
+}
+.cpnptn6 .cpntext p{font-size: 12px; font-size:0.75rem;}
+.cpnptn6 .aboutcpn p{font-size: 16px; font-size:1.0rem;}
+.cpnptn6 .ftcpn{height: 10px;}
+/*クーポンパーツ パターン７*/
+.cpnptn7{
+	padding-bottom: 0;
+	position: relative;
+	border: 6px solid #4f81bd;
+	box-shadow: 5px 5px 8px -5px rgba(0, 0, 0, 0.8);
+	max-width: 640px;
+}
+.cpnptn7::before{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 110px;
+	height: 52px;
+	transform: rotate(-34deg);
+	-moz-transform: rotate(-34deg);
+	-webkit-transform: rotate(-34deg);
+	-o-transform: rotate(-34deg);
+	-ms-transform: rotate(-34deg);
+	box-shadow: 0 10px 8px -12px rgba(0, 0, 0, 0.8);
+	top: -18px;
+	left: -26px;
+}
+.cpnptn7 .hdcpn::after{
+	content: "Coupon";
+	font-size: 14px; font-size:0.875rem;
+	font-weight: bold;
+	position: absolute;
+	z-index: 1;
+	width: 60px;
+	top:10px;
+	left: -5px;
+	transform: rotate(-34deg);
+	-moz-transform: rotate(-34deg);
+	-webkit-transform: rotate(-34deg);
+	-o-transform: rotate(-34deg);
+	-ms-transform: rotate(-34deg);
+}
+.cpnptn7 .cpnimgtxt{
+	margin-top: 10px;
+}
+.cpnptn7 .cpnimg_imgbd{
+	float: none;
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+.cpnptn7 .cpntext{
+	display: block;
+	margin-left: 50px;
+}
+.cpnptn7 .cpnimg_imgbd + .cpntext{
+	display: table-cell;
+	vertical-align: middle;
+}
+.cpnptn7 .namecpn{
+	text-decoration: underline;
+	padding-bottom: 10px;
+}
+.cpnptn7 .showcpn{
+	margin-top: 10px;
+	clear: both;
+}
+.cpnptn7 .showcpn,.cpnptn7 .usecpn,.cpnptn7 .limitcpn{
+	font-weight: bold;
+	padding-left: 10px;
+}
+.cpnptn7 .showcpn p,.cpnptn7 .usecpn p,.cpnptn7 .limitcpn p{
+	padding-bottom: 0;
+}
+
+/*クーポンパーツ パターン８*/
+.cpnptn8{
+	position: relative;
+	border: 6px solid #ad5b5b;
+	max-width: 400px;
+}
+.cpnptn8 .cpnimg_imgbd{
+	float: none;
+	position: relative;
+	width: 280px;
+	height: 280px;
+	overflow: hidden;
+	margin: 0;
+}
+.cpnptn8 .cpnimg_imgbd img{
+	position: absolute;
+}
+.cpnptn8 .cpnimgtxt{
+	position: relative;
+	width: 280px;
+	height: 280px;
+	margin: 0 auto 10px auto;
+	overflow: hidden;
+	border: 1px solid #000;
+	text-align: center;
+}
+.cpnptn8 .cpntext{
+	position: absolute;
+	bottom: 5px;bottom: 0.5rem;
+	width: 100%;
+	margin: 0;
+}
+.cpnptn8 .aboutcpn p{
+	font-size: 12px; font-size:0.75rem;
+}
+.cpnptn8 .showcpn p,.cpnptn8 .usecpn p,.cpnptn8 .limitcpn p{
+	font-size: 12px; font-size:0.75rem;
+	text-decoration: underline;
+}
+.cpnptn8 h2{
+	font-size: 20px; font-size:1.25rem;
+	text-align: center;
+}
+
+/*--------- クーポンパターン９（すっきりオレンジ）  ---------*/
+
+/* クーポンパターン９（すっきりオレンジ） 全体 */
+.cpnptn9{
+    margin:10px 10px 20px 10px;
+    padding:20px 10px 15px 10px;
+    border:solid 1px #e6e6e6;
+    text-align:center;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn9{width:360px;}
+}
+/* クーポン名 */
+.cpnptn9 .namecpn{
+    margin-bottom: 24px;
+    padding:0;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn9 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin-bottom:14px;
+}
+/* クーポン内容（オレンジの枠内） */
+.cpnptn9 .aboutcpn{
+    margin: 0 9% 18px 9%;
+    padding:18px 5px 18px 5px;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    font-weight:bold;
+}
+.cpnptn9 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+/* クーポン有効期限 */
+.cpnptn9 .limitcpn{
+    margin: 0 5% 19px 5%;
+    padding:0;
+}
+.cpnptn9 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn9 .limitcpn p span{
+    text-decoration: underline;
+}
+/* 改行ポイント */
+.cpnptn9 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn9 .usecpn{
+    margin:0 7% 10px 7%;
+    padding:0;
+    text-align: left;
+}
+.cpnptn9 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+/* クーポン利用方法 */
+.cpnptn9 .showcpn{
+    margin:0 7% 10px 7%;
+    padding:0;
+    text-align: left;
+}
+.cpnptn9 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+/*--------- クーポンパターン10（すっきりレッド）  ---------*/
+
+/* クーポンパターン10（すっきりレッド） 全体 */
+.cpnptn10{
+    margin:10px 10px 40px 10px;
+    padding:0 0 10px 0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn10{width:360px;}
+}
+/* クーポンの枠 */
+.cpnptn10 .ponDisp{
+    margin:0 0 15px 0;
+    padding:20px 10px 0 10px;
+    border:solid 1px #e6e6e6;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn10 .namecpn{
+    margin:0 0 24px 0;
+    padding:0;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn10 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin:0 0 14px 0;
+}
+/* クーポン内容 */
+.cpnptn10 .aboutcpn{
+    margin: 0 9% 20px 9%;
+    padding:18px 5px;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    font-weight:bold;
+}
+.cpnptn10 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+/* クーポン有効期限 */
+.cpnptn10 .limitcpn{
+    margin: 0 5% 20px 5%;
+    padding:0;
+}
+.cpnptn10 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn10 .limitcpn p span{
+    text-decoration: underline;
+}
+/* 改行ポイント */
+.cpnptn10 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn10 .usecpn{
+    margin:0 10px 10px 10px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn10 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 枠 */
+.cpnptn10 .showcpn{
+    margin:0 10px 10px 10px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn10 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+
+/*--------- クーポンパターン11（すっきりグリーン）  ---------*/
+
+/* クーポンパターン11（すっきりグリーン） 全体 */
+.cpnptn11{
+    margin:10px 10px 40px 10px;
+    padding:0 0 10px 0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn11{width:360px;}
+}
+/* クーポン部分の枠 */
+.cpnptn11 .ponDisp{
+    margin:0 0 15px 0;
+    padding:20px 10px 0 10px;
+    border:solid 1px #e6e6e6;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn11 .namecpn{
+    margin:0 0 24px 0;
+    padding:0;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn11 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin:0 0 14px 0;
+}
+/* クーポン内容 */
+.cpnptn11 .aboutcpn{
+    margin: 0 9% 20px 9%;
+    padding:18px 5px;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    font-weight:bold;
+}
+.cpnptn11 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+/* クーポン有効期限 */
+.cpnptn11 .limitcpn{
+    margin: 0 5% 20px 5%;
+    padding:0;
+}
+.cpnptn11 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn11 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn11 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn11 .usecpn{
+    margin:0 10px 10px 10px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn11 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 */
+.cpnptn11 .showcpn{
+    margin:0 10px 10px 10px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn11 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+
+/*--------- クーポンパターン12（オレンジカード） ---------*/
+
+/* クーポンパターン12（オレンジカード）  全体 */
+.cpnptn12{
+    margin:10px 14px 30px 14px;
+    padding:0;
+    border:none;
+    text-align:center;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    /* box-shadow */
+    -webkit-box-shadow:rgba(70, 70, 70, 0.6) 2px 2px 7px 0;
+       -moz-box-shadow:rgba(70, 70, 70, 0.6) 2px 2px 7px 0;
+            box-shadow:rgba(70, 70, 70, 0.6) 2px 2px 7px 0;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn12{width:360px;}
+}
+/* 内側の白い部分 */
+.cpnptn12 .ponDisp{
+    margin:20px 20px 10px 20px;
+    padding:16px 0 16px 0;
+    /* box-shadow */
+    -webkit-box-shadow:rgba(204, 204, 204, 0.75) 0 0 7px 0 inset;
+       -moz-box-shadow:rgba(204, 204, 204, 0.75) 0 0 7px 0 inset;
+            box-shadow:rgba(204, 204, 204, 0.75) 0 0 7px 0 inset;
+}
+
+/* クーポン名 */
+.cpnptn12 .namecpn{
+    margin: 0 10px 24px 10px;
+    padding:0;
+    font-size:1.2rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn12 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 50%;
+    margin-bottom:14px;
+}
+/* クーポン内容 */
+.cpnptn12 .aboutcpn{
+    margin: 0 10px 0 10px;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn12 .aboutcpn p{
+    padding:0;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+/* クーポン有効期限 */
+.cpnptn12 .limitcpn{
+    margin: 0;
+    padding:8px 5px 8px 5px;
+}
+.cpnptn12 .limitcpn p{
+    padding:0;
+    font-size: 0.9rem;
+}
+/* 改行ポイント */
+.cpnptn12 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn12 .usecpn{
+    padding:0;
+    margin:0 20px 7px 20px;
+    text-align: left;
+}
+.cpnptn12 .usecpn p{
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+/* クーポン利用方法 */
+.cpnptn12 .showcpn{
+    padding:0;
+    margin:0 20px 7px 20px;
+    text-align: left;
+}
+.cpnptn12 .showcpn p{
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+
+/*--------- クーポンパターン13（ゴールドフレーム） ---------*/
+
+/* クーポンパターン13（ゴールドフレーム） 全体 */
+.cpnptn13{
+    margin:10px 10px 50px 10px;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn13{width:360px;}
+}
+/* 額縁 外枠 */
+.cpnptn13 .ponDisp{
+    margin:0 0 15px 0;
+    padding:0;
+    text-align:center;
+    border:double 7px #fbb03b;/* イレギュラー発生時は、7pxの二重線を表示 */
+    /* Image border */
+    -webkit-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+       -moz-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+         -o-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+            border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+    border:dashed 2px #fbb03b\9;/* IEは2ｐｘの点線 */
+}
+/* 額縁 内枠（IE対応のため） */
+.cpnptn13 .ponDispDuble{
+    margin:0;
+    padding:20px 10px 20px 10px;
+    text-align:center;
+    -webkit-box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+       -moz-box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+            box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+    border:double 5px #fbb03b\9;/* IEは5ｐｘの二重線 */
+}
+/* 下の灰色のテキスト部分 */
+.cpnptn13 .ponDisp2{
+    margin:3px;
+    padding:14px 15px 7px 15px;
+    border:solid 1px #e6e6e6;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn13 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn13 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 50%;
+    margin:0 0 14px 0;
+    padding:10px;
+}
+/* クーポン内容 */
+.cpnptn13 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn13 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.5rem;
+    line-height: 2.8rem;
+}
+/* クーポン有効期限 */
+.cpnptn13 .limitcpn{
+    margin: 0 0 10px 0;
+    padding:0;
+}
+.cpnptn13 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn13 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn13 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn13 .usecpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn13 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 */
+.cpnptn13 .showcpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn13 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+
+/*--------- クーポンパターン14（切り取りグリーン） ---------*/
+
+/* クーポンパターン14（切り取りグリーン） 全体 */
+.cpnptn14{
+    margin:10px 0 45px 0;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn14{width:360px;}
+}
+/* 外枠 ギザギザ */
+.cpnptn14 .ponDisp{
+    margin:10px 10px 15px 10px;
+    padding:15px;
+    text-align:center;
+    border:dotted 2px #B3B3B3;
+    /* Box shadow */
+    -webkit-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+       -moz-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+            box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+}
+/* 緑の部分 */
+.cpnptn14 .ponDispDuble{
+    margin:0;
+    padding:15px 5px 18px 5px;
+}
+/* 枠外のテキスト部分 */
+.cpnptn14 .ponDisp2{
+    margin:0 10px;
+    padding:5px 14px 5px 14px;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn14 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn14 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin:0 0 14px 0;
+    padding:3px;
+}
+/* クーポン内容 */
+.cpnptn14 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn14 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.8rem;
+    line-height: 2.6rem;
+}
+/* クーポン有効期限 */
+.cpnptn14 .limitcpn{
+    margin: 0 0 10px 0;
+    padding:0;
+}
+.cpnptn14 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn14 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn14 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn14 .usecpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn14 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 */
+.cpnptn14 .showcpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn14 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+
+/*--------- クーポンパターン15（紅白） ---------*/
+
+/* クーポンパターン15（紅白） 全体 */
+.cpnptn15{
+    margin:10px 0 45px 0;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn15{width:360px;}
+}
+/* 白い枠の部分と影 */
+.cpnptn15 .ponDisp{
+    margin:10px 10px 15px 10px;
+    padding:15px;
+    text-align:center;
+    /* Box shadow */
+    -webkit-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+       -moz-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+            box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+    border: solid 1px #cccccc\9; /* IEの時だけ枠線を付ける */
+}
+/* 内枠 赤字に白文字のところ */
+.cpnptn15 .ponDispDuble{
+    margin:0;
+    padding:15px 5px 18px 5px;
+}
+/* 白枠外のテキスト部分 */
+.cpnptn15 .ponDisp2{
+    margin:0 10px;
+    padding:5px 0 5px 0;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn15 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1.1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn15 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 50%;
+    margin:0 0 14px 0;
+    padding:3px;
+}
+/* クーポン内容 */
+.cpnptn15 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn15 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.9rem;
+    line-height: 2.7rem;
+}
+/* クーポン有効期限 */
+.cpnptn15 .limitcpn{
+    margin: 0 14px 10px 14px;
+    padding:0;
+}
+.cpnptn15 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn15 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn15 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn15 .usecpn{
+    margin:0 14px 8px 14px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn15 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 */
+.cpnptn15 .showcpn{
+    margin:0 14px 8px 14px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn15 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+/*--------- クーポンパターン16（赤文字） ---------*/
+
+/* クーポンパターン16（赤文字） 全体 */
+.cpnptn16{
+    margin:10px 0 45px 0;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn16{width:360px;}
+}
+/* 紅い枠＋影 */
+.cpnptn16 .ponDisp{
+    margin:10px 10px 15px 10px;
+    padding:14px;
+    text-align:center;
+    /* Box shadow */
+    -webkit-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+       -moz-box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+            box-shadow:rgba(10,10,10,0.3) 1px 1px 7px 1px;
+}
+/* 赤枠内の白地の部分 */
+.cpnptn16 .ponDispDuble{
+    margin:0;
+    padding:15px 5px 18px 5px;
+}
+/* 赤枠外のテキスト部分 */
+.cpnptn16 .ponDisp2{
+    margin:0 10px 0 10px;
+    padding:5px 0 5px 0;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn16 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1.1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn16 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 60%;
+    margin:0 0 14px 0;
+}
+/* クーポン内容 */
+.cpnptn16 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn16 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.9rem;
+    line-height: 2.7rem;
+}
+/* クーポン有効期限 */
+.cpnptn16 .limitcpn{
+    margin: 0 14px 10px 14px;
+    padding:0;
+}
+.cpnptn16 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn16 .limitcpn p span{
+    text-decoration: underline;
+}
+/* 改行ポイント */
+.cpnptn16 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn16 .usecpn{
+    margin:0 14px 8px 14px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn16 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 */
+.cpnptn16 .showcpn{
+    margin:0 14px 8px 14px;
+    padding:0;
+    text-align: left;
+}
+.cpnptn16 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+/*--------- クーポンパターン17（Black in Blood） ---------*/
+
+/* クーポン 血の黒 全体 */
+.cpnptn17{
+    margin:10px 10px 20px 10px;
+    padding:20px 6px 15px 6px;
+    border: 5px solid #850020;
+    text-align:center;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn17{width:360px;}
+}
+/* クーポン名 */
+.cpnptn17 .namecpn{
+    margin-bottom: 24px;
+    padding:0;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn17 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin-bottom:14px;
+}
+/* クーポン内容（オレンジの枠） */
+.cpnptn17 .aboutcpn{
+    margin: 0 9% 18px 9%;
+    padding:18px 5px 18px 5px;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    font-weight:bold;
+}
+.cpnptn17 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+/* クーポン有効期限 */
+.cpnptn17 .limitcpn{
+    margin: 0 5% 19px 5%;
+    padding:0;
+}
+.cpnptn17 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn17 .limitcpn p span{
+    text-decoration: underline;
+}
+/* 改行ポイント */
+.cpnptn17 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 */
+.cpnptn17 .usecpn{
+    margin:0 7% 10px 7%;
+    padding:0;
+    text-align: left;
+}
+.cpnptn17 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+/* クーポン利用方法 */
+.cpnptn17 .showcpn{
+    margin:0 7% 10px 7%;
+    padding:0;
+    text-align: left;
+}
+.cpnptn17 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+/*--------- クーポンパターン18（Black in Frame） ---------*/
+
+/* クーポンパターン18（Black in Frame） 全体 */
+.cpnptn18{
+    margin:10px 10px 50px 10px;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn18{width:360px;}
+}
+/* 額縁 外枠 */
+.cpnptn18 .ponDisp{
+    margin:0 0 15px 0;
+    padding:0;
+    text-align:center;
+    border:double 7px #fbb03b;/* イレギュラー発生時は、7pxの二重線を表示 */
+    /* Image border */
+    -webkit-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+       -moz-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+         -o-border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+            border-image: url("../../../crayonimg.e-shops.jp/cms-dimg/shared-library/61/26_26.png") 7 round;
+    border:dashed 2px #fbb03b\9;/* IEは2ｐｘの点線 */
+}
+/* 額縁 内枠（IE対応のため） */
+.cpnptn18 .ponDispDuble{
+    margin:0;
+    padding:20px 10px 20px 10px;
+    text-align:center;
+    -webkit-box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+       -moz-box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+            box-shadow:rgba(200, 200, 180, 0.75) 0 0 7px 1px inset;
+    border:double 5px #fbb03b\9;/* IEは5ｐｘの二重線 */
+}
+/* 下の灰色のテキスト部分 */
+.cpnptn18 .ponDisp2{
+    margin:3px;
+    padding:14px 15px 7px 15px;
+    border:solid 1px #3e3e3e;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn18 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1.1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn18 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 50%;
+    margin:0 0 14px 0;
+    padding:12px;
+}
+/* クーポン内容 */
+.cpnptn18 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn18 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.5rem;
+    line-height: 2.8rem;
+}
+/* クーポン有効期限 枠 */
+.cpnptn18 .limitcpn{
+    margin: 0 0 10px 0;
+    padding:0;
+}
+.cpnptn18 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn18 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn18 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 枠 */
+.cpnptn18 .usecpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn18 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 枠 */
+.cpnptn18 .showcpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn18 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+
+/*--------- クーポンパターン19（Black of Cut）  ---------*/
+
+/* クーポンパターン19（Black of Cut） 全体 */
+.cpnptn19{
+    margin:10px 0 45px 0;
+    padding:0;
+    border: none;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+}
+@media screen and (min-width: 396px){ /* 396pxを超えたら */
+    .cpnptn19{width:360px;}
+}
+/* 外枠 ギザギザ */
+.cpnptn19 .ponDisp{
+    margin:10px 10px 15px 10px;
+    padding:12px;
+    text-align:center;
+    border:dotted 2px #222222;
+    /* Box shadow */
+    -webkit-box-shadow:rgba(0,0,0,1) 1px 1px 8px 3px;
+       -moz-box-shadow:rgba(0,0,0,1) 1px 1px 8px 3px;
+            box-shadow:rgba(0,0,0,1) 1px 1px 8px 3px;
+}
+/* クーポン内側 */
+.cpnptn19 .ponDispDuble{
+    margin:0;
+    padding:15px 5px 18px 5px;
+}
+/* 枠外のテキスト部分 */
+.cpnptn19 .ponDisp2{
+    margin:0 10px;
+    padding:5px 14px 5px 14px;
+    text-align:center;
+}
+/* クーポン名 */
+.cpnptn19 .namecpn{
+    margin:0 0 18px 0;
+    padding:0;
+    font-size:1rem;
+    font-weight:bold;
+}
+/* クーポン画像 */
+.cpnptn19 .imgtrm{
+    display: inline-block;
+    vertical-align:top;/*ベースラインのズレを修正*/
+    width: 45%;
+    margin:0 0 14px 0;
+    padding:10px;
+}
+/* クーポン内容 */
+.cpnptn19 .aboutcpn{
+    margin: 0;
+    padding:0;
+    font-weight:bold;
+}
+.cpnptn19 .aboutcpn p{
+    margin:0;
+    padding:0;
+    font-size:1.8rem;
+    line-height: 2.6rem;
+}
+/* クーポン有効期限 枠 */
+.cpnptn19 .limitcpn{
+    margin: 0 0 10px 0;
+    padding:0;
+}
+.cpnptn19 .limitcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.cpnptn19 .limitcpn p span{
+    text-decoration: underline;
+}
+.cpnptn19 .textBreak{
+    display: inline-block;
+}
+/* クーポン利用条件 枠 */
+.cpnptn19 .usecpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn19 .usecpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+/* クーポン利用方法 枠 */
+.cpnptn19 .showcpn{
+    margin:0 0 8px 0;
+    padding:0;
+    text-align: left;
+}
+.cpnptn19 .showcpn p{
+    margin:0;
+    padding:0;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+/*区切り線パーツ　パターン２*/
+.lineptn02{
+	border-bottom-style: dashed;
+}
+/*区切り線パーツ　パターン３*/
+.lineptn03{
+	border-bottom-width: 3px;
+	border-bottom-style: dotted;
+}
+/*区切り線パーツ　パターン４*/
+.lineptn04{
+	height: 3px;
+	border-top-width: 1px;
+	border-top-style: solid;
+}
+/*区切り線パーツ　パターン５*/
+.lineptn05{
+	height: 3px;
+	border-top-width: 4px;
+	border-top-style: solid;
+}
+/*区切り線パーツ　パターン６*/
+.lineptn06{
+	border-bottom-width: 6px;
+	border-radius: 5px;
+}
+/*区切り線パーツ　パターン７*/
+.lineptn07{
+    height: 20px;
+    border-top-width: 1px;
+    border-top-style: solid;
+	border-bottom-style: none;
+}
+/*区切り線パーツ　パターン８*/
+.lineptn08{
+    height: 20px;
+}
+/*区切り線パーツ　パターン９*/
+.lineptn09{
+	border: none;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1630/2000_21.png) no-repeat left bottom;
+}
+/*区切り線パーツ　パターン10*/
+.lineptn10{
+	border: none;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1631/2000_20.png) no-repeat right top;
+}
+/*区切り線パーツ　パターン11*/
+.lineptn11{
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1632/30_20.png) no-repeat center top;
+}
+/*区切り線パーツ　パターン12*/
+.lineptn12{
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1633/1200_20.png) no-repeat center bottom;
+	background-size: contain;
+}
+/*区切り線パーツ　パターン13*/
+.lineptn13{
+	border-bottom-style: none;
+	border-top-width: 1px;
+	border-top-style: solid;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1634/1200_20.png) no-repeat center top;
+	background-size: contain;
+}
+/*区切り線パーツ　パターン14*/
+.lineptn14{
+	border: none;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1635/2000_20.png) no-repeat left center;
+	background-size: contain;
+
+}
+/*区切り線パーツ　パターン15*/
+.lineptn15{
+	border: none;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1636/28_20.png) repeat-x left center;	
+}
+/*区切り線パーツ　パターン16*/
+.lineptn16{
+	border: none;
+	height: 20px;
+	background: url(../../../crayonimg.e-shops.jp/cms-dimg/shared-library/1637/50_19.png) repeat-x left center;
+	background-size: contain;
+}
+
+/*お問合せパーツ*/
+.cmark01:before{
+	padding-right: 2px;
+	content: "■";
+	vertical-align: top;
+	text-decoration: none;
+	display: inline-block;
+}
+.cmark02:before{
+	padding-right: 5px;
+	content: "≫";
+	vertical-align: top;
+	text-decoration: none;
+	display: inline-block;
+}
+.cbtn02{
+	text-shadow: 1px 1px 0px #cccccc;
+	border-top: 1px solid #eeeeee;
+	border-left: 1px solid #eeeeee;
+	border-bottom: 2px solid #dddddd;
+	border-right: 2px solid #dddddd;
+	border-radius: 6px;
+	-moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.3);
+	box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.3);
+}
+.cbtn03{
+	border: 1px solid #bbbbbb;
+	border-radius: 6px;
+}
+.cbtn04 {
+	padding: 4px;
+}
+.cbtn04 p{
+	border-width: 2px;
+	border-style: solid;
+}
+
+.bottomBanner{
+	background-color: rgba(255,255,255,0.85);
+	text-align: center;
+}
+.maxWidth{
+	max-width:100%;
+	height:auto;
+	vertical-align: bottom;
+}
+#powered p{
+	font-size:0.9rem;
+	padding-top:0;
+}
+
+/* 動画パーツ */
+/* 動画フレーム部分 */
+.videoFrame { 
+    display:inline-block;
+    width:580px;
+    max-width:100%;
+    text-align:center;
+    background-color:#000;
+    margin:0;
+    padding:10px 0;
+}
+/* 動画のレイアウト　最大サイズを560pxに指定 */
+.l-videoBox{
+    display: inline-block;
+    width:560px;
+    max-width:100%;
+    vertical-align: bottom;
+}
+/* 動画フレームを使わずに枠をつけるスタイル */
+.l-videoBoxBorder{
+    box-sizing: border-box;
+    border:solid 10px #222;
+    width:580px;
+    max-width:100%;
+    margin:0 auto;
+}
+/* 動画を伸縮自在にする */
+.videoBox { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    padding-top: 15px; 
+    height: 0; 
+    overflow: hidden; 
+}
+.videoBox iframe { 
+    position: absolute; 
+    top: 0;left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+/* サムネのレイアウト */
+.l-samneLink{
+    display: inline-block;
+    width: 92%;
+    max-width: 480px;
+    margin: 0 4%;
+}
+/* 枠線つけた時 */
+.samneBorder{
+    max-width: calc(480px + 8px);
+    padding: 8px 4px;
+    box-sizing: border-box;
+    background-color: #000;
+}
+/* リンク部分 */
+.samneLink{
+    display: inline-block;
+    width: 100%;
+    min-height:120px;
+    box-sizing: border-box;
+    position:relative;
+}
+/* サムネを暗くするための奴 */
+.samneLink::before{
+    content: "";
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    position:absolute;
+    top: 0; left: 0;
+    transition: all 0.5s;
+}
+/* サムネを暗くするための奴（マウスオーバー） */
+.samneLink:hover:before{ opacity: 0.1; }
+/* サムネ画像　*/
+.samneImg{ width: 100%; vertical-align: top; }
+/* YouTubeアイコン */
+.samneIcon{
+    width:64px;
+    position:absolute;
+    top:0; bottom:0;
+    left:0; right:0;
+    margin: auto;
+    transition: all 0.5s;
+}
+/* YouTubeアイコン（マウスオーバー） */
+.samneLink:hover > .samneIcon{ opacity: 0.6; }
+
+/* Google翻訳ボタン用 */
+#google_translate_element {
+    text-align: right;
+}
+#google_translate_element .goog-logo-link{
+    display: initial;
+}
+
+/* ********* lazy load パーツ別 ********* */
+
+.img_area img[data-lazy-src],
+.imgtext_area img[data-lazy-src],
+.ggrid_area img[data-lazy-src] {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ggrid_area img[data-lazy-src] {
+    height: 100px !important;
+    width: 100px !important;
+    max-height: 100%;
+    max-width: 100%;
+}
+.ggrid_area .imgl img[data-lazy-src] {
+    top: 92.5px !important;
+    left: 92.5px !important;
+}
+.ggrid_area .imgm img[data-lazy-src] {
+    top: 20px !important;
+    left: 20px !important;
+}
+.ggrid_area .imgs img[data-lazy-src] {
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* ********* 汎用モジュール ********* */
+
+/*左右余白*/
+.sideMargin_0{ margin-right:0; margin-left:0; }
+.sideMargin_1{ margin-right:1%; margin-left:1%; }
+.sideMargin_2{ margin-right:2%; margin-left:2%; }
+.sideMargin_3{ margin-right:3%; margin-left:3%; }
+.sideMargin_4{ margin-right:4%; margin-left:4%; }
+.sideMargin_5{ margin-right:5%; margin-left:5%; }
+.sideMargin_8px{ margin-right:8px; margin-left:8px; }
+/* 文字サイズ */
+.fontSize07, .fontSize_07{ font-size: 0.7rem; }
+.fontSize09, .fontSize_09{font-size: 0.9rem;}
+.fontSize1, .fontSize_1{ font-size: 1rem; }
+.fontSize13, .fontSize_13{ font-size: 1.3rem; }
+.fontSize2, .fontSize_2{ font-size: 2rem; }
+/* 太字 */
+.bold{font-weight:bold;}
+/* 内余白　縦 */
+.paddingHeight_02em{ padding-top:0.2em; padding-bottom:0.2em; }
+.paddingHeight_05em{ padding-top:0.5em; padding-bottom:0.5em; }
+.paddingHeight_07em{ padding-top:0.7em; padding-bottom:0.7em; }
+/* 内余白　横 */
+.paddingWidth_02em{ padding-right:0.2em; padding-left:0.2em; }
+.paddingWidth_05em{ padding-right:0.5em; padding-left:0.5em; }
+.paddingWidth_07em{ padding-right:0.7em; padding-left:0.7em; }

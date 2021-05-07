@@ -1,0 +1,493 @@
+
+
+/* オビテーマ */
+.t-obi {
+    margin:0 auto; padding:0;
+    width:100%;
+    font-size:16px;
+    color:#111;
+    text-align:center;
+    font-family:Verdana, Roboto, "Droid Sans", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    background-color:#eaeaea;
+}
+/* ページ全体 */
+.l-pageWrap{
+    margin:0 auto;
+    padding: 0;
+    width:850px;
+    overflow: visible;
+}
+/* 850px以上でページ全体の左右に余白を付ける */
+@media screen and (max-width: 870px){
+    .l-pageWrap{
+        width:100%;
+        overflow:hidden;
+    }
+}
+/* ヘッダー大枠（帯部分） */
+.obiHeader{
+    width:100%;
+    position: fixed; z-index: 999;
+    text-align:left;
+    background-color:#272727;
+    box-shadow: 0 0 4px rgba(1,1,1,0.4);
+}
+/* PC時に帯内の左位置を下のコンテンツと揃える為の透明な枠 */
+.obiHeaderInner{
+	box-sizing: border-box;
+    width:850px;
+    margin:0 auto;
+    padding-right:28px;
+    position: relative;
+}
+/* 870px 以下で画面幅に合わせるよ */
+@media screen and (max-width: 870px){
+.obiHeaderInner{
+    width:100%;
+    margin:0;
+    }
+}
+/* 帯内のナビゲーションリンク大枠 */
+.obiHederNavigation{
+    width: 100%;
+    height:36px;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    overflow:hidden;
+    letter-spacing: -.40rem;
+    list-style-type: none;
+}
+/* 帯内のナビゲーションリンク　中枠 */
+.obiHederNavigation > li{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    letter-spacing: normal;
+}
+.obiHederNavigation > li:hover{
+    background-color: #474747;
+}
+/* 帯内のナビゲーションリンク　リンク枠 */
+.obiHederNavigation > li > a{
+    height:36px;
+    vertical-align:top;
+    display: inline-block;
+    color: #fff;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+/* 帯内のナビゲーションリンク　文字枠と縦線 */
+.obiHederNavigation > li > a > span{
+	display: inline-block;
+	height:18px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
+	margin-top:10px;
+    padding: 0 8px 0 8px;
+    border-right: #666 solid 1px;
+    max-width:130px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+/* 帯内左側のトグルボタン */
+.oviHeadRighter,
+.s-oviHeadRighterOn{
+	box-sizing: border-box;
+	height:29px;
+	color:#fff;
+	position:absolute;
+	top:4px;
+	right:1px;
+	border:solid 1px transparent;
+	text-align:center;
+	vertical-align: bottom;
+    padding: 4px 6px 4px 8px;
+    line-height: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.oviHeadRighter:hover{
+	border-color:#666;
+}
+.s-oviHeadRighterOn{
+    background-color: #474747;
+    border:solid 1px #666;
+}
+/*-------------------------------------------------------*/
+/* 基からあるスタイルを消す */
+.t-obi #header {
+    background-color: transparent;
+}
+/* 帯の下のヘッダーまわり 大枠 */
+.obiSita{
+    padding-top: 50px;
+}
+/* 帯の下のヘッダーまわり 大枠　ロゴ＋ロゴ横のスタイル */
+.logoLeftStyle{
+    display:table;
+    width:100%;
+    height:auto;
+    margin: 0 0 15px 0;
+    text-align: left;
+    table-layout:auto;
+}
+.logoLeftText{
+    display:table;
+    width:100%;
+    height:auto;
+    margin: 0 0 15px 0;
+    text-align: left;
+    table-layout:auto;
+}
+/* ロゴの枠 */
+.obiSitaLogo{
+    height:auto;
+    display: table-cell;
+    vertical-align: bottom;
+    padding:0;
+}
+/* ロゴ画像 */
+.logoImage{
+    max-width:100%;
+    height:auto;
+    vertical-align: bottom;
+}
+/* ロゴの左側 */
+.logoLeft{
+    padding:0 0 0 20px;
+    text-align: right;
+    vertical-align: bottom;
+    display: table-cell;
+}
+/* ロゴ左が画像の時、画像とアンカーの両方につける */
+.logoLeftIn{
+    vertical-align: bottom;
+    margin:0 0 0 auto;
+    max-width:100%;
+}
+/* ロゴ左がテキストの時 */
+.logoLeftTextBox{
+    display: inline-block;
+    text-align: left;
+    width: auto;
+    font-size:1rem;
+    line-height:1.6rem;
+}
+/* ロゴ左が画像の時（450以下） */
+@media screen and (max-width: 450px){
+    .logoLeftImage .logoLeft{display:none;}
+}
+/* ロゴ左がテキストの時（600以下） */
+@media screen and (max-width: 600px){
+    .logoLeftText .obiSitaLogo{display:block;}
+    .logoLeftText .logoLeft{
+        display:block;
+        margin-top:15px;
+        padding:0;
+        text-align: center;
+    }
+}
+/*-------------------------------------------------------*/
+/* コンテンツの枠 */
+.t-obi .articleBox{
+    padding:10px 0;
+    overflow:hidden;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    border: none;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    text-align: left;
+}
+/* トップ画像にはパディング不要 */
+.t-obi .articleBoxTop{
+    padding:0;
+}
+/*-------------------------------------------------------*/
+/* フッターについたしつこい汚れを落とす */
+.t-obi #footer {
+  background-color: #cacaca;
+}
+.t-obi .ft_area {
+  padding: 12px 0 12px;
+}
+.obiFooterInner {
+    width: 850px;
+    margin: 0 auto;
+}
+/* 870px 以下で画面幅に合わせるよ */
+@media screen and (max-width: 870px){
+.obiFooterInner{
+    width:100%;
+    margin:0;
+    }
+}
+.t-obi .fadd,
+.t-obi .ftel,
+.t-obi .fcpy{color: #000;}
+.t-obi #powered p{
+    font-size:0.9rem;
+    padding-top:0;
+}
+/* フッター下の広告 */
+.t-obi .bottomBanner,
+.t-obi #powered{
+    background-color: transparent;
+    text-align: center;
+}
+/* 画像を画面幅に合わせる汎用モジュール */
+.maxWidth{
+    max-width:100%;
+    height:auto;
+    vertical-align: bottom;
+}
+
+/*-------------------------------------------------------*/
+
+/* ファースト画像大枠 */
+.firstImageDon {
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+/* ファースト画像 */
+.firstImage {
+    max-width:100%;
+    height:auto;
+    vertical-align:bottom;
+}
+/* リラティブの汎用モジュール */
+.relative{
+    position:relative;
+}
+/* 画像に文字を入れる時（上） */
+.firstImageTitele{
+    position:absolute;
+    top:10px;
+    left:20px;
+    font-size:3rem;
+    font-weight:bold;
+    text-align:left;
+}
+/* 画像に文字を入れる時（下） */
+.firstImageText{
+    margin:0;
+    position:absolute;
+    bottom:10px;
+    right:20px;
+    margin:10px 0 0 20px;
+    font-size:2rem;
+    font-weight:bold;
+    text-align:left;
+}
+/* 画像に文字を入れる時（黒） */
+.firstImageTextBlack{
+    color:#000;
+    text-shadow: 0 0 2px #fff,0 0 6px #fff;
+}
+/* 画像に文字を入れる時（白） */
+.firstImageTextWhite{
+    color:#fff;
+    text-shadow: 0 0 2px #000, 0 0 6px #fff;
+}
+/* 画像に文字を入れる時（500以下） */
+@media screen and (max-width: 500px){
+    .firstImageTitele{font-size:2rem;}
+    .firstImageText{font-size:1.4rem;}
+}
+
+/*-------------------------------------------------------*/
+
+/* 血染めの桜 */
+.obi-color01{background-color:#fcf6f8;}
+.obi-color01 .obiHeader,
+.obi-color01.previewHeader{background-color: #f8c8c9;}
+.obi-color01 .obiHederNavigation > li:hover{background-color: #e89c9f;}
+.obi-color01 .obiHederNavigation > li > a,
+.obi-color01 .oviHeadRighter,
+.obi-color01 .previewHeaderNavigation{color:#552C03;}
+.obi-color01 .obiHederNavigation > li > a > span,
+.obi-color01 .previewHeaderNavigation{border-right: #dc9391 solid 1px;}
+.obi-color01 .oviHeadRighter:hover{border-color:#dc9391;}
+.obi-color01 .s-oviHeadRighterOn{background-color:#e89c9f;border-color:#dc9391;}
+.obi-color01 #footer {background-color: #e1dbdd;color:#000;}
+/* 癒しの風信子 */
+.obi-color02{background-color:#f9fcfd;}
+.obi-color02 .obiHeader,
+.obi-color02.previewHeader{background-color:#d0e9f7;}
+.obi-color02 .obiHederNavigation > li:hover{background-color: #bbe3f2;}
+.obi-color02 .obiHederNavigation > li > a,
+.obi-color02 .previewHeaderNavigation{color:#34a7e0;}
+.obi-color02 .obiHederNavigation > li > a > span,
+.obi-color02 .previewHeaderNavigation{border-right: #a5d6e5 solid 1px;}
+.obi-color02 .oviHeadRighter{color:#34a7e0;}
+.obi-color02 .oviHeadRighter:hover{border-color:#a5d6e5;}
+.obi-color02 .s-oviHeadRighterOn{background-color:#bbe3f2;border-color:#a5d6e5;}
+.obi-color02 #footer {background-color: #dde0e1;color:#000;}
+/* 向日葵の涙 */
+.obi-color03{background-color:#fcfBf7;}
+.obi-color03 .obiHeader,
+.obi-color03.previewHeader{background-color: #efcc62;/*background-color:#e2b752;*/}
+.obi-color03 .obiHederNavigation > li:hover{background-color: #D2B038;}
+.obi-color03 .obiHederNavigation > li > a,
+.obi-color03 .previewHeaderNavigation{color:#210;}
+.obi-color03 .obiHederNavigation > li > a > span,
+.obi-color03 .previewHeaderNavigation{border-right: #D2B038 solid 1px;}
+.obi-color03 .oviHeadRighter{color:#210;}
+.obi-color03 .oviHeadRighter:hover{border-color:#D2B038;}
+.obi-color03 .s-oviHeadRighterOn{background-color:#d2b038;border-color:#d2b038;}
+.obi-color03 #footer {background-color: #e3e1d8;color:#000;}
+/* 柊の叫び */
+.obi-color04{background-color:#f1f2ed;}
+.obi-color04 .obiHeader,
+.obi-color04.previewHeader{background-color: #1a4d27;}
+.obi-color04 .obiHederNavigation > li:hover{background-color: #336639;}
+.obi-color04 .obiHederNavigation > li > a,
+.obi-color04 .previewHeaderNavigation{color:#fff;}
+.obi-color04 .obiHederNavigation > li > a > span,
+.obi-color04 .previewHeaderNavigation{border-right: #585 solid 1px;}
+.obi-color04 .oviHeadRighter{color:#fff;}
+.obi-color04 .oviHeadRighter:hover{border-color:#585;}
+.obi-color04 .s-oviHeadRighterOn{background-color:#336639;border-color:#585;}
+.obi-color04 #footer {background-color: #d4dad3;color:#000;}
+
+/* マリーの断頭台 */
+.obi-color06{background-color:#f9fcfd;}
+.obi-color06 .obiHeader,
+.obi-color06.previewHeader{background-color: #172f4b;}
+.obi-color06 .obiHederNavigation > li:hover{background-color: #33506c;}
+.obi-color06 .obiHederNavigation > li > a > span,
+.obi-color06 .previewHeaderNavigation{border-right: #668 solid 1px;}
+.obi-color06 .oviHeadRighter:hover{border-color:#668;}
+.obi-color06 .s-oviHeadRighterOn{background-color:#33506c;border-color:#668;}
+.obi-color06 #footer {background-color: #dde0e1;color:#000;}
+/* ドングリ共和国 */
+.obi-color07{background-color:#f2eee9;}
+.obi-color07 .obiHeader,
+.obi-color07.previewHeader{background-color: #54412e;}
+.obi-color07 .obiHederNavigation > li:hover{background-color:#72583b;}
+.obi-color07 .obiHederNavigation > li > a > span,
+.obi-color07 .previewHeaderNavigation{border-right: #7a6b61 solid 1px;}
+.obi-color07 .oviHeadRighter:hover{border-color:#7a6b61;}
+.obi-color07 .s-oviHeadRighterOn{background-color:#72583b;border-color:#7a6b61;}
+.obi-color07 #footer {background-color: #d7d4d0;color:#000;}
+/* カーネーション */
+.obi-color08{background-color:#fcf6f8;}
+.obi-color08 .obiHeader,
+.obi-color08.previewHeader{background-color: #C94a67;}
+.obi-color08 .obiHederNavigation > li:hover{background-color: #D27082;}
+.obi-color08 .obiHederNavigation > li > a > span,
+.obi-color08 .previewHeaderNavigation{border-right: #dc9391 solid 1px;}
+.obi-color08 .oviHeadRighter:hover{border-color:#dc9391}
+.obi-color08 .s-oviHeadRighterOn{background-color:#D27082;border-color:#dc9391;}
+.obi-color08 #footer {background-color: #e1dbdd;color:#000;}
+/* つつじ */
+.obi-color09{background-color:#fefefe;}
+.obi-color09 .obiHeader,
+.obi-color09.previewHeader{background-color: #CA4b57;}
+.obi-color09 .obiHederNavigation > li:hover{background-color: #D27072;}
+.obi-color09 .obiHederNavigation > li > a > span,
+.obi-color09 .previewHeaderNavigation{border-right: #dc9391 solid 1px;}
+.obi-color09 #footer {background-color: #e1dbdd;color:#000;}
+.obi-color09 .oviHeadRighter:hover{border-color:#dc9391;}
+.obi-color09 .s-oviHeadRighterOn{background-color:#D27072;border-color:#dc9391;}
+.obi-color09 .articleBox{background-color: #fae4eb;}
+/* たんぽぽ */
+.obi-color10{background-color:#fefefe;}
+.obi-color10 .obiHeader,
+.obi-color10.previewHeader{background-color:#ffe578;}
+.obi-color10 .obiHederNavigation > li:hover{background-color:#edd770;}
+.obi-color10 .obiHederNavigation > li > a,
+.obi-color10 .previewHeaderNavigation{color:#210;}
+.obi-color10 .obiHederNavigation > li > a > span,
+.obi-color10 .previewHeaderNavigation{border-right: #ceb85d solid 1px;}
+.obi-color10 .oviHeadRighter{color:#210;}
+.obi-color10 .oviHeadRighter:hover{border-color:#ceb85d;}
+.obi-color10 .s-oviHeadRighterOn{background-color:#edd770;border-color:#ceb85d;}
+.obi-color10 #footer {background-color: #eae5d0;}
+.obi-color10 .fadd,
+.obi-color10 .ftel,
+.obi-color10 .fcpy{color:#000;}
+.obi-color10 .articleBox{background-color: #fff9b1;}
+/* よつばと */
+.obi-color11{background-color:#fefefe;}
+.obi-color11 .obiHeader,
+.obi-color11.previewHeader{background-color: #abd690;}
+.obi-color11 .obiHederNavigation > li:hover{background-color: #89aa74;}
+.obi-color11 .obiHederNavigation > li > a,
+.obi-color11 .previewHeaderNavigation{color:#fff;}
+.obi-color11 .obiHederNavigation > li > a > span,
+.obi-color11 .previewHeaderNavigation{border-right: #91af7d solid 1px;}
+.obi-color11 .oviHeadRighter{color:#fff;}
+.obi-color11 .oviHeadRighter:hover{border-color:#91af7d;}
+.obi-color11 .s-oviHeadRighterOn{background-color:#89aa74;border-color:#91af7d;}
+.obi-color11 #footer {background-color: #dfe5da;}
+.obi-color11 .articleBox{background-color: #e6f5e1;}
+/* 勿忘草 */
+.obi-color12{background-color:#fefefe;}
+.obi-color12 .obiHeader,
+.obi-color12.previewHeader{background-color:#8ed7f4;}
+.obi-color12 .obiHederNavigation > li:hover{background-color: #80b3ce;}
+.obi-color12 .obiHederNavigation > li > a,
+.obi-color12 .previewHeaderNavigation{color:#01223d;}
+.obi-color12 .obiHederNavigation > li > a > span,
+.obi-color12 .previewHeaderNavigation{border-right: #4f9ab7 solid 1px;}
+.obi-color12 .oviHeadRighter{color:#01223d;}
+.obi-color12 .oviHeadRighter:hover{border-color:#4f9ab7;}
+.obi-color12 .s-oviHeadRighterOn{background-color:#80b3ce;border-color:#4f9ab7;}
+.obi-color12 #footer {background-color: #c5d2d6;}
+.obi-color12 .articleBox{background-color: #d2ebfa;}
+/* 露草 */
+.obi-color13{background-color:#5a80b7;color:#fff;}
+.obi-color13 .obiHeader,
+.obi-color13.previewHeader{background-color: #022a56;}
+.obi-color13 .obiHederNavigation > li:hover{background-color: #264f75;}
+.obi-color13 .obiHederNavigation > li > a > span,
+.obi-color13 .previewHeaderNavigation{border-right: #596c87 solid 1px;}
+.obi-color13 .oviHeadRighter:hover{border-color:#596c87;}
+.obi-color13 .s-oviHeadRighterOn{background-color:#264f75;border-color:#596c87;}
+.obi-color13 #footer{background-color: #27446d;}
+.obi-color13 .fadd,
+.obi-color13 .ftel,
+.obi-color13 .fcpy{color:#fff;}
+.obi-color13 .articleBox{background-color: #003c87;}
+/* 紅葉 */
+.obi-color14{background-color:#4f1802;color:#fff;}
+.obi-color14 .obiHeader,
+.obi-color14.previewHeader{background-color: #070200;}
+.obi-color14 .obiHederNavigation > li:hover{background-color: #4f1802;}
+.obi-color14 .obiHederNavigation > li > a > span,
+.obi-color14 .previewHeaderNavigation{border-right: #8e3d00 solid 1px;}
+.obi-color14 .oviHeadRighter:hover{border-color:#8e3d00;}
+.obi-color14 .s-oviHeadRighterOn{background-color:#4f1802;border-color:#8e3d00;}
+.obi-color14 #footer{background-color: #2c0c00;}
+.obi-color14 .fadd,
+.obi-color14 .ftel,
+.obi-color14 .fcpy{color:#fff;}
+.obi-color14 .articleBox{background-color: #85180d;}
+/* パンジー */
+.obi-color15{background-color:#2d2d2d;color:#fff;}
+.obi-color15 .obiHeader,
+.obi-color15.previewHeader{background-color: #6f3a3a;}
+.obi-color15 .obiHederNavigation > li:hover{background-color: #844a4a;}
+.obi-color15 .obiHederNavigation > li > a > span,
+.obi-color15 .previewHeaderNavigation{border-right: #090000 solid 1px;}
+.obi-color15 .oviHeadRighter:hover{border-color:#090000;}
+.obi-color15 .s-oviHeadRighterOn{background-color:#844a4a;border-color:#090000;}
+.obi-color15 #footer{background-color: #1b1b1b;}
+.obi-color15 .fadd,
+.obi-color15 .ftel,
+.obi-color15 .fcpy{color:#fff;}
+.obi-color15 .articleBox{background-color: #040404;}
+
+/* ダーク 暗く */
+.naviColorMenu_Dark:hover,.naviColorMenu_Dark.s-oviHeadRighterOn{background-color:rgba(0,0,0,0.2) !important;}
+/* ブライト 明るく */
+.naviColorMenu_Bright:hover,.naviColorMenu_Bright.s-oviHeadRighterOn{background-color:rgba(255,255,255,0.24) !important;}
